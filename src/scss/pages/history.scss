@@ -1,0 +1,29 @@
+.history-page {
+  background-color: $color-bg;
+  color: white;
+  padding-top: 60px !important;
+  &__filter {
+    background: $color-surface;
+    border-radius: 999px;
+    padding: 0.3rem 0.75rem;
+    font-size: 0.85rem;
+    color: $color-text;
+    display: inline-block;
+  }
+
+  &__item {
+    background-color: $color-surface;
+    border-radius: 1rem;
+    margin-bottom: 1rem;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.15);
+  }
+
+  &__tag {
+    background: $color-accent;
+    border-radius: 999px;
+    font-size: 0.75rem;
+    padding: 0.25rem 0.65rem;
+    color: black;
+    white-space: nowrap;
+  }
+}

@@ -1,0 +1,120 @@
+.tutor-page {
+  background-color: $color-bg;
+  color: white;
+  display: flex;
+  flex-direction: column;
+  height: 100dvh;
+
+  &__top {
+    background-color: $color-surface;
+    border-bottom: 1px solid $color-border;
+  }
+  &__close-btn {
+    background: none;
+    border: none;
+    color: $color-muted;
+    font-size: 1.2rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0;
+    transition: color 0.2s;
+
+    &:hover {
+      color: white;
+    }
+  }
+  &__avatar {
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+  }
+
+  &__chat {
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    overflow-y: auto;
+    padding: 1rem 1rem 0 1rem;
+  }
+
+  &__message {
+    background-color: $color-card;
+    color: white;
+    padding: 0.75rem 1rem;
+    border-radius: 1rem;
+    max-width: 80%;
+    font-size: 0.95rem;
+    margin-bottom: 0.5rem;
+
+    &--ai {
+      align-self: flex-start;
+      border-top-left-radius: 0;
+    }
+
+    &--user {
+      align-self: flex-end;
+      background: $color-accent;
+      color: black;
+      border-top-right-radius: 0;
+    }
+  }
+
+  &__input {
+    background-color: $color-surface;
+    border-top: 1px solid $color-border;
+    padding: 0.75rem 1rem;
+  }
+
+  &__textarea-wrapper {
+    background: $color-card;
+    border-radius: 12px;
+    padding: 0.75rem 0.85rem;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+
+  &__textarea {
+    width: 100%;
+    background: transparent;
+    border: none;
+    resize: none;
+    color: white;
+    font-size: 1rem;
+    line-height: 1.4;
+    outline: none;
+    min-height: 80px;
+
+    &::placeholder {
+      color: $color-muted;
+    }
+  }
+
+  &__icon-btn {
+    background: none;
+    border: 1px solid $color-border;
+    color: $color-muted;
+    border-radius: 50%;
+    width: 34px;
+    height: 34px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 1rem;
+  }
+
+  &__send-btn {
+    background: $color-accent;
+    border: none;
+    color: black;
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    font-size: 1.2rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+}

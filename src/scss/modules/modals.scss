@@ -1,0 +1,99 @@
+.modal-pro {
+  background-color: #0d1117;
+  color: white;
+  border: none;
+  border-radius: 0;
+  height: 100%;
+
+  &__header {
+    position: relative;
+    overflow: hidden;
+  }
+
+  &__bg-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    // opacity: 0.15;
+    position: absolute;
+    top: -50px;
+    left: 0;
+  }
+
+  &__header-content {
+    position: relative;
+    z-index: 2;
+  }
+  &__billing-box {
+    background-color: rgba(255, 255, 255, 0.03);
+    padding: 0.75rem 1rem;
+    border-radius: 1rem;
+    line-height: 1.5;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  &__title {
+    font-size: 2rem;
+    font-weight: 800;
+    letter-spacing: -0.5px;
+    margin: 0;
+
+    span {
+      color: $color-accent;
+      font-weight: 500;
+    }
+
+    strong {
+      color: white;
+    }
+  }
+
+  &__chip {
+    background-color: #1e1e30;
+    padding: 0.35rem 0.75rem;
+    border-radius: 999px;
+    font-size: 0.75rem;
+    font-weight: 500;
+    display: inline-block;
+  }
+
+  &__features {
+    font-size: 1rem;
+
+    li {
+      margin-bottom: 0.8rem;
+      display: flex;
+      align-items: center;
+
+      i {
+        color: $color-accent;
+        font-size: 1.1rem;
+      }
+    }
+  }
+
+  &__cta {
+    background: linear-gradient(135deg, #6366f1, #8b5cf6);
+    color: white;
+    border: none;
+    border-radius: 999px;
+    padding: 0.9rem;
+    font-weight: 600;
+    font-size: 1rem;
+    transition: 0.2s ease;
+
+    &:hover {
+      opacity: 0.92;
+    }
+  }
+
+  &__body {
+    position: relative;
+    z-index: 2;
+    flex: 1;
+    overflow-y: auto;
+    margin-top: 30%;
+  }
+}

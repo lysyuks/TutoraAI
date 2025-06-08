@@ -1,0 +1,19 @@
+@import '../../node_modules/bootstrap/scss/bootstrap';
+@import 'reset';
+@import 'vars';
+@import 'global';
+@import 'fonts';
+@import 'animations';
+@import 'components';
+@import 'modules/header';
+@import 'modules/footer';
+@import 'modules/modals';
+
+
+@import 'pages/index';
+@import 'pages/camera';
+@import 'pages/chat-ai';
+@import 'pages/history';
+
+
+ 

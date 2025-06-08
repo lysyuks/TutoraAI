@@ -1,0 +1,51 @@
+<div class="tutor-page d-flex flex-column vh-100">
+
+  <div class="tutor-page__top d-flex align-items-center justify-content-between p-3">
+    <!-- Ліва частина: аватар + ім’я + хрестик -->
+    <div class="d-flex align-items-center w-100">
+      <img src="img/tutor-avatar.png" alt="Tutor" class="tutor-page__avatar me-2">
+      <div>
+        <div class="fw-bold text-white">Tutor AI</div>
+        <div class="small text-success">● Active</div>
+      </div>
+      <button class="tutor-page__close-btn ms-auto">
+        <i class="bi bi-x-lg"></i>
+      </button>
+    </div>
+  </div>
+
+
+
+  <!-- Messages -->
+  <div class="tutor-page__chat flex-grow-1 d-flex flex-column px-3 pb-3">
+    <!-- Повідомлення від NeuraX -->
+    <div class="tutor-page__message tutor-page__message--ai">
+      👋 Hi! I’m NeuraX, your friendly tutor assistant. Ask me anything!
+    </div>
+
+    <!-- Повідомлення від користувача -->
+    <div class="tutor-page__message tutor-page__message--user">
+      What’s the fastest way to solve a quadratic equation?
+    </div>
+  </div>
+
+
+  <!-- Input area -->
+  <div class="tutor-page__input px-3 py-3 d-flex flex-column">
+    <!-- ВЕЛИКЕ ПОЛЕ ВВОДУ -->
+    <div class="tutor-page__textarea-wrapper w-100 mb-2">
+      <textarea class="tutor-page__textarea" rows="2" placeholder="Type your message here..."></textarea>
+    </div>
+
+    <!-- НИЖНІ КНОПКИ -->
+    <div class="d-flex justify-content-between align-items-center">
+      <div class="d-flex gap-2">
+        <button class="tutor-page__icon-btn"><i class="bi bi-file-text"></i></i></button>
+        <button class="tutor-page__icon-btn"><i class="bi bi-mic"></i></button>
+      </div>
+      <button class="tutor-page__send-btn"><i class="bi bi-send-fill"></i></button>
+    </div>
+  </div>
+
+
+</div>
