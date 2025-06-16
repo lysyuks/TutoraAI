@@ -23,6 +23,105 @@
 
 
    <main class="main">
+      <!-- Bootstrap Fullscreen Modal -->
+      <div class="modal fade onboarding-modal" id="onboardingModal" tabindex="-1" aria-hidden="true">
+         <div class="modal-dialog modal-fullscreen">
+            <div class="modal-content onboarding-modal__content accent-dark-1 text-white">
+
+               <!-- MODAL BODY -->
+               <div class="modal-body p-4 text-center">
+
+                  <!-- ========== SCREEN 1 ========== -->
+                  <div class="onboarding-screen onboarding-screen--1 d-flex flex-column justify-content-center align-items-center">
+                     <h2 class="onboarding-modal__title mb-2 mt-5">
+                        Welcome to <span class="onboarding-modal__title--ai">Neura<b>X</b></span>
+                     </h2>
+                     <p class="onboarding-modal__subtitle mb-2">Smart tools. Fast answers.</p>
+                     <p class="mt-2"><b>Powered by <span class="text-primary">ChatGPT API</span></b></p>
+
+                     <div class="onboarding-modal__tags-grid my-4">
+                        <span class="onboarding-modal__tag accent-1">Scan & Solve</span>
+                        <span class="onboarding-modal__tag accent-2">Sketch</span>
+                        <span class="onboarding-modal__tag accent-3">Language</span>
+                        <span class="onboarding-modal__tag accent-4">Code</span>
+                        <span class="onboarding-modal__tag accent-3">Revise</span>
+                        <span class="onboarding-modal__tag accent-5">Summarize</span>
+                        <span class="onboarding-modal__tag accent-6">Learning</span>
+                     </div>
+
+                     <div class="onboarding-modal__owl mb-4">
+                        <img src="/img/illustrator-cat.png" alt="Owl Mascot" class="img-fluid">
+                     </div>
+
+                     <button class="btn btn-lg justify-content-center w-100 onboarding-modal__button mt-auto mb-3 onboarding-next-btn" id="onboardingNextBtn">
+                        Continue
+                     </button>
+
+                     <p class="onboarding-modal__legal small">
+                        By continuing, you accept our
+                        <a href="#" class="text-decoration-underline text-light">Privacy Policy</a>
+                        and
+                        <a href="#" class="text-decoration-underline text-light">Terms of Use</a>.
+                     </p>
+                  </div>
+
+                  <!-- === Screen 2 === -->
+                  <div class="onboarding-screen onboarding-screen--2 d-none flex-column justify-content-center align-items-center">
+                     <video autoplay muted loop playsinline class="img-fluid rounded">
+                        <source src="img/video.webm" type="video/mp4">
+                        Ваш браузер не підтримує відео.
+                     </video>
+                     <h2 class="onboarding-screen__title mt-3 mb-3">
+                        Scan your task,<br />and Nerd AI will solve it for you!
+                     </h2>
+                     <button class="btn btn-lg w-100 onboarding-modal__button justify-content-center mb-2 onboarding-next-btn">
+                        Continue
+                     </button>
+                     <button class="btn btn-link text-secondary onboarding-screen__skip" data-bs-dismiss="modal">
+                        Skip demo
+                     </button>
+                  </div>
+
+                  <!-- === Screen 3 === -->
+                  <div class="onboarding-screen onboarding-screen--3 d-none flex-column justify-content-center align-items-center">
+                     <video autoplay muted loop playsinline class="img-fluid rounded">
+                        <source src="img/video.webm" type="video/mp4">
+                        Ваш браузер не підтримує відео.
+                     </video>
+                     <h2 class="onboarding-screen__title mb-3">
+                        Improve your writing<br />with AI-powered tools!
+                     </h2>
+                     <button class="btn btn-lg w-100 onboarding-modal__button justify-content-center mb-2 onboarding-next-btn">
+                        Continue
+                     </button>
+                     <button class="btn btn-link text-secondary onboarding-screen__skip" data-bs-dismiss="modal">
+                        Skip demo
+                     </button>
+                  </div>
+
+                  <!-- === Screen 4 === -->
+                  <div class="onboarding-screen onboarding-screen--4 d-none flex-column justify-content-center align-items-center">
+                     <video autoplay muted loop playsinline class="img-fluid rounded">
+                        <source src="img/video.webm" type="video/mp4">
+                        Ваш браузер не підтримує відео.
+                     </video>
+                     <h2 class="onboarding-screen__title mb-3">
+                        Learn faster. Master more.<br />With NeuraX.
+                     </h2>
+                     <button class="btn btn-lg w-100 justify-content-center onboarding-modal__button mb-2" data-bs-dismiss="modal">
+                        Get started
+                     </button>
+                  </div>
+
+
+               </div>
+            </div>
+         </div>
+      </div>
+
+
+
+
       <!-- PRO Modal Fullscreen -->
       <div class="modal fade" id="proModal" tabindex="-1" aria-hidden="true">
          <div class="modal-dialog modal-fullscreen">

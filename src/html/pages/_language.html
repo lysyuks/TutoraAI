@@ -1,0 +1,61 @@
+<div class="generator-page">
+  <div class="container py-4 d-flex flex-column justify-content-between">
+    <!-- Back + title -->
+    <div class="d-flex align-items-center mb-3">
+      <button class="btn btn-sm btn-outline-light rounded-circle me-2"><i class="bi bi-arrow-left"></i></button>
+      <h3 class="m-0 fw-bold text-white">Language</h3>
+    </div>
+
+    <!-- Tabs -->
+    <div class="generator-page__tabs d-flex justify-content-between mb-4">
+      <button class="generator-tab active" data-tab="essay">
+        <i class="bi bi-card-checklist"></i>
+        <span class="ms-2">Grammar check</span>
+      </button>
+      <button class="generator-tab" data-tab="poem">
+        <i class="bi bi-translate"></i>
+        <span class="ms-2">Translate</span>
+      </button>
+    </div>
+
+
+    <!-- Topic -->
+    <div class="mb-3">
+      <label class="form-label text-white fw-semibold small">Topic:</label>
+
+      <textarea id="topicInput" class="form-control generator-page__textarea" rows="4" maxlength="1000"
+        placeholder="Enter a clear topic for your content..."></textarea>
+
+      <!-- Нижній ряд з кнопкою + лічильником -->
+      <div class="d-flex justify-content-between align-items-center mt-2">
+        <button type="button" class="btn btn-sm generator-page__scan-btn">
+          <i class="bi bi-file-text"></i>
+        </button>
+        <div class="small text-white">
+          <span id="charCount">0</span> / 1000
+        </div>
+      </div>
+    </div>
+
+    <!-- Advanced options -->
+    <div class="generator-page__section p-3 rounded mb-3">
+      <div class="text-white fw-semibold mb-3">Advanced Settings</div>
+      <!-- Language -->
+      <div>
+        <label class="form-label text-white small d-flex align-items-center">
+          <i class="bi bi-translate me-2"></i> Language
+        </label>
+        <select class="form-select generator-page__select">
+          <option>English</option>
+          <option>Russian</option>
+          <option>Ukrainian</option>
+        </select>
+      </div>
+    </div>
+
+
+    <!-- Button -->
+    <button class="btn w-100 generator-page__submit mt-auto">Generate</button>
+
+  </div>
+</div>

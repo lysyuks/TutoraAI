@@ -22,12 +22,54 @@ function setViewportProperty(doc) {
 }
 window.addEventListener('resize', setViewportProperty(document.documentElement));
 
+//show modal preload
+window.addEventListener('DOMContentLoaded', () => {
+    const modal = new bootstrap.Modal(document.getElementById('onboardingModal'), {
+      backdrop: 'static',
+      keyboard: false
+    });
+    modal.show();
+  });
+
+document.addEventListener("DOMContentLoaded", function () {
+  document.querySelectorAll(".onboarding-next-btn").forEach(button => {
+    button.addEventListener("click", () => {
+      const currentScreen = button.closest(".onboarding-screen");
+      const nextScreen = currentScreen.nextElementSibling;
+
+      if (nextScreen && nextScreen.classList.contains("onboarding-screen")) {
+        currentScreen.classList.add("d-none");
+        nextScreen.classList.remove("d-none");
+        nextScreen.classList.remove("d-flex");
+      }
+    });
+  });
+});
+
+document.querySelectorAll(".onboarding-screen__skip").forEach(btn => {
+  btn.addEventListener("click", () => {
+    const modal = bootstrap.Modal.getInstance(document.getElementById("onboardingModal"));
+    if (modal) modal.hide();
+  });
+});
+
+
+
+
 document.addEventListener("DOMContentLoaded", function () {
     setTimeout(() => {
       const proModal = new bootstrap.Modal(document.getElementById('proModal'));
       proModal.show();
     }, 5000); // 10 секунд
   });
+
+if(document.getElementById('topicInput')) {
+  document.getElementById('topicInput').addEventListener('input', function () {
+  document.getElementById('charCount').textContent = this.value.length;
+});
+}
+
+
 
 
 

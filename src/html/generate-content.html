@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="ru">
+@include('modules/link.html',{ 'title': 'Главная' })
+
+<body>
+
+
+  <main class="main">
+    @include('modules/header.html')
+    @include('pages/_generate-content.html')
+    <!-- @include('modules/footer.html') -->
+  </main>
+
+  @include('modules/script.html')
+</body>
+
+</html>

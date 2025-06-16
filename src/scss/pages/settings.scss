@@ -1,0 +1,37 @@
+.settings-page {
+  background-color: $color-bg;
+  color: $color-text;
+  padding-top: 10% !important;
+  height: 100%;
+  .container {
+    height: 100%;
+  }
+  &__block {
+    background-color: $color-surface;
+    border-radius: 12px;
+    padding: 0.75rem;
+  }
+
+  &__item {
+    background: transparent;
+    border: none;
+    width: 100%;
+    text-align: left;
+    padding: 0.75rem 1rem;
+    color: white;
+    border-radius: 10px;
+    font-size: 0.95rem;
+    display: flex;
+    align-items: center;
+    transition: background 0.2s ease;
+
+    &:hover {
+      background-color: $color-card;
+      color: $color-accent;
+    }
+
+    i {
+      font-size: 1.1rem;
+    }
+  }
+}
