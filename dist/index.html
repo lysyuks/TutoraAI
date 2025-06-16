@@ -24,7 +24,7 @@
    <main class="main">
       <!-- Bootstrap Fullscreen Modal -->
       <div class="modal fade onboarding-modal" id="onboardingModal" tabindex="-1" aria-hidden="true">
-         <div class="modal-dialog modal-fullscreen">
+         <div class="modal-dialog ">
             <div class="modal-content onboarding-modal__content accent-dark-1 text-white">
 
                <!-- MODAL BODY -->
@@ -49,7 +49,7 @@
                      </div>
 
                      <div class="onboarding-modal__owl mb-4">
-                        <img src="/img/illustrator-cat.png" alt="Owl Mascot" class="img-fluid">
+                        <img src="img/illustrator-cat.png" alt="Owl Mascot" class="img-fluid">
                      </div>
 
                      <button class="btn btn-lg justify-content-center w-100 onboarding-modal__button mt-auto mb-3 onboarding-next-btn" id="onboardingNextBtn">
@@ -66,10 +66,7 @@
 
                   <!-- === Screen 2 === -->
                   <div class="onboarding-screen onboarding-screen--2 d-none flex-column justify-content-center align-items-center">
-                     <video autoplay muted loop playsinline class="img-fluid rounded">
-                        <source src="img/video.webm" type="video/mp4">
-                        Ваш браузер не підтримує відео.
-                     </video>
+                     <img class="img-fluid rounded" src="img/video.gif" alt="">
                      <h2 class="onboarding-screen__title mt-3 mb-3">
                         Scan your task,<br />and Nerd AI will solve it for you!
                      </h2>
@@ -83,10 +80,7 @@
 
                   <!-- === Screen 3 === -->
                   <div class="onboarding-screen onboarding-screen--3 d-none flex-column justify-content-center align-items-center">
-                     <video autoplay muted loop playsinline class="img-fluid rounded">
-                        <source src="img/video.webm" type="video/mp4">
-                        Ваш браузер не підтримує відео.
-                     </video>
+                     <img class="img-fluid rounded" src="img/video.gif" alt="">
                      <h2 class="onboarding-screen__title mb-3">
                         Improve your writing<br />with AI-powered tools!
                      </h2>
@@ -100,10 +94,7 @@
 
                   <!-- === Screen 4 === -->
                   <div class="onboarding-screen onboarding-screen--4 d-none flex-column justify-content-center align-items-center">
-                     <video autoplay muted loop playsinline class="img-fluid rounded">
-                        <source src="img/video.webm" type="video/mp4">
-                        Ваш браузер не підтримує відео.
-                     </video>
+                     <img class="img-fluid rounded" src="img/video.gif" alt="">
                      <h2 class="onboarding-screen__title mb-3">
                         Learn faster. Master more.<br />With NeuraX.
                      </h2>
@@ -195,74 +186,78 @@
             </div>
          </div>
       </header>
-      <div class="app container-fluid py-3 pb-5">
+      <div class="app  py-3 pb-5">
          <div class="app__bg-header">
             <img src="img/bg-header.png" alt="" class="">
          </div>
+         <div class="container">
+            <!-- First row with 2 cards -->
+            <div class="app__content-header row g-3 mb-3">
+               <div class="col-6 tool-card d-flex flex-column">
+                  <div class="tool-card__wrapper accent-dark-1">
+                     <i class="bi bi-search tool-card__icon mb-2"></i>
+                     <div class="tool-card__title">Chat with Search</div>
+                     <div class="tool-card__desc">Get the latest answers instantly...</div>
+                  </div>
+               </div>
 
-
-
-         <!-- First row with 2 cards -->
-         <div class="app__content-header row g-3 mb-3">
-            <div class="col-6 tool-card d-flex flex-column">
-               <div class="tool-card__wrapper accent-dark-1">
-                  <i class="bi bi-search tool-card__icon mb-2"></i>
-                  <div class="tool-card__title">Chat with Search</div>
-                  <div class="tool-card__desc">Get the latest answers instantly...</div>
+               <div class="col-6 tool-card d-flex flex-column">
+                  <div class="tool-card__wrapper accent-dark-1">
+                     <i class="bi bi-ear tool-card__icon mb-2"></i>
+                     <div class="tool-card__title">Listen to Text</div>
+                     <div class="tool-card__desc">Voice any text out loud</div>
+                  </div>
                </div>
             </div>
 
-            <div class="col-6 tool-card d-flex flex-column">
-               <div class="tool-card__wrapper accent-dark-1">
-                  <i class="bi bi-ear tool-card__icon mb-2"></i>
-                  <div class="tool-card__title">Listen to Text</div>
-                  <div class="tool-card__desc">Voice any text out loud</div>
+
+
+            <!-- Section title -->
+            <div class="row app__section-title mb-3">
+               <div class="col">
+                  <i class="bi bi-robot me-1"></i>
+                  AI Tools
                </div>
             </div>
+
+            <!-- Tools -->
+            <div class=" app__cards row g-3">
+               <div class="col-7 tool-card">
+                  <div class="tool-card__wrapper accent-1 d-flex flex-column"> <!-- violet-pink -->
+                     <i class="bi bi-journal-text tool-card__icon mb-2"></i>
+                     <div class="tool-card__title">Study Assistant</div>
+                     <div class="tool-card__desc">Explains, checks, quizzes</div>
+                  </div>
+               </div>
+
+               <div class="col-5 tool-card">
+                  <div class="tool-card__wrapper accent-4 d-flex flex-column"> <!-- orange-red -->
+                     <i class="bi bi-pencil-square tool-card__icon mb-2"></i>
+                     <div class="tool-card__title">Content Generator</div>
+                     <div class="tool-card__desc">Essays, poems, blogs — instantly</div>
+                  </div>
+               </div>
+
+               <div class="col-5 tool-card">
+                  <div class="tool-card__wrapper accent-3 d-flex flex-column"> <!-- green -->
+                     <i class="bi bi-translate tool-card__icon mb-2"></i>
+                     <div class="tool-card__title">Language</div>
+                     <div class="tool-card__desc">Translate, grammar check, adapt</div>
+                  </div>
+               </div>
+
+               <div class="col-7 tool-card">
+                  <div class="tool-card__wrapper accent-2 d-flex flex-column"> <!-- violet-pink -->
+                     <i class="bi bi-lightbulb tool-card__icon mb-2"></i>
+                     <div class="tool-card__title">Essay Helper</div>
+                     <div class="tool-card__desc">Improve, rephrase</div>
+                  </div>
+               </div>
+            </div>
+
          </div>
 
 
-
-         <!-- Section title -->
-         <div class="app__section-title mb-3">
-            <i class="bi bi-robot me-1"></i>
-            AI Tools
-         </div>
-
-         <!-- Tools -->
-         <div class="row g-3">
-            <div class="col-7 tool-card">
-               <div class="tool-card__wrapper accent-1 d-flex flex-column"> <!-- violet-pink -->
-                  <i class="bi bi-journal-text tool-card__icon mb-2"></i>
-                  <div class="tool-card__title">Study Assistant</div>
-                  <div class="tool-card__desc">Explains, checks, quizzes</div>
-               </div>
-            </div>
-
-            <div class="col-5 tool-card">
-               <div class="tool-card__wrapper accent-4 d-flex flex-column"> <!-- orange-red -->
-                  <i class="bi bi-pencil-square tool-card__icon mb-2"></i>
-                  <div class="tool-card__title">Content Generator</div>
-                  <div class="tool-card__desc">Essays, poems, blogs — instantly</div>
-               </div>
-            </div>
-
-            <div class="col-5 tool-card">
-               <div class="tool-card__wrapper accent-3 d-flex flex-column"> <!-- green -->
-                  <i class="bi bi-translate tool-card__icon mb-2"></i>
-                  <div class="tool-card__title">Language</div>
-                  <div class="tool-card__desc">Translate, grammar check, adapt</div>
-               </div>
-            </div>
-
-            <div class="col-7 tool-card">
-               <div class="tool-card__wrapper accent-2 d-flex flex-column"> <!-- violet-pink -->
-                  <i class="bi bi-lightbulb tool-card__icon mb-2"></i>
-                  <div class="tool-card__title">Essay Helper</div>
-                  <div class="tool-card__desc">Improve, rephrase</div>
-               </div>
-            </div>
-         </div>
 
          <!-- Bottom navigation -->
          <nav class="app__nav nav fixed-bottom bg-dark">
