@@ -23,27 +23,32 @@ function Header() {
 
   return (
     <header
-      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
-        isScrolled
-          ? 'bg-[#1a1a2e]/95 backdrop-blur-md shadow-lg py-3'
-          : 'bg-transparent py-5'
-      }`}
+      style={{
+        position: 'fixed',
+        top: 0,
+        left: 0,
+        right: 0,
+        zIndex: 50,
+        transition: 'all 0.3s',
+        backgroundColor: isScrolled ? 'rgba(26, 26, 46, 0.95)' : 'transparent',
+        backdropFilter: isScrolled ? 'blur(10px)' : 'none',
+        padding: isScrolled ? '12px 0' : '20px 0',
+      }}
     >
-      <nav className="container-width flex items-center justify-between">
-        <a
-          href="#"
-          className="text-xl font-bold text-white"
-        >
-          SL<span className="text-[#e94560]">.</span>
+      <nav className="container-width" style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between' }}>
+        <a href="#" style={{ fontSize: '20px', fontWeight: 'bold', color: 'white', textDecoration: 'none' }}>
+          SL<span style={{ color: '#e94560' }}>.</span>
         </a>
 
         {/* Desktop Navigation */}
-        <ul className="hidden md:flex items-center gap-8">
+        <ul style={{ display: 'none', gap: '32px', listStyle: 'none', margin: 0, padding: 0 }} className="desktop-nav">
           {navLinks.map((link) => (
             <li key={link.name}>
               <a
                 href={link.href}
-                className="text-gray-400 hover:text-[#e94560] transition-colors text-sm font-medium"
+                style={{ color: '#9ca3af', textDecoration: 'none', fontSize: '14px', fontWeight: '500', transition: 'color 0.2s' }}
+                onMouseOver={(e) => e.target.style.color = '#e94560'}
+                onMouseOut={(e) => e.target.style.color = '#9ca3af'}
               >
                 {link.name}
               </a>
@@ -53,27 +58,27 @@ function Header() {
 
         {/* Mobile Menu Button */}
         <button
-          className="md:hidden p-2"
+          style={{ padding: '8px', background: 'none', border: 'none', cursor: 'pointer' }}
+          className="mobile-menu-btn"
           onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-          aria-label="Toggle menu"
         >
           {isMobileMenuOpen ? (
-            <X className="w-6 h-6 text-white" />
+            <X style={{ width: '24px', height: '24px', color: 'white' }} />
           ) : (
-            <Menu className="w-6 h-6 text-white" />
+            <Menu style={{ width: '24px', height: '24px', color: 'white' }} />
           )}
         </button>
       </nav>
 
       {/* Mobile Navigation */}
       {isMobileMenuOpen && (
-        <div className="md:hidden bg-[#1a1a2e] border-t border-white/10">
-          <ul className="container-width py-4 space-y-2">
+        <div style={{ backgroundColor: '#1a1a2e', borderTop: '1px solid rgba(255,255,255,0.1)' }}>
+          <ul className="container-width" style={{ padding: '16px 24px', listStyle: 'none', margin: 0 }}>
             {navLinks.map((link) => (
               <li key={link.name}>
                 <a
                   href={link.href}
-                  className="block py-2 text-gray-400 hover:text-[#e94560] transition-colors font-medium"
+                  style={{ display: 'block', padding: '8px 0', color: '#9ca3af', textDecoration: 'none', fontWeight: '500' }}
                   onClick={() => setIsMobileMenuOpen(false)}
                 >
                   {link.name}
@@ -83,6 +88,13 @@ function Header() {
           </ul>
         </div>
       )}
+
+      <style>{`
+        @media (min-width: 768px) {
+          .desktop-nav { display: flex !important; }
+          .mobile-menu-btn { display: none !important; }
+        }
+      `}</style>
     </header>
   )
 }

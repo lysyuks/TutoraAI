@@ -1,91 +1,138 @@
-import { Mail, MapPin, Send, Linkedin } from 'lucide-react'
+import { Mail, MapPin, Linkedin } from 'lucide-react'
 
 function Contact() {
   return (
-    <section id="contact" className="section-padding bg-[#1a1a2e] text-white">
+    <section id="contact" className="section-padding" style={{ backgroundColor: '#1a1a2e' }}>
       <div className="container-width">
-        <h2 className="text-3xl font-bold mb-2 text-center text-white">
+        <h2 style={{ fontSize: '28px', fontWeight: 'bold', marginBottom: '8px', textAlign: 'center', color: 'white' }}>
           Get In Touch
         </h2>
-        <div className="w-12 h-1 bg-[#e94560] mx-auto mb-4 rounded-full"></div>
-        <p className="text-gray-400 text-center mb-12 max-w-xl mx-auto">
+        <div style={{ width: '48px', height: '4px', backgroundColor: '#e94560', margin: '0 auto 16px', borderRadius: '2px' }}></div>
+        <p style={{ color: '#9ca3af', textAlign: 'center', marginBottom: '48px', maxWidth: '500px', margin: '0 auto 48px' }}>
           Open to new opportunities and collaborations. Feel free to reach out!
         </p>
 
-        <div className="grid md:grid-cols-2 gap-12 max-w-4xl mx-auto">
+        <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(280px, 1fr))', gap: '48px', maxWidth: '800px', margin: '0 auto' }}>
           {/* Contact Info */}
-          <div>
-            <div className="space-y-6">
-              <a
-                href="mailto:contact@serhii.dev"
-                className="flex items-center gap-4 text-gray-300 hover:text-[#e94560] transition-colors group"
-              >
-                <div className="p-3 bg-[#e94560]/10 rounded-lg group-hover:bg-[#e94560]/20 transition-colors">
-                  <Mail className="w-5 h-5 text-[#e94560]" />
-                </div>
-                <div>
-                  <div className="text-xs text-gray-500 uppercase tracking-wider">Email</div>
-                  <div className="text-white">contact@serhii.dev</div>
-                </div>
-              </a>
-              <div className="flex items-center gap-4 text-gray-300">
-                <div className="p-3 bg-[#e94560]/10 rounded-lg">
-                  <MapPin className="w-5 h-5 text-[#e94560]" />
-                </div>
-                <div>
-                  <div className="text-xs text-gray-500 uppercase tracking-wider">Location</div>
-                  <div className="text-white">Prague, Czechia</div>
-                </div>
+          <div style={{ display: 'flex', flexDirection: 'column', gap: '24px' }}>
+            <a
+              href="mailto:contact@serhii.dev"
+              style={{ display: 'flex', alignItems: 'center', gap: '16px', color: '#d1d5db', textDecoration: 'none' }}
+            >
+              <div style={{
+                padding: '12px',
+                backgroundColor: 'rgba(233, 69, 96, 0.1)',
+                borderRadius: '8px'
+              }}>
+                <Mail style={{ width: '20px', height: '20px', color: '#e94560' }} />
               </div>
-              <a
-                href="https://www.linkedin.com/in/serhii-lysiuk-322ab926/"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="flex items-center gap-4 text-gray-300 hover:text-[#e94560] transition-colors group"
-              >
-                <div className="p-3 bg-[#e94560]/10 rounded-lg group-hover:bg-[#e94560]/20 transition-colors">
-                  <Linkedin className="w-5 h-5 text-[#e94560]" />
-                </div>
-                <div>
-                  <div className="text-xs text-gray-500 uppercase tracking-wider">LinkedIn</div>
-                  <div className="text-white">Connect with me</div>
-                </div>
-              </a>
+              <div>
+                <div style={{ fontSize: '12px', color: '#6b7280', textTransform: 'uppercase', letterSpacing: '1px' }}>Email</div>
+                <div style={{ color: 'white' }}>contact@serhii.dev</div>
+              </div>
+            </a>
+
+            <div style={{ display: 'flex', alignItems: 'center', gap: '16px', color: '#d1d5db' }}>
+              <div style={{
+                padding: '12px',
+                backgroundColor: 'rgba(233, 69, 96, 0.1)',
+                borderRadius: '8px'
+              }}>
+                <MapPin style={{ width: '20px', height: '20px', color: '#e94560' }} />
+              </div>
+              <div>
+                <div style={{ fontSize: '12px', color: '#6b7280', textTransform: 'uppercase', letterSpacing: '1px' }}>Location</div>
+                <div style={{ color: 'white' }}>Prague, Czechia</div>
+              </div>
             </div>
+
+            <a
+              href="https://www.linkedin.com/in/serhii-lysiuk-322ab926/"
+              target="_blank"
+              rel="noopener noreferrer"
+              style={{ display: 'flex', alignItems: 'center', gap: '16px', color: '#d1d5db', textDecoration: 'none' }}
+            >
+              <div style={{
+                padding: '12px',
+                backgroundColor: 'rgba(233, 69, 96, 0.1)',
+                borderRadius: '8px'
+              }}>
+                <Linkedin style={{ width: '20px', height: '20px', color: '#e94560' }} />
+              </div>
+              <div>
+                <div style={{ fontSize: '12px', color: '#6b7280', textTransform: 'uppercase', letterSpacing: '1px' }}>LinkedIn</div>
+                <div style={{ color: 'white' }}>Connect with me</div>
+              </div>
+            </a>
           </div>
 
           {/* Contact Form */}
-          <div className="bg-white/5 backdrop-blur-sm rounded-xl p-6 border border-white/10">
-            <form className="space-y-4">
-              <div>
-                <input
-                  type="text"
-                  name="name"
-                  className="w-full px-4 py-3 bg-white/5 border border-white/10 rounded-lg focus:outline-none focus:border-[#e94560] text-white placeholder-gray-500 text-sm"
-                  placeholder="Your name"
-                />
-              </div>
-              <div>
-                <input
-                  type="email"
-                  name="email"
-                  className="w-full px-4 py-3 bg-white/5 border border-white/10 rounded-lg focus:outline-none focus:border-[#e94560] text-white placeholder-gray-500 text-sm"
-                  placeholder="Your email"
-                />
-              </div>
-              <div>
-                <textarea
-                  name="message"
-                  rows={4}
-                  className="w-full px-4 py-3 bg-white/5 border border-white/10 rounded-lg focus:outline-none focus:border-[#e94560] text-white placeholder-gray-500 resize-none text-sm"
-                  placeholder="Your message..."
-                />
-              </div>
+          <div style={{
+            backgroundColor: 'rgba(255,255,255,0.05)',
+            borderRadius: '12px',
+            padding: '24px',
+            border: '1px solid rgba(255,255,255,0.1)'
+          }}>
+            <form style={{ display: 'flex', flexDirection: 'column', gap: '16px' }}>
+              <input
+                type="text"
+                name="name"
+                placeholder="Your name"
+                style={{
+                  width: '100%',
+                  padding: '12px 16px',
+                  backgroundColor: 'rgba(255,255,255,0.05)',
+                  border: '1px solid rgba(255,255,255,0.1)',
+                  borderRadius: '8px',
+                  color: 'white',
+                  fontSize: '14px',
+                  outline: 'none'
+                }}
+              />
+              <input
+                type="email"
+                name="email"
+                placeholder="Your email"
+                style={{
+                  width: '100%',
+                  padding: '12px 16px',
+                  backgroundColor: 'rgba(255,255,255,0.05)',
+                  border: '1px solid rgba(255,255,255,0.1)',
+                  borderRadius: '8px',
+                  color: 'white',
+                  fontSize: '14px',
+                  outline: 'none'
+                }}
+              />
+              <textarea
+                name="message"
+                rows={4}
+                placeholder="Your message..."
+                style={{
+                  width: '100%',
+                  padding: '12px 16px',
+                  backgroundColor: 'rgba(255,255,255,0.05)',
+                  border: '1px solid rgba(255,255,255,0.1)',
+                  borderRadius: '8px',
+                  color: 'white',
+                  fontSize: '14px',
+                  resize: 'none',
+                  outline: 'none'
+                }}
+              />
               <button
                 type="submit"
-                className="w-full flex items-center justify-center gap-2 px-6 py-3 bg-[#e94560] text-white rounded-lg font-medium hover:bg-[#d63d56] transition-colors text-sm"
+                style={{
+                  padding: '12px 24px',
+                  backgroundColor: '#e94560',
+                  color: 'white',
+                  border: 'none',
+                  borderRadius: '8px',
+                  fontWeight: '500',
+                  fontSize: '14px',
+                  cursor: 'pointer'
+                }}
               >
-                <Send className="w-4 h-4" />
                 Send Message
               </button>
             </form>

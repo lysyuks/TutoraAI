@@ -36,44 +36,56 @@ const projects = [
 
 function Projects() {
   return (
-    <section id="projects" className="section-padding bg-white">
+    <section id="projects" className="section-padding" style={{ backgroundColor: 'white' }}>
       <div className="container-width">
-        <h2 className="text-3xl font-bold mb-2 text-center text-[#1a1a2e]">
+        <h2 style={{ fontSize: '28px', fontWeight: 'bold', marginBottom: '8px', textAlign: 'center', color: '#1a1a2e' }}>
           Projects
         </h2>
-        <div className="w-12 h-1 bg-[#e94560] mx-auto mb-12 rounded-full"></div>
+        <div style={{ width: '48px', height: '4px', backgroundColor: '#e94560', margin: '0 auto 48px', borderRadius: '2px' }}></div>
 
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+        <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))', gap: '24px' }}>
           {projects.map((project, index) => (
             <div
               key={index}
-              className="group bg-[#fafafa] rounded-xl p-6 hover:shadow-lg transition-all duration-300 border border-gray-100"
+              style={{
+                backgroundColor: '#fafafa',
+                borderRadius: '12px',
+                padding: '24px',
+                border: '1px solid #e5e7eb',
+                transition: 'box-shadow 0.3s'
+              }}
             >
-              <div className="flex items-center justify-between mb-4">
-                <Folder className="w-8 h-8 text-[#e94560]" />
+              <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', marginBottom: '16px' }}>
+                <Folder style={{ width: '32px', height: '32px', color: '#e94560' }} />
                 {project.live && (
                   <a
                     href={project.live}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="text-gray-400 hover:text-[#e94560] transition-colors"
-                    aria-label="Live Demo"
+                    style={{ color: '#9ca3af', transition: 'color 0.2s' }}
                   >
-                    <ExternalLink className="w-5 h-5" />
+                    <ExternalLink style={{ width: '20px', height: '20px' }} />
                   </a>
                 )}
               </div>
-              <h3 className="text-lg font-semibold text-[#1a1a2e] mb-2 group-hover:text-[#e94560] transition-colors">
+              <h3 style={{ fontSize: '16px', fontWeight: '600', color: '#1a1a2e', marginBottom: '8px' }}>
                 {project.title}
               </h3>
-              <p className="text-gray-500 text-sm mb-4 leading-relaxed">
+              <p style={{ color: '#6b7280', fontSize: '14px', marginBottom: '16px', lineHeight: '1.6' }}>
                 {project.description}
               </p>
-              <div className="flex flex-wrap gap-2">
+              <div style={{ display: 'flex', flexWrap: 'wrap', gap: '8px' }}>
                 {project.technologies.map((tech, i) => (
                   <span
                     key={i}
-                    className="px-2 py-1 bg-white text-gray-500 text-xs rounded border border-gray-200"
+                    style={{
+                      padding: '4px 8px',
+                      backgroundColor: 'white',
+                      color: '#6b7280',
+                      fontSize: '12px',
+                      borderRadius: '4px',
+                      border: '1px solid #e5e7eb'
+                    }}
                   >
                     {tech}
                   </span>

@@ -21,27 +21,32 @@ const otherSkills = [
 
 function Skills() {
   return (
-    <section id="skills" className="section-padding bg-[#fafafa]">
+    <section id="skills" className="section-padding" style={{ backgroundColor: '#fafafa' }}>
       <div className="container-width">
-        <h2 className="text-3xl font-bold mb-2 text-center text-[#1a1a2e]">
+        <h2 style={{ fontSize: '28px', fontWeight: 'bold', marginBottom: '8px', textAlign: 'center', color: '#1a1a2e' }}>
           Skills
         </h2>
-        <div className="w-12 h-1 bg-[#e94560] mx-auto mb-12 rounded-full"></div>
+        <div style={{ width: '48px', height: '4px', backgroundColor: '#e94560', margin: '0 auto 48px', borderRadius: '2px' }}></div>
 
-        <div className="grid md:grid-cols-3 gap-6 mb-12">
+        <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(280px, 1fr))', gap: '24px', marginBottom: '48px' }}>
           {skillCategories.map((category, categoryIndex) => (
             <div
               key={categoryIndex}
-              className="bg-white p-6 rounded-xl border border-gray-100 shadow-sm"
+              style={{
+                backgroundColor: 'white',
+                padding: '24px',
+                borderRadius: '12px',
+                border: '1px solid #e5e7eb'
+              }}
             >
-              <h3 className="text-lg font-semibold text-[#1a1a2e] mb-4 pb-3 border-b border-gray-100">
+              <h3 style={{ fontSize: '16px', fontWeight: '600', color: '#1a1a2e', marginBottom: '16px', paddingBottom: '12px', borderBottom: '1px solid #e5e7eb' }}>
                 {category.title}
               </h3>
-              <div className="space-y-3">
+              <div style={{ display: 'flex', flexDirection: 'column', gap: '12px' }}>
                 {category.skills.map((skill, skillIndex) => (
-                  <div key={skillIndex} className="flex items-center gap-3">
-                    <span className="w-2 h-2 rounded-full bg-[#e94560]"></span>
-                    <span className="text-gray-600 text-sm">{skill}</span>
+                  <div key={skillIndex} style={{ display: 'flex', alignItems: 'center', gap: '12px' }}>
+                    <span style={{ width: '8px', height: '8px', borderRadius: '50%', backgroundColor: '#e94560' }}></span>
+                    <span style={{ color: '#4b5563', fontSize: '14px' }}>{skill}</span>
                   </div>
                 ))}
               </div>
@@ -49,12 +54,19 @@ function Skills() {
           ))}
         </div>
 
-        {/* Additional Skills Tags */}
-        <div className="flex flex-wrap justify-center gap-2">
+        {/* Other Skills */}
+        <div style={{ display: 'flex', flexWrap: 'wrap', justifyContent: 'center', gap: '8px' }}>
           {otherSkills.map((skill, index) => (
             <span
               key={index}
-              className="px-4 py-2 bg-white border border-gray-200 text-gray-600 rounded-lg text-sm hover:border-[#e94560] hover:text-[#e94560] transition-colors cursor-default"
+              style={{
+                padding: '8px 16px',
+                backgroundColor: 'white',
+                border: '1px solid #e5e7eb',
+                color: '#4b5563',
+                borderRadius: '8px',
+                fontSize: '14px'
+              }}
             >
               {skill}
             </span>

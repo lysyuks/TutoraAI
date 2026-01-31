@@ -2,71 +2,105 @@ import { ArrowDown, Github, Linkedin, Mail } from 'lucide-react'
 
 function Hero() {
   return (
-    <section className="min-h-screen flex items-center justify-center relative bg-[#1a1a2e]">
-      <div className="container-width text-center pt-20">
+    <section style={{
+      minHeight: '100vh',
+      display: 'flex',
+      alignItems: 'center',
+      justifyContent: 'center',
+      position: 'relative',
+      backgroundColor: '#1a1a2e',
+      padding: '80px 24px 40px'
+    }}>
+      <div style={{ textAlign: 'center', maxWidth: '600px' }}>
         {/* Profile Image */}
-        <div className="mb-8">
-          <div className="w-36 h-36 mx-auto rounded-full bg-gradient-to-br from-[#e94560] to-[#ff6b6b] p-1">
-            <div className="w-full h-full rounded-full bg-[#1a1a2e] flex items-center justify-center">
-              <span className="text-4xl font-bold text-white">SL</span>
-            </div>
+        <div style={{
+          width: '140px',
+          height: '140px',
+          margin: '0 auto 32px',
+          borderRadius: '50%',
+          background: 'linear-gradient(135deg, #e94560, #ff6b6b)',
+          padding: '4px'
+        }}>
+          <div style={{
+            width: '100%',
+            height: '100%',
+            borderRadius: '50%',
+            backgroundColor: '#1a1a2e',
+            display: 'flex',
+            alignItems: 'center',
+            justifyContent: 'center'
+          }}>
+            <span style={{ fontSize: '36px', fontWeight: 'bold', color: 'white' }}>SL</span>
           </div>
         </div>
 
         {/* Name and Title */}
-        <h1 className="text-4xl md:text-5xl font-bold mb-3 text-white tracking-tight">
+        <h1 style={{ fontSize: '42px', fontWeight: 'bold', marginBottom: '12px', color: 'white' }}>
           Serhii Lysiuk
         </h1>
-        <p className="text-xl md:text-2xl text-[#e94560] font-medium mb-6">
+        <p style={{ fontSize: '20px', color: '#e94560', fontWeight: '500', marginBottom: '24px' }}>
           AI Product Manager
         </p>
 
         {/* Tagline */}
-        <p className="text-base text-gray-400 max-w-xl mx-auto mb-10 leading-relaxed">
+        <p style={{ fontSize: '16px', color: '#9ca3af', marginBottom: '40px', lineHeight: '1.6' }}>
           14+ years delivering high-impact products in AI, blockchain, legal tech,
           and supply-chain solutions for enterprises and startups.
         </p>
 
         {/* Social Links */}
-        <div className="flex items-center justify-center gap-3 mb-10">
-          <a
-            href="https://github.com/lysyuks"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="p-3 rounded-lg bg-white/5 border border-white/10 hover:bg-[#e94560] hover:border-[#e94560] text-gray-400 hover:text-white transition-all duration-300"
-            aria-label="GitHub"
-          >
-            <Github className="w-5 h-5" />
-          </a>
-          <a
-            href="https://www.linkedin.com/in/serhii-lysiuk-322ab926/"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="p-3 rounded-lg bg-white/5 border border-white/10 hover:bg-[#e94560] hover:border-[#e94560] text-gray-400 hover:text-white transition-all duration-300"
-            aria-label="LinkedIn"
-          >
-            <Linkedin className="w-5 h-5" />
-          </a>
-          <a
-            href="mailto:contact@example.com"
-            className="p-3 rounded-lg bg-white/5 border border-white/10 hover:bg-[#e94560] hover:border-[#e94560] text-gray-400 hover:text-white transition-all duration-300"
-            aria-label="Email"
-          >
-            <Mail className="w-5 h-5" />
-          </a>
+        <div style={{ display: 'flex', justifyContent: 'center', gap: '12px', marginBottom: '40px' }}>
+          {[
+            { icon: Github, href: 'https://github.com/lysyuks' },
+            { icon: Linkedin, href: 'https://www.linkedin.com/in/serhii-lysiuk-322ab926/' },
+            { icon: Mail, href: 'mailto:contact@example.com' }
+          ].map((item, i) => (
+            <a
+              key={i}
+              href={item.href}
+              target={item.href.startsWith('http') ? '_blank' : undefined}
+              rel={item.href.startsWith('http') ? 'noopener noreferrer' : undefined}
+              style={{
+                padding: '12px',
+                borderRadius: '8px',
+                backgroundColor: 'rgba(255,255,255,0.05)',
+                border: '1px solid rgba(255,255,255,0.1)',
+                color: '#9ca3af',
+                display: 'flex',
+                transition: 'all 0.3s'
+              }}
+            >
+              <item.icon style={{ width: '20px', height: '20px' }} />
+            </a>
+          ))}
         </div>
 
         {/* CTA Buttons */}
-        <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
+        <div style={{ display: 'flex', flexDirection: 'column', gap: '16px', alignItems: 'center' }}>
           <a
             href="#contact"
-            className="px-7 py-3 bg-[#e94560] text-white rounded-lg font-medium hover:bg-[#d63d56] transition-colors"
+            style={{
+              padding: '14px 28px',
+              backgroundColor: '#e94560',
+              color: 'white',
+              borderRadius: '8px',
+              fontWeight: '500',
+              textDecoration: 'none',
+              transition: 'background 0.3s'
+            }}
           >
             Get In Touch
           </a>
           <a
             href="#experience"
-            className="px-7 py-3 border border-white/20 text-white rounded-lg font-medium hover:bg-white/5 transition-colors"
+            style={{
+              padding: '14px 28px',
+              border: '1px solid rgba(255,255,255,0.2)',
+              color: 'white',
+              borderRadius: '8px',
+              fontWeight: '500',
+              textDecoration: 'none'
+            }}
           >
             View Experience
           </a>
@@ -75,12 +109,27 @@ function Hero() {
         {/* Scroll Indicator */}
         <a
           href="#about"
-          className="absolute bottom-8 left-1/2 -translate-x-1/2 animate-bounce"
-          aria-label="Scroll down"
+          style={{
+            position: 'absolute',
+            bottom: '32px',
+            left: '50%',
+            transform: 'translateX(-50%)',
+            animation: 'bounce 2s infinite'
+          }}
         >
-          <ArrowDown className="w-5 h-5 text-gray-500" />
+          <ArrowDown style={{ width: '20px', height: '20px', color: '#6b7280' }} />
         </a>
       </div>
+
+      <style>{`
+        @keyframes bounce {
+          0%, 100% { transform: translateX(-50%) translateY(0); }
+          50% { transform: translateX(-50%) translateY(-10px); }
+        }
+        @media (min-width: 640px) {
+          section > div > div:last-of-type { flex-direction: row !important; }
+        }
+      `}</style>
     </section>
   )
 }
