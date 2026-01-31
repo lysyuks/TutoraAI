@@ -1,4 +1,4 @@
-import { Mail, MapPin, Linkedin } from 'lucide-react'
+import { Mail, MapPin, Linkedin, Phone } from 'lucide-react'
 
 function Contact() {
   return (
@@ -29,6 +29,23 @@ function Contact() {
               <div>
                 <div style={{ fontSize: '12px', color: '#6b7280', textTransform: 'uppercase', letterSpacing: '1px' }}>Email</div>
                 <div style={{ color: 'white' }}>contact@serhii.dev</div>
+              </div>
+            </a>
+
+            <a
+              href="tel:+380675378771"
+              style={{ display: 'flex', alignItems: 'center', gap: '16px', color: '#d1d5db', textDecoration: 'none' }}
+            >
+              <div style={{
+                padding: '12px',
+                backgroundColor: 'rgba(233, 69, 96, 0.1)',
+                borderRadius: '8px'
+              }}>
+                <Phone style={{ width: '20px', height: '20px', color: '#e94560' }} />
+              </div>
+              <div>
+                <div style={{ fontSize: '12px', color: '#6b7280', textTransform: 'uppercase', letterSpacing: '1px' }}>Phone</div>
+                <div style={{ color: 'white' }}>+380 67 537 8771</div>
               </div>
             </a>
 
