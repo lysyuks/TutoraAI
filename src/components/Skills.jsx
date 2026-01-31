@@ -26,7 +26,7 @@ function Skills() {
         <h2 style={{ fontSize: '28px', fontWeight: 'bold', marginBottom: '8px', textAlign: 'center', color: '#1a1a2e' }}>
           Skills
         </h2>
-        <div style={{ width: '48px', height: '4px', backgroundColor: '#e94560', margin: '0 auto 48px', borderRadius: '2px' }}></div>
+        <div style={{ width: '48px', height: '4px', background: 'linear-gradient(135deg, #a855f7, #6366f1)', margin: '0 auto 48px', borderRadius: '2px' }}></div>
 
         <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(280px, 1fr))', gap: '24px', marginBottom: '48px' }}>
           {skillCategories.map((category, categoryIndex) => (
@@ -45,7 +45,7 @@ function Skills() {
               <div style={{ display: 'flex', flexDirection: 'column', gap: '12px' }}>
                 {category.skills.map((skill, skillIndex) => (
                   <div key={skillIndex} style={{ display: 'flex', alignItems: 'center', gap: '12px' }}>
-                    <span style={{ width: '8px', height: '8px', borderRadius: '50%', backgroundColor: '#e94560' }}></span>
+                    <span style={{ width: '8px', height: '8px', borderRadius: '50%', backgroundColor: '#8b5cf6' }}></span>
                     <span style={{ color: '#4b5563', fontSize: '14px' }}>{skill}</span>
                   </div>
                 ))}

@@ -20,7 +20,7 @@ function About() {
         <h2 style={{ fontSize: '28px', fontWeight: 'bold', marginBottom: '8px', textAlign: 'center', color: '#1a1a2e' }}>
           About Me
         </h2>
-        <div style={{ width: '48px', height: '4px', backgroundColor: '#e94560', margin: '0 auto 48px', borderRadius: '2px' }}></div>
+        <div style={{ width: '48px', height: '4px', background: 'linear-gradient(135deg, #a855f7, #6366f1)', margin: '0 auto 48px', borderRadius: '2px' }}></div>
 
         <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))', gap: '48px', alignItems: 'start' }}>
           {/* Bio */}
@@ -44,12 +44,12 @@ function About() {
                     width: '40px',
                     height: '40px',
                     borderRadius: '8px',
-                    backgroundColor: 'rgba(233, 69, 96, 0.1)',
+                    backgroundColor: 'rgba(139, 92, 246, 0.1)',
                     display: 'flex',
                     alignItems: 'center',
                     justifyContent: 'center'
                   }}>
-                    <item.icon style={{ width: '20px', height: '20px', color: '#e94560' }} />
+                    <item.icon style={{ width: '20px', height: '20px', color: '#8b5cf6' }} />
                   </div>
                   <span>{item.text}</span>
                 </div>
@@ -64,7 +64,7 @@ function About() {
                 key={i}
                 style={{
                   padding: '24px',
-                  backgroundColor: stat.highlight ? '#e94560' : 'white',
+                  backgroundColor: stat.highlight ? '#7c3aed' : 'white',
                   borderRadius: '12px',
                   border: stat.highlight ? 'none' : '1px solid #e5e7eb',
                   boxShadow: '0 1px 3px rgba(0,0,0,0.05)'

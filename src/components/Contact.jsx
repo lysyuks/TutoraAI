@@ -7,7 +7,7 @@ function Contact() {
         <h2 style={{ fontSize: '28px', fontWeight: 'bold', marginBottom: '8px', textAlign: 'center', color: 'white' }}>
           Get In Touch
         </h2>
-        <div style={{ width: '48px', height: '4px', backgroundColor: '#e94560', margin: '0 auto 16px', borderRadius: '2px' }}></div>
+        <div style={{ width: '48px', height: '4px', background: 'linear-gradient(135deg, #a855f7, #6366f1)', margin: '0 auto 16px', borderRadius: '2px' }}></div>
         <p style={{ color: '#9ca3af', textAlign: 'center', marginBottom: '48px', maxWidth: '500px', margin: '0 auto 48px' }}>
           Open to new opportunities and collaborations. Feel free to reach out!
         </p>
@@ -21,10 +21,10 @@ function Contact() {
             >
               <div style={{
                 padding: '12px',
-                backgroundColor: 'rgba(233, 69, 96, 0.1)',
+                backgroundColor: 'rgba(139, 92, 246, 0.1)',
                 borderRadius: '8px'
               }}>
-                <Mail style={{ width: '20px', height: '20px', color: '#e94560' }} />
+                <Mail style={{ width: '20px', height: '20px', color: '#8b5cf6' }} />
               </div>
               <div>
                 <div style={{ fontSize: '12px', color: '#6b7280', textTransform: 'uppercase', letterSpacing: '1px' }}>Email</div>
@@ -38,10 +38,10 @@ function Contact() {
             >
               <div style={{
                 padding: '12px',
-                backgroundColor: 'rgba(233, 69, 96, 0.1)',
+                backgroundColor: 'rgba(139, 92, 246, 0.1)',
                 borderRadius: '8px'
               }}>
-                <Phone style={{ width: '20px', height: '20px', color: '#e94560' }} />
+                <Phone style={{ width: '20px', height: '20px', color: '#8b5cf6' }} />
               </div>
               <div>
                 <div style={{ fontSize: '12px', color: '#6b7280', textTransform: 'uppercase', letterSpacing: '1px' }}>Phone</div>
@@ -52,10 +52,10 @@ function Contact() {
             <div style={{ display: 'flex', alignItems: 'center', gap: '16px', color: '#d1d5db' }}>
               <div style={{
                 padding: '12px',
-                backgroundColor: 'rgba(233, 69, 96, 0.1)',
+                backgroundColor: 'rgba(139, 92, 246, 0.1)',
                 borderRadius: '8px'
               }}>
-                <MapPin style={{ width: '20px', height: '20px', color: '#e94560' }} />
+                <MapPin style={{ width: '20px', height: '20px', color: '#8b5cf6' }} />
               </div>
               <div>
                 <div style={{ fontSize: '12px', color: '#6b7280', textTransform: 'uppercase', letterSpacing: '1px' }}>Location</div>
@@ -71,10 +71,10 @@ function Contact() {
             >
               <div style={{
                 padding: '12px',
-                backgroundColor: 'rgba(233, 69, 96, 0.1)',
+                backgroundColor: 'rgba(139, 92, 246, 0.1)',
                 borderRadius: '8px'
               }}>
-                <Linkedin style={{ width: '20px', height: '20px', color: '#e94560' }} />
+                <Linkedin style={{ width: '20px', height: '20px', color: '#8b5cf6' }} />
               </div>
               <div>
                 <div style={{ fontSize: '12px', color: '#6b7280', textTransform: 'uppercase', letterSpacing: '1px' }}>LinkedIn</div>
@@ -141,7 +141,7 @@ function Contact() {
                 type="submit"
                 style={{
                   padding: '12px 24px',
-                  backgroundColor: '#e94560',
+                  background: 'linear-gradient(135deg, #a855f7, #6366f1)',
                   color: 'white',
                   border: 'none',
                   borderRadius: '8px',

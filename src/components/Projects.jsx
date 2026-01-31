@@ -41,7 +41,7 @@ function Projects() {
         <h2 style={{ fontSize: '28px', fontWeight: 'bold', marginBottom: '8px', textAlign: 'center', color: '#1a1a2e' }}>
           Projects
         </h2>
-        <div style={{ width: '48px', height: '4px', backgroundColor: '#e94560', margin: '0 auto 48px', borderRadius: '2px' }}></div>
+        <div style={{ width: '48px', height: '4px', background: 'linear-gradient(135deg, #a855f7, #6366f1)', margin: '0 auto 48px', borderRadius: '2px' }}></div>
 
         <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))', gap: '24px' }}>
           {projects.map((project, index) => (
@@ -56,7 +56,7 @@ function Projects() {
               }}
             >
               <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', marginBottom: '16px' }}>
-                <Folder style={{ width: '32px', height: '32px', color: '#e94560' }} />
+                <Folder style={{ width: '32px', height: '32px', color: '#8b5cf6' }} />
                 {project.live && (
                   <a
                     href={project.live}

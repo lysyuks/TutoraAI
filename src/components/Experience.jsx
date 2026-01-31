@@ -61,7 +61,7 @@ function Experience() {
         <h2 style={{ fontSize: '28px', fontWeight: 'bold', marginBottom: '8px', textAlign: 'center', color: '#1a1a2e' }}>
           Experience
         </h2>
-        <div style={{ width: '48px', height: '4px', backgroundColor: '#e94560', margin: '0 auto 48px', borderRadius: '2px' }}></div>
+        <div style={{ width: '48px', height: '4px', background: 'linear-gradient(135deg, #a855f7, #6366f1)', margin: '0 auto 48px', borderRadius: '2px' }}></div>
 
         <div style={{ display: 'flex', flexDirection: 'column', gap: '24px' }}>
           {experiences.map((exp, index) => (
@@ -78,7 +78,7 @@ function Experience() {
                 {exp.title}
               </h3>
               <div style={{ display: 'flex', flexWrap: 'wrap', alignItems: 'center', gap: '16px', marginBottom: '16px' }}>
-                <div style={{ display: 'flex', alignItems: 'center', gap: '8px', color: '#e94560' }}>
+                <div style={{ display: 'flex', alignItems: 'center', gap: '8px', color: '#8b5cf6' }}>
                   <Building2 style={{ width: '16px', height: '16px' }} />
                   <span style={{ fontWeight: '500' }}>{exp.company}</span>
                 </div>
@@ -91,7 +91,7 @@ function Experience() {
               <ul style={{ margin: 0, paddingLeft: 0, listStyle: 'none' }}>
                 {exp.description.map((item, i) => (
                   <li key={i} style={{ display: 'flex', alignItems: 'flex-start', gap: '12px', color: '#4b5563', fontSize: '14px', marginBottom: '8px' }}>
-                    <span style={{ width: '6px', height: '6px', borderRadius: '50%', backgroundColor: '#e94560', marginTop: '6px', flexShrink: 0 }}></span>
+                    <span style={{ width: '6px', height: '6px', borderRadius: '50%', backgroundColor: '#8b5cf6', marginTop: '6px', flexShrink: 0 }}></span>
                     <span>{item}</span>
                   </li>
                 ))}
