@@ -26,14 +26,14 @@ function About() {
           {/* Bio */}
           <div>
             <p style={{ color: '#4b5563', marginBottom: '20px', lineHeight: '1.7' }}>
-              I'm Serhii, an AI Product Manager with 14+ years of experience
-              delivering high-impact products in AI, blockchain, legal tech, and
-              supply-chain solutions for enterprises and startups.
+              Technical Product Manager with deep expertise in AI, blockchain,
+              legal tech, and supply-chain domains, delivering high-impact
+              products for enterprises and startups over 14 years.
             </p>
             <p style={{ color: '#4b5563', marginBottom: '32px', lineHeight: '1.7' }}>
-              Currently at UserWay.org, I lead AI/LLM product strategy using
-              LangChain, RAG, and vector databases. I've scaled products from MVP
-              to 1.5M+ users and secured Google's largest 2024 accessibility contract.
+              When people love what they do, great results follow. For me,
+              shaping the future through tech is a true calling. Currently leading
+              AI/LLM product strategy at UserWay using LangChain, RAG, and vector databases.
             </p>
 
             {/* Quick Info */}

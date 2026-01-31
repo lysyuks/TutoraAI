@@ -54,13 +54,13 @@ function Hero() {
           Serhii Lysiuk
         </h1>
         <p style={{ fontSize: '22px', color: '#c4b5fd', fontWeight: '500', marginBottom: '24px' }}>
-          AI Product Manager
+          Product Manager | Senior Level Executive
         </p>
 
         {/* Description */}
         <p style={{ fontSize: '16px', color: '#a5b4fc', marginBottom: '40px', lineHeight: '1.7', opacity: 0.9 }}>
-          14+ years delivering high-impact products in AI, blockchain, legal tech,
-          and supply-chain solutions for enterprises and startups.
+          Technical Product Manager with deep expertise in AI, blockchain, legal tech,
+          and supply-chain domains. 14+ years delivering high-impact products for enterprises and startups.
         </p>
 
         {/* Social Links */}
@@ -68,7 +68,7 @@ function Hero() {
           {[
             { icon: Github, href: 'https://github.com/lysyuks' },
             { icon: Linkedin, href: 'https://www.linkedin.com/in/serhii-lysiuk-322ab926/' },
-            { icon: Mail, href: 'mailto:contact@serhii.dev' }
+            { icon: Mail, href: 'mailto:sm.lysyuk@gmail.com' }
           ].map((item, i) => (
             <a
               key={i}

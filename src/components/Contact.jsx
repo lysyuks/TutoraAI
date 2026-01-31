@@ -16,7 +16,7 @@ function Contact() {
           {/* Contact Info */}
           <div style={{ display: 'flex', flexDirection: 'column', gap: '24px' }}>
             <a
-              href="mailto:contact@serhii.dev"
+              href="mailto:sm.lysyuk@gmail.com"
               style={{ display: 'flex', alignItems: 'center', gap: '16px', color: '#d1d5db', textDecoration: 'none' }}
             >
               <div style={{
@@ -28,7 +28,7 @@ function Contact() {
               </div>
               <div>
                 <div style={{ fontSize: '12px', color: '#6b7280', textTransform: 'uppercase', letterSpacing: '1px' }}>Email</div>
-                <div style={{ color: 'white' }}>contact@serhii.dev</div>
+                <div style={{ color: 'white' }}>sm.lysyuk@gmail.com</div>
               </div>
             </a>
 

@@ -1,22 +1,31 @@
 const skillCategories = [
   {
+    title: 'Technical Skills',
+    skills: ['AI / LLM Integration', 'Blockchain / Web3', 'Cloud Infrastructure', 'CI/CD Pipelines', 'API & Event-Driven Design', 'Microservices Architecture'],
+  },
+  {
     title: 'Product Management',
-    skills: ['Product Strategy', 'Roadmap Planning', 'A/B Testing', 'Data Analysis', 'Stakeholder Management'],
+    skills: ['Product Strategy & Vision', 'Customer Discovery (JTBD)', 'Stakeholder Alignment', 'Data-Driven Roadmapping & OKRs', 'Go-to-Market & Growth Ops', 'RICE / WSJF Prioritization'],
   },
   {
-    title: 'AI & Technology',
-    skills: ['LangChain & RAG', 'Vector Databases', 'MLOps & CI/CD', 'AWS & Kubernetes', 'PostgreSQL'],
-  },
-  {
-    title: 'Tools & Analytics',
-    skills: ['Mixpanel', 'Hotjar', 'Jira & Confluence', 'Figma', 'SAFe & Agile'],
+    title: 'Leadership & Soft Skills',
+    skills: ['Servant Leadership', 'Problem-Solving', 'Clear Communication', 'Cross-Functional Collaboration', 'Change Management', 'Coaching & Mentorship'],
   },
 ]
 
-const otherSkills = [
-  'AI/LLM Strategy', 'Blockchain', 'Legal Tech', 'Supply Chain',
-  'WCAG 2.2', 'ADA & GDPR', 'EU AI Act', 'FlutterFlow',
-  'Make & n8n', 'Go-to-Market', 'Enterprise Sales', 'Growth Hacking',
+const technologies = [
+  'AWS', 'Azure', 'Google Cloud', 'Terraform', 'Docker',
+  'PostgreSQL', 'Redis', 'Snowflake', 'Qdrant', 'Pinecone',
+  'LangChain', 'RAG', 'LlamaIndex', 'MLflow', 'Weights & Biases',
+  'React', 'Next.js', 'React Native', 'Flutter', 'Node.js', 'Python',
+  'Solidity', 'IPFS', 'Chainlink', 'Smart Contracts',
+]
+
+const tools = [
+  'Jira', 'Monday.com', 'Asana', 'Confluence', 'Notion',
+  'Figma', 'Sketch', 'MiroBoard', 'Adobe XD',
+  'Mixpanel', 'Tableau', 'Hotjar', 'Google Analytics',
+  'GitHub', 'GitLab', 'BitBucket',
 ]
 
 function Skills() {
@@ -54,9 +63,35 @@ function Skills() {
           ))}
         </div>
 
-        {/* Other Skills */}
+        {/* Technologies */}
+        <h3 style={{ fontSize: '18px', fontWeight: '600', color: '#1a1a2e', marginBottom: '16px', textAlign: 'center' }}>
+          Technologies
+        </h3>
+        <div style={{ display: 'flex', flexWrap: 'wrap', justifyContent: 'center', gap: '8px', marginBottom: '32px' }}>
+          {technologies.map((tech, index) => (
+            <span
+              key={index}
+              style={{
+                padding: '8px 16px',
+                backgroundColor: 'rgba(139, 92, 246, 0.1)',
+                border: '1px solid rgba(139, 92, 246, 0.2)',
+                color: '#8b5cf6',
+                borderRadius: '8px',
+                fontSize: '14px',
+                fontWeight: '500'
+              }}
+            >
+              {tech}
+            </span>
+          ))}
+        </div>
+
+        {/* Tools */}
+        <h3 style={{ fontSize: '18px', fontWeight: '600', color: '#1a1a2e', marginBottom: '16px', textAlign: 'center' }}>
+          Tools
+        </h3>
         <div style={{ display: 'flex', flexWrap: 'wrap', justifyContent: 'center', gap: '8px' }}>
-          {otherSkills.map((skill, index) => (
+          {tools.map((tool, index) => (
             <span
               key={index}
               style={{
@@ -68,7 +103,7 @@ function Skills() {
                 fontSize: '14px'
               }}
             >
-              {skill}
+              {tool}
             </span>
           ))}
         </div>
