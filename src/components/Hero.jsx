@@ -1,5 +1,4 @@
 import { ArrowDown, Github, Linkedin, Mail } from 'lucide-react'
-import profileImg from '/profile.png'
 
 function Hero() {
   return (
@@ -24,7 +23,7 @@ function Hero() {
           boxShadow: '0 20px 40px rgba(139, 92, 246, 0.3)'
         }}>
           <img
-            src={profileImg}
+            src="/profile.png"
             alt="Serhii Lysiuk"
             style={{
               width: '100%',
