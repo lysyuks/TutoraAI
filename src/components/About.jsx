@@ -1,11 +1,16 @@
 import { MapPin, Briefcase, TrendingUp, Award } from 'lucide-react'
+import { useTheme } from '../context/ThemeContext'
+import { useLanguage } from '../context/LanguageContext'
 
 function About() {
+  const { themes } = useTheme()
+  const { t } = useLanguage()
+
   const stats = [
-    { value: '1.5M+', label: 'Widget Installations', color: '#39c2d7' },
-    { value: '14+', label: 'Years Experience', color: '#a3c644' },
-    { value: '$670M', label: 'Revenue Generated', color: '#39c2d7' },
-    { value: '1000+', label: 'Engineers Supported', color: '#a3c644' },
+    { value: '1.5M+', label: t.about.stats.installs, color: '#39c2d7' },
+    { value: '14+', label: t.about.stats.years, color: '#a3c644' },
+    { value: '$670M', label: t.about.stats.revenue, color: '#39c2d7' },
+    { value: '1000+', label: t.about.stats.engineers, color: '#a3c644' },
   ]
 
   const certifications = [
@@ -14,7 +19,11 @@ function About() {
   ]
 
   return (
-    <section id="about" style={{ backgroundColor: 'white', padding: '100px 0' }}>
+    <section id="about" style={{
+      backgroundColor: themes.bg,
+      padding: '100px 0',
+      transition: 'background-color 0.3s'
+    }}>
       <div style={{ maxWidth: '1400px', margin: '0 auto', padding: '0 48px' }}>
         <div style={{
           display: 'grid',
@@ -32,16 +41,16 @@ function About() {
               fontWeight: '600',
               textTransform: 'uppercase'
             }}>
-              WHO I AM
+              {t.about.label}
             </p>
             <h2 style={{
               fontSize: '48px',
               fontWeight: '700',
-              color: '#464547',
+              color: themes.text,
               marginBottom: '16px',
               lineHeight: '1.1'
             }}>
-              About Me
+              {t.about.title}
             </h2>
             <div style={{
               width: '60px',
@@ -52,40 +61,43 @@ function About() {
 
             <p style={{
               fontSize: '18px',
-              color: '#666',
+              color: themes.textMuted,
               marginBottom: '24px',
               lineHeight: '1.8'
             }}>
-              Technical Product Manager with deep expertise in AI, blockchain,
-              legal tech, and supply-chain domains. I deliver high-impact
-              products for enterprises and startups, turning complex challenges
-              into elegant solutions.
+              {t.about.bio1}
             </p>
 
             <p style={{
               fontSize: '16px',
-              color: '#666',
+              color: themes.textMuted,
+              marginBottom: '24px',
+              lineHeight: '1.8'
+            }}>
+              {t.about.bio2}
+            </p>
+
+            <p style={{
+              fontSize: '16px',
+              color: themes.textMuted,
               marginBottom: '40px',
               lineHeight: '1.8'
             }}>
-              When people love what they do, great results follow. For me,
-              shaping the future through tech is a true calling. Currently leading
-              AI/LLM product strategy at UserWay, building accessibility solutions
-              that reach millions worldwide.
+              {t.about.bio3}
             </p>
 
             {/* Info Items */}
             <div style={{ display: 'flex', flexDirection: 'column', gap: '20px', marginBottom: '40px' }}>
               {[
-                { icon: MapPin, text: 'Prague, Czechia', label: 'Location' },
-                { icon: Briefcase, text: 'AI Product Manager at UserWay', label: 'Current Role' },
-                { icon: TrendingUp, text: '14+ years of experience', label: 'Experience' },
+                { icon: MapPin, text: 'Prague, Czechia', label: t.about.location },
+                { icon: Briefcase, text: 'AI Product Manager at UserWay', label: t.about.currentRole },
+                { icon: TrendingUp, text: '14+ years', label: t.about.experienceLabel },
               ].map((item, i) => (
                 <div key={i} style={{ display: 'flex', alignItems: 'center', gap: '16px' }}>
                   <div style={{
                     width: '48px',
                     height: '48px',
-                    backgroundColor: '#f5f5f5',
+                    backgroundColor: themes.bgAlt,
                     display: 'flex',
                     alignItems: 'center',
                     justifyContent: 'center'
@@ -93,10 +105,16 @@ function About() {
                     <item.icon style={{ width: '20px', height: '20px', color: '#39c2d7' }} />
                   </div>
                   <div>
-                    <p style={{ fontSize: '12px', color: '#999', textTransform: 'uppercase', letterSpacing: '1px', marginBottom: '2px' }}>
+                    <p style={{
+                      fontSize: '12px',
+                      color: themes.textLight,
+                      textTransform: 'uppercase',
+                      letterSpacing: '1px',
+                      marginBottom: '2px'
+                    }}>
                       {item.label}
                     </p>
-                    <p style={{ fontSize: '16px', color: '#464547', fontWeight: '500' }}>
+                    <p style={{ fontSize: '16px', color: themes.text, fontWeight: '500' }}>
                       {item.text}
                     </p>
                   </div>
@@ -107,17 +125,27 @@ function About() {
             {/* Certifications */}
             <div style={{
               padding: '24px',
-              backgroundColor: '#f5f5f5',
+              backgroundColor: themes.bgAlt,
               borderLeft: '4px solid #a3c644'
             }}>
               <div style={{ display: 'flex', alignItems: 'center', gap: '12px', marginBottom: '16px' }}>
                 <Award style={{ width: '20px', height: '20px', color: '#a3c644' }} />
-                <span style={{ fontSize: '14px', fontWeight: '600', color: '#464547', textTransform: 'uppercase', letterSpacing: '1px' }}>
-                  Certifications
+                <span style={{
+                  fontSize: '14px',
+                  fontWeight: '600',
+                  color: themes.text,
+                  textTransform: 'uppercase',
+                  letterSpacing: '1px'
+                }}>
+                  {t.about.certifications}
                 </span>
               </div>
               {certifications.map((cert, i) => (
-                <p key={i} style={{ fontSize: '14px', color: '#666', marginBottom: i < certifications.length - 1 ? '8px' : 0 }}>
+                <p key={i} style={{
+                  fontSize: '14px',
+                  color: themes.textMuted,
+                  marginBottom: i < certifications.length - 1 ? '8px' : 0
+                }}>
                   {cert}
                 </p>
               ))}
@@ -135,8 +163,8 @@ function About() {
                 key={i}
                 style={{
                   padding: '40px 32px',
-                  backgroundColor: 'white',
-                  border: '1px solid #e0e0e0',
+                  backgroundColor: themes.cardBg,
+                  border: `1px solid ${themes.border}`,
                   textAlign: 'center',
                   transition: 'all 0.3s',
                   position: 'relative',
@@ -163,7 +191,7 @@ function About() {
                 </div>
                 <div style={{
                   fontSize: '14px',
-                  color: '#666',
+                  color: themes.textMuted,
                   textTransform: 'uppercase',
                   letterSpacing: '1px'
                 }}>

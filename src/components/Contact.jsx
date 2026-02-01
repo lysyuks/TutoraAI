@@ -1,8 +1,24 @@
 import { Mail, MapPin, Linkedin, Phone, Send } from 'lucide-react'
+import { useTheme } from '../context/ThemeContext'
+import { useLanguage } from '../context/LanguageContext'
 
 function Contact() {
+  const { themes } = useTheme()
+  const { t } = useLanguage()
+
+  const contactItems = [
+    { icon: Mail, label: t.contact.email, value: 'sm.lysyuk@gmail.com', href: 'mailto:sm.lysyuk@gmail.com' },
+    { icon: Phone, label: t.contact.phone, value: '+380 67 537 8771', href: 'tel:+380675378771' },
+    { icon: MapPin, label: t.contact.locationLabel, value: 'Prague, Czechia' },
+    { icon: Linkedin, label: t.contact.linkedin, value: t.contact.connectWithMe, href: 'https://www.linkedin.com/in/serhii-lysiuk-322ab926/' },
+  ]
+
   return (
-    <section id="contact" style={{ backgroundColor: '#464547', padding: '100px 0' }}>
+    <section id="contact" style={{
+      backgroundColor: themes.contactBg,
+      padding: '100px 0',
+      transition: 'background-color 0.3s'
+    }}>
       <div style={{ maxWidth: '1400px', margin: '0 auto', padding: '0 48px' }}>
         <div style={{
           display: 'grid',
@@ -20,7 +36,7 @@ function Contact() {
               fontWeight: '600',
               textTransform: 'uppercase'
             }}>
-              GET IN TOUCH
+              {t.contact.label}
             </p>
             <h2 style={{
               fontSize: '48px',
@@ -29,7 +45,7 @@ function Contact() {
               marginBottom: '16px',
               lineHeight: '1.1'
             }}>
-              Let's Work Together
+              {t.contact.title}
             </h2>
             <div style={{
               width: '60px',
@@ -44,18 +60,12 @@ function Contact() {
               marginBottom: '48px',
               lineHeight: '1.8'
             }}>
-              Open to new opportunities and collaborations. Whether you have a project in mind
-              or just want to connect, feel free to reach out.
+              {t.contact.description}
             </p>
 
             {/* Contact Items */}
             <div style={{ display: 'flex', flexDirection: 'column', gap: '24px' }}>
-              {[
-                { icon: Mail, label: 'Email', value: 'sm.lysyuk@gmail.com', href: 'mailto:sm.lysyuk@gmail.com' },
-                { icon: Phone, label: 'Phone', value: '+380 67 537 8771', href: 'tel:+380675378771' },
-                { icon: MapPin, label: 'Location', value: 'Prague, Czechia' },
-                { icon: Linkedin, label: 'LinkedIn', value: 'Connect with me', href: 'https://www.linkedin.com/in/serhii-lysiuk-322ab926/' },
-              ].map((item, i) => (
+              {contactItems.map((item, i) => (
                 <div key={i}>
                   {item.href ? (
                     <a
@@ -142,7 +152,7 @@ function Contact() {
               color: 'white',
               marginBottom: '32px'
             }}>
-              Send a Message
+              {t.contact.sendMessage}
             </h3>
             <form style={{ display: 'flex', flexDirection: 'column', gap: '24px' }}>
               <div>
@@ -154,7 +164,7 @@ function Contact() {
                   letterSpacing: '1px',
                   marginBottom: '8px'
                 }}>
-                  Your Name
+                  {t.contact.yourName}
                 </label>
                 <input
                   type="text"
@@ -182,7 +192,7 @@ function Contact() {
                   letterSpacing: '1px',
                   marginBottom: '8px'
                 }}>
-                  Your Email
+                  {t.contact.yourEmail}
                 </label>
                 <input
                   type="email"
@@ -210,7 +220,7 @@ function Contact() {
                   letterSpacing: '1px',
                   marginBottom: '8px'
                 }}>
-                  Message
+                  {t.contact.message}
                 </label>
                 <textarea
                   name="message"
@@ -251,7 +261,7 @@ function Contact() {
                 onMouseEnter={(e) => e.target.style.backgroundColor = '#8fb33a'}
                 onMouseLeave={(e) => e.target.style.backgroundColor = '#a3c644'}
               >
-                Send Message
+                {t.contact.send}
                 <Send style={{ width: '16px', height: '16px' }} />
               </button>
             </form>

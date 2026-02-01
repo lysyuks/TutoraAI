@@ -2,6 +2,8 @@ import React from 'react'
 import ReactDOM from 'react-dom/client'
 import { createBrowserHistory } from 'history'
 import { HistoryAdaptedRouter, useUuiServices, UuiContext } from '@epam/uui-core'
+import { ThemeProvider } from './context/ThemeContext'
+import { LanguageProvider } from './context/LanguageContext'
 import App from './App.jsx'
 import '@epam/uui-components/styles.css'
 import '@epam/loveship/styles.css'
@@ -14,7 +16,11 @@ function UuiEnhancedApp() {
 
   return (
     <UuiContext.Provider value={services}>
-      <App />
+      <ThemeProvider>
+        <LanguageProvider>
+          <App />
+        </LanguageProvider>
+      </ThemeProvider>
     </UuiContext.Provider>
   )
 }

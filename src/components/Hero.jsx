@@ -1,14 +1,20 @@
 import { ArrowDown, Github, Linkedin, Mail } from 'lucide-react'
+import { useTheme } from '../context/ThemeContext'
+import { useLanguage } from '../context/LanguageContext'
 
 function Hero() {
+  const { themes } = useTheme()
+  const { t } = useLanguage()
+
   return (
     <section style={{
       minHeight: '100vh',
       display: 'flex',
       alignItems: 'center',
       position: 'relative',
-      backgroundColor: '#ffffff',
-      paddingTop: '80px'
+      backgroundColor: themes.bg,
+      paddingTop: '80px',
+      transition: 'background-color 0.3s'
     }}>
       <div style={{
         maxWidth: '1400px',
@@ -31,7 +37,7 @@ function Hero() {
             fontWeight: '600',
             textTransform: 'uppercase'
           }}>
-            ENGINEERING EXCELLENCE FOR TOMORROW'S WORLD
+            {t.hero.tagline}
           </p>
 
           {/* Name */}
@@ -39,7 +45,7 @@ function Hero() {
             fontSize: '64px',
             fontWeight: '700',
             marginBottom: '16px',
-            color: '#464547',
+            color: themes.text,
             lineHeight: '1.1',
             letterSpacing: '-1px'
           }}>
@@ -50,11 +56,11 @@ function Hero() {
           {/* Title */}
           <p style={{
             fontSize: '24px',
-            color: '#666',
+            color: themes.textMuted,
             fontWeight: '400',
             marginBottom: '32px'
           }}>
-            Product Manager | Senior Level Executive
+            {t.hero.title}
           </p>
 
           {/* Accent Line */}
@@ -68,13 +74,12 @@ function Hero() {
           {/* Description */}
           <p style={{
             fontSize: '18px',
-            color: '#666',
+            color: themes.textMuted,
             marginBottom: '40px',
             lineHeight: '1.8',
             maxWidth: '500px'
           }}>
-            Technical Product Manager with deep expertise in AI, blockchain, legal tech,
-            and supply-chain domains. 14+ years delivering high-impact products for enterprises and startups.
+            {t.hero.description}
           </p>
 
           {/* CTA Buttons */}
@@ -95,32 +100,32 @@ function Hero() {
               onMouseEnter={(e) => e.target.style.backgroundColor = '#8fb33a'}
               onMouseLeave={(e) => e.target.style.backgroundColor = '#a3c644'}
             >
-              Get In Touch
+              {t.hero.getInTouch}
             </a>
             <a
               href="#experience"
               style={{
                 padding: '16px 32px',
                 backgroundColor: 'transparent',
-                color: '#464547',
+                color: themes.text,
                 textDecoration: 'none',
                 fontSize: '14px',
                 fontWeight: '600',
                 textTransform: 'uppercase',
                 letterSpacing: '1px',
-                border: '2px solid #464547',
+                border: `2px solid ${themes.text}`,
                 transition: 'all 0.3s'
               }}
               onMouseEnter={(e) => {
-                e.target.style.backgroundColor = '#464547'
-                e.target.style.color = 'white'
+                e.target.style.backgroundColor = themes.text
+                e.target.style.color = themes.bg
               }}
               onMouseLeave={(e) => {
                 e.target.style.backgroundColor = 'transparent'
-                e.target.style.color = '#464547'
+                e.target.style.color = themes.text
               }}
             >
-              View Experience
+              {t.hero.viewExperience}
             </a>
           </div>
 
@@ -138,8 +143,8 @@ function Hero() {
                 rel={item.href.startsWith('http') ? 'noopener noreferrer' : undefined}
                 style={{
                   padding: '12px',
-                  border: '1px solid #e0e0e0',
-                  color: '#464547',
+                  border: `1px solid ${themes.border}`,
+                  color: themes.text,
                   display: 'flex',
                   transition: 'all 0.3s'
                 }}
@@ -148,8 +153,8 @@ function Hero() {
                   e.currentTarget.style.color = '#39c2d7'
                 }}
                 onMouseLeave={(e) => {
-                  e.currentTarget.style.borderColor = '#e0e0e0'
-                  e.currentTarget.style.color = '#464547'
+                  e.currentTarget.style.borderColor = themes.border
+                  e.currentTarget.style.color = themes.text
                 }}
                 title={item.label}
               >
@@ -185,7 +190,7 @@ function Hero() {
               position: 'relative',
               width: '100%',
               height: '100%',
-              backgroundColor: '#f5f5f5',
+              backgroundColor: themes.bgAlt,
               overflow: 'hidden',
               zIndex: 1
             }}>

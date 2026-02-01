@@ -1,23 +1,26 @@
 import { useState, useEffect } from 'react'
-import { Menu, X } from 'lucide-react'
-
-const navLinks = [
-  { name: 'About', href: '#about' },
-  { name: 'Experience', href: '#experience' },
-  { name: 'Skills', href: '#skills' },
-  { name: 'Projects', href: '#projects' },
-  { name: 'Contact', href: '#contact' },
-]
+import { Menu, X, Sun, Moon, Globe } from 'lucide-react'
+import { useTheme } from '../context/ThemeContext'
+import { useLanguage } from '../context/LanguageContext'
 
 function Header() {
   const [isScrolled, setIsScrolled] = useState(false)
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false)
+  const { theme, themes, toggleTheme } = useTheme()
+  const { language, t, toggleLanguage } = useLanguage()
 
   useEffect(() => {
     const handleScroll = () => setIsScrolled(window.scrollY > 50)
     window.addEventListener('scroll', handleScroll)
     return () => window.removeEventListener('scroll', handleScroll)
   }, [])
+
+  const navLinks = [
+    { name: t.nav.about, href: '#about' },
+    { name: t.nav.experience, href: '#experience' },
+    { name: t.nav.skills, href: '#skills' },
+    { name: t.nav.contact, href: '#contact' },
+  ]
 
   return (
     <header style={{
@@ -26,7 +29,7 @@ function Header() {
       left: 0,
       right: 0,
       zIndex: 1000,
-      backgroundColor: isScrolled ? 'rgba(255, 255, 255, 0.98)' : 'white',
+      backgroundColor: isScrolled ? themes.headerBg : themes.bg,
       boxShadow: isScrolled ? '0 2px 20px rgba(0,0,0,0.08)' : 'none',
       transition: 'all 0.3s ease'
     }}>
@@ -41,24 +44,24 @@ function Header() {
       }}>
         {/* Logo */}
         <a href="#" style={{
-          fontSize: '24px',
+          fontSize: '20px',
           fontWeight: '700',
-          color: '#464547',
+          color: themes.text,
           textDecoration: 'none',
           letterSpacing: '-0.5px'
         }}>
-          <span style={{ color: '#39c2d7' }}>S</span>ERHII
-          <span style={{ color: '#a3c644' }}>.</span>
+          <span style={{ color: '#39c2d7' }}>Serhii</span>{' '}
+          <span style={{ color: themes.text }}>Lysiuk</span>
         </a>
 
         {/* Desktop Navigation */}
-        <div className="desktop-nav" style={{ display: 'none', gap: '40px', alignItems: 'center' }}>
+        <div className="desktop-nav" style={{ display: 'none', gap: '32px', alignItems: 'center' }}>
           {navLinks.map((link) => (
             <a
               key={link.name}
               href={link.href}
               style={{
-                color: '#464547',
+                color: themes.textMuted,
                 textDecoration: 'none',
                 fontSize: '14px',
                 fontWeight: '500',
@@ -67,11 +70,71 @@ function Header() {
                 transition: 'color 0.3s'
               }}
               onMouseEnter={(e) => e.target.style.color = '#39c2d7'}
-              onMouseLeave={(e) => e.target.style.color = '#464547'}
+              onMouseLeave={(e) => e.target.style.color = themes.textMuted}
             >
               {link.name}
             </a>
           ))}
+
+          {/* Language Toggle */}
+          <button
+            onClick={toggleLanguage}
+            style={{
+              display: 'flex',
+              alignItems: 'center',
+              gap: '6px',
+              padding: '8px 12px',
+              backgroundColor: 'transparent',
+              border: `1px solid ${themes.border}`,
+              color: themes.textMuted,
+              fontSize: '12px',
+              fontWeight: '600',
+              cursor: 'pointer',
+              transition: 'all 0.3s'
+            }}
+            onMouseEnter={(e) => {
+              e.currentTarget.style.borderColor = '#39c2d7'
+              e.currentTarget.style.color = '#39c2d7'
+            }}
+            onMouseLeave={(e) => {
+              e.currentTarget.style.borderColor = themes.border
+              e.currentTarget.style.color = themes.textMuted
+            }}
+          >
+            <Globe style={{ width: '14px', height: '14px' }} />
+            {language.toUpperCase()}
+          </button>
+
+          {/* Theme Toggle */}
+          <button
+            onClick={toggleTheme}
+            style={{
+              padding: '10px',
+              backgroundColor: 'transparent',
+              border: `1px solid ${themes.border}`,
+              color: themes.textMuted,
+              cursor: 'pointer',
+              display: 'flex',
+              alignItems: 'center',
+              justifyContent: 'center',
+              transition: 'all 0.3s'
+            }}
+            onMouseEnter={(e) => {
+              e.currentTarget.style.borderColor = '#39c2d7'
+              e.currentTarget.style.color = '#39c2d7'
+            }}
+            onMouseLeave={(e) => {
+              e.currentTarget.style.borderColor = themes.border
+              e.currentTarget.style.color = themes.textMuted
+            }}
+          >
+            {theme === 'light' ? (
+              <Moon style={{ width: '18px', height: '18px' }} />
+            ) : (
+              <Sun style={{ width: '18px', height: '18px' }} />
+            )}
+          </button>
+
           <a
             href="#contact"
             style={{
@@ -88,27 +151,68 @@ function Header() {
             onMouseEnter={(e) => e.target.style.backgroundColor = '#8fb33a'}
             onMouseLeave={(e) => e.target.style.backgroundColor = '#a3c644'}
           >
-            Hire Me
+            {t.nav.hireMe}
           </a>
         </div>
 
-        {/* Mobile Menu Button */}
-        <button
-          className="mobile-menu-btn"
-          style={{ padding: '8px', background: 'none', border: 'none', cursor: 'pointer' }}
-          onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-        >
-          {isMobileMenuOpen ? (
-            <X style={{ width: '24px', height: '24px', color: '#464547' }} />
-          ) : (
-            <Menu style={{ width: '24px', height: '24px', color: '#464547' }} />
-          )}
-        </button>
+        {/* Mobile Controls */}
+        <div style={{ display: 'flex', alignItems: 'center', gap: '12px' }} className="mobile-controls">
+          {/* Language Toggle Mobile */}
+          <button
+            onClick={toggleLanguage}
+            style={{
+              padding: '8px',
+              backgroundColor: 'transparent',
+              border: 'none',
+              color: themes.textMuted,
+              cursor: 'pointer',
+              display: 'flex'
+            }}
+          >
+            <Globe style={{ width: '20px', height: '20px' }} />
+          </button>
+
+          {/* Theme Toggle Mobile */}
+          <button
+            onClick={toggleTheme}
+            style={{
+              padding: '8px',
+              backgroundColor: 'transparent',
+              border: 'none',
+              color: themes.textMuted,
+              cursor: 'pointer',
+              display: 'flex'
+            }}
+          >
+            {theme === 'light' ? (
+              <Moon style={{ width: '20px', height: '20px' }} />
+            ) : (
+              <Sun style={{ width: '20px', height: '20px' }} />
+            )}
+          </button>
+
+          {/* Mobile Menu Button */}
+          <button
+            className="mobile-menu-btn"
+            style={{ padding: '8px', background: 'none', border: 'none', cursor: 'pointer' }}
+            onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
+          >
+            {isMobileMenuOpen ? (
+              <X style={{ width: '24px', height: '24px', color: themes.text }} />
+            ) : (
+              <Menu style={{ width: '24px', height: '24px', color: themes.text }} />
+            )}
+          </button>
+        </div>
       </nav>
 
       {/* Mobile Navigation */}
       {isMobileMenuOpen && (
-        <div style={{ backgroundColor: 'white', borderTop: '1px solid #e0e0e0', padding: '24px 48px' }}>
+        <div style={{
+          backgroundColor: themes.bg,
+          borderTop: `1px solid ${themes.border}`,
+          padding: '24px 48px'
+        }}>
           {navLinks.map((link) => (
             <a
               key={link.name}
@@ -116,13 +220,13 @@ function Header() {
               style={{
                 display: 'block',
                 padding: '12px 0',
-                color: '#464547',
+                color: themes.text,
                 textDecoration: 'none',
                 fontWeight: '500',
                 fontSize: '14px',
                 textTransform: 'uppercase',
                 letterSpacing: '1px',
-                borderBottom: '1px solid #f0f0f0'
+                borderBottom: `1px solid ${themes.border}`
               }}
               onClick={() => setIsMobileMenuOpen(false)}
             >
@@ -145,7 +249,7 @@ function Header() {
             }}
             onClick={() => setIsMobileMenuOpen(false)}
           >
-            Hire Me
+            {t.nav.hireMe}
           </a>
         </div>
       )}
@@ -154,6 +258,7 @@ function Header() {
         @media (min-width: 768px) {
           .desktop-nav { display: flex !important; }
           .mobile-menu-btn { display: none !important; }
+          .mobile-controls { display: none !important; }
         }
       `}</style>
     </header>

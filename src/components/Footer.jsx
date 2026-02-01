@@ -1,12 +1,17 @@
 import { Github, Linkedin, Mail } from 'lucide-react'
+import { useTheme } from '../context/ThemeContext'
+import { useLanguage } from '../context/LanguageContext'
 
 function Footer() {
+  const { themes } = useTheme()
+  const { t } = useLanguage()
   const currentYear = new Date().getFullYear()
 
   return (
     <footer style={{
-      backgroundColor: '#2d2d2f',
-      padding: '60px 0 40px'
+      backgroundColor: themes.footerBg,
+      padding: '60px 0 40px',
+      transition: 'background-color 0.3s'
     }}>
       <div style={{ maxWidth: '1400px', margin: '0 auto', padding: '0 48px' }}>
         <div style={{
@@ -27,8 +32,8 @@ function Footer() {
             textDecoration: 'none',
             letterSpacing: '-0.5px'
           }}>
-            <span style={{ color: '#39c2d7' }}>S</span>ERHII
-            <span style={{ color: '#a3c644' }}>.</span>
+            <span style={{ color: '#39c2d7' }}>Serhii</span>{' '}
+            <span style={{ color: 'white' }}>Lysiuk</span>
           </a>
 
           {/* Social Links */}
@@ -77,10 +82,10 @@ function Footer() {
           gap: '16px'
         }}>
           <p style={{ fontSize: '14px', color: 'rgba(255,255,255,0.5)' }}>
-            &copy; {currentYear} Serhii Lysiuk. All rights reserved.
+            &copy; {currentYear} Serhii Lysiuk. {t.footer.rights}
           </p>
           <p style={{ fontSize: '14px', color: 'rgba(255,255,255,0.5)' }}>
-            Product Manager | Senior Level Executive
+            {t.footer.title}
           </p>
         </div>
       </div>

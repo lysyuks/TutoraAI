@@ -1,20 +1,5 @@
-const skillCategories = [
-  {
-    title: 'Technical Skills',
-    color: '#39c2d7',
-    skills: ['AI / LLM Integration', 'Blockchain / Web3', 'Cloud Infrastructure', 'CI/CD Pipelines', 'API & Event-Driven Design', 'Microservices Architecture'],
-  },
-  {
-    title: 'Product Management',
-    color: '#a3c644',
-    skills: ['Product Strategy & Vision', 'Customer Discovery (JTBD)', 'Stakeholder Alignment', 'Data-Driven Roadmapping & OKRs', 'Go-to-Market & Growth Ops', 'RICE / WSJF Prioritization'],
-  },
-  {
-    title: 'Leadership & Soft Skills',
-    color: '#39c2d7',
-    skills: ['Servant Leadership', 'Problem-Solving', 'Clear Communication', 'Cross-Functional Collaboration', 'Change Management', 'Coaching & Mentorship'],
-  },
-]
+import { useTheme } from '../context/ThemeContext'
+import { useLanguage } from '../context/LanguageContext'
 
 const technologies = [
   'AWS', 'Azure', 'Google Cloud', 'Terraform', 'Docker',
@@ -32,8 +17,33 @@ const tools = [
 ]
 
 function Skills() {
+  const { themes } = useTheme()
+  const { t } = useLanguage()
+
+  const skillCategories = [
+    {
+      title: t.skills.technical,
+      color: '#39c2d7',
+      skills: ['AI / LLM Integration', 'Blockchain / Web3', 'Cloud Infrastructure', 'CI/CD Pipelines', 'API & Event-Driven Design', 'Microservices Architecture'],
+    },
+    {
+      title: t.skills.productManagement,
+      color: '#a3c644',
+      skills: ['Product Strategy & Vision', 'Customer Discovery (JTBD)', 'Stakeholder Alignment', 'Data-Driven Roadmapping & OKRs', 'Go-to-Market & Growth Ops', 'RICE / WSJF Prioritization'],
+    },
+    {
+      title: t.skills.leadership,
+      color: '#39c2d7',
+      skills: ['Servant Leadership', 'Problem-Solving', 'Clear Communication', 'Cross-Functional Collaboration', 'Change Management', 'Coaching & Mentorship'],
+    },
+  ]
+
   return (
-    <section id="skills" style={{ backgroundColor: 'white', padding: '100px 0' }}>
+    <section id="skills" style={{
+      backgroundColor: themes.bg,
+      padding: '100px 0',
+      transition: 'background-color 0.3s'
+    }}>
       <div style={{ maxWidth: '1400px', margin: '0 auto', padding: '0 48px' }}>
         {/* Section Header */}
         <div style={{ marginBottom: '60px' }}>
@@ -45,16 +55,16 @@ function Skills() {
             fontWeight: '600',
             textTransform: 'uppercase'
           }}>
-            WHAT I DO
+            {t.skills.label}
           </p>
           <h2 style={{
             fontSize: '48px',
             fontWeight: '700',
-            color: '#464547',
+            color: themes.text,
             marginBottom: '16px',
             lineHeight: '1.1'
           }}>
-            Skills & Expertise
+            {t.skills.title}
           </h2>
           <div style={{
             width: '60px',
@@ -74,7 +84,7 @@ function Skills() {
             <div
               key={categoryIndex}
               style={{
-                backgroundColor: '#f5f5f5',
+                backgroundColor: themes.bgAlt,
                 padding: '32px',
                 position: 'relative'
               }}
@@ -90,7 +100,7 @@ function Skills() {
               <h3 style={{
                 fontSize: '18px',
                 fontWeight: '600',
-                color: '#464547',
+                color: themes.text,
                 marginBottom: '24px',
                 textTransform: 'uppercase',
                 letterSpacing: '1px'
@@ -104,7 +114,7 @@ function Skills() {
                     alignItems: 'center',
                     gap: '12px',
                     padding: '8px 0',
-                    borderBottom: skillIndex < category.skills.length - 1 ? '1px solid #e0e0e0' : 'none'
+                    borderBottom: skillIndex < category.skills.length - 1 ? `1px solid ${themes.border}` : 'none'
                   }}>
                     <div style={{
                       width: '8px',
@@ -112,7 +122,7 @@ function Skills() {
                       backgroundColor: category.color,
                       flexShrink: 0
                     }}></div>
-                    <span style={{ color: '#666', fontSize: '14px' }}>{skill}</span>
+                    <span style={{ color: themes.textMuted, fontSize: '14px' }}>{skill}</span>
                   </div>
                 ))}
               </div>
@@ -125,7 +135,7 @@ function Skills() {
           <h3 style={{
             fontSize: '24px',
             fontWeight: '600',
-            color: '#464547',
+            color: themes.text,
             marginBottom: '32px',
             display: 'flex',
             alignItems: 'center',
@@ -137,7 +147,7 @@ function Skills() {
               height: '4px',
               background: 'linear-gradient(90deg, #39c2d7, #a3c644)'
             }}></span>
-            Technologies
+            {t.skills.technologies}
           </h3>
           <div style={{ display: 'flex', flexWrap: 'wrap', gap: '12px' }}>
             {technologies.map((tech, index) => (
@@ -145,24 +155,15 @@ function Skills() {
                 key={index}
                 style={{
                   padding: '10px 20px',
-                  backgroundColor: 'white',
-                  border: '1px solid #e0e0e0',
-                  color: '#464547',
+                  backgroundColor: themes.cardBg,
+                  border: `1px solid ${themes.border}`,
+                  color: themes.text,
                   fontSize: '14px',
                   fontWeight: '500',
                   transition: 'all 0.3s',
                   cursor: 'default'
                 }}
-                onMouseEnter={(e) => {
-                  e.target.style.backgroundColor = '#39c2d7'
-                  e.target.style.color = 'white'
-                  e.target.style.borderColor = '#39c2d7'
-                }}
-                onMouseLeave={(e) => {
-                  e.target.style.backgroundColor = 'white'
-                  e.target.style.color = '#464547'
-                  e.target.style.borderColor = '#e0e0e0'
-                }}
+                className="tech-tag"
               >
                 {tech}
               </span>
@@ -175,7 +176,7 @@ function Skills() {
           <h3 style={{
             fontSize: '24px',
             fontWeight: '600',
-            color: '#464547',
+            color: themes.text,
             marginBottom: '32px',
             display: 'flex',
             alignItems: 'center',
@@ -187,7 +188,7 @@ function Skills() {
               height: '4px',
               background: 'linear-gradient(90deg, #a3c644, #39c2d7)'
             }}></span>
-            Tools
+            {t.skills.tools}
           </h3>
           <div style={{ display: 'flex', flexWrap: 'wrap', gap: '12px' }}>
             {tools.map((tool, index) => (
@@ -195,21 +196,14 @@ function Skills() {
                 key={index}
                 style={{
                   padding: '10px 20px',
-                  backgroundColor: '#f5f5f5',
-                  color: '#666',
+                  backgroundColor: themes.bgAlt,
+                  color: themes.textMuted,
                   fontSize: '14px',
                   fontWeight: '500',
                   transition: 'all 0.3s',
                   cursor: 'default'
                 }}
-                onMouseEnter={(e) => {
-                  e.target.style.backgroundColor = '#a3c644'
-                  e.target.style.color = 'white'
-                }}
-                onMouseLeave={(e) => {
-                  e.target.style.backgroundColor = '#f5f5f5'
-                  e.target.style.color = '#666'
-                }}
+                className="tool-tag"
               >
                 {tool}
               </span>
@@ -219,6 +213,15 @@ function Skills() {
       </div>
 
       <style>{`
+        .tech-tag:hover {
+          background-color: #39c2d7 !important;
+          color: white !important;
+          border-color: #39c2d7 !important;
+        }
+        .tool-tag:hover {
+          background-color: #a3c644 !important;
+          color: white !important;
+        }
         @media (max-width: 900px) {
           .skills-grid {
             grid-template-columns: 1fr !important;
