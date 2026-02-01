@@ -1,161 +1,278 @@
-import { Mail, MapPin, Linkedin, Phone } from 'lucide-react'
+import { Mail, MapPin, Linkedin, Phone, Send } from 'lucide-react'
 
 function Contact() {
   return (
-    <section id="contact" className="section-padding" style={{ backgroundColor: '#1a1a2e' }}>
-      <div className="container-width">
-        <h2 style={{ fontSize: '28px', fontWeight: 'bold', marginBottom: '8px', textAlign: 'center', color: 'white' }}>
-          Get In Touch
-        </h2>
-        <div style={{ width: '48px', height: '4px', background: 'linear-gradient(135deg, #a855f7, #6366f1)', margin: '0 auto 16px', borderRadius: '2px' }}></div>
-        <p style={{ color: '#9ca3af', textAlign: 'center', marginBottom: '48px', maxWidth: '500px', margin: '0 auto 48px' }}>
-          Open to new opportunities and collaborations. Feel free to reach out!
-        </p>
+    <section id="contact" style={{ backgroundColor: '#464547', padding: '100px 0' }}>
+      <div style={{ maxWidth: '1400px', margin: '0 auto', padding: '0 48px' }}>
+        <div style={{
+          display: 'grid',
+          gridTemplateColumns: '1fr 1fr',
+          gap: '80px',
+          alignItems: 'start'
+        }} className="contact-grid">
+          {/* Left - Contact Info */}
+          <div>
+            <p style={{
+              fontSize: '12px',
+              color: '#39c2d7',
+              letterSpacing: '3px',
+              marginBottom: '16px',
+              fontWeight: '600',
+              textTransform: 'uppercase'
+            }}>
+              GET IN TOUCH
+            </p>
+            <h2 style={{
+              fontSize: '48px',
+              fontWeight: '700',
+              color: 'white',
+              marginBottom: '16px',
+              lineHeight: '1.1'
+            }}>
+              Let's Work Together
+            </h2>
+            <div style={{
+              width: '60px',
+              height: '4px',
+              background: 'linear-gradient(90deg, #39c2d7, #a3c644)',
+              marginBottom: '32px'
+            }}></div>
 
-        <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(280px, 1fr))', gap: '48px', maxWidth: '800px', margin: '0 auto' }}>
-          {/* Contact Info */}
-          <div style={{ display: 'flex', flexDirection: 'column', gap: '24px' }}>
-            <a
-              href="mailto:sm.lysyuk@gmail.com"
-              style={{ display: 'flex', alignItems: 'center', gap: '16px', color: '#d1d5db', textDecoration: 'none' }}
-            >
-              <div style={{
-                padding: '12px',
-                backgroundColor: 'rgba(139, 92, 246, 0.1)',
-                borderRadius: '8px'
-              }}>
-                <Mail style={{ width: '20px', height: '20px', color: '#8b5cf6' }} />
-              </div>
-              <div>
-                <div style={{ fontSize: '12px', color: '#6b7280', textTransform: 'uppercase', letterSpacing: '1px' }}>Email</div>
-                <div style={{ color: 'white' }}>sm.lysyuk@gmail.com</div>
-              </div>
-            </a>
+            <p style={{
+              fontSize: '18px',
+              color: 'rgba(255,255,255,0.7)',
+              marginBottom: '48px',
+              lineHeight: '1.8'
+            }}>
+              Open to new opportunities and collaborations. Whether you have a project in mind
+              or just want to connect, feel free to reach out.
+            </p>
 
-            <a
-              href="tel:+380675378771"
-              style={{ display: 'flex', alignItems: 'center', gap: '16px', color: '#d1d5db', textDecoration: 'none' }}
-            >
-              <div style={{
-                padding: '12px',
-                backgroundColor: 'rgba(139, 92, 246, 0.1)',
-                borderRadius: '8px'
-              }}>
-                <Phone style={{ width: '20px', height: '20px', color: '#8b5cf6' }} />
-              </div>
-              <div>
-                <div style={{ fontSize: '12px', color: '#6b7280', textTransform: 'uppercase', letterSpacing: '1px' }}>Phone</div>
-                <div style={{ color: 'white' }}>+380 67 537 8771</div>
-              </div>
-            </a>
-
-            <div style={{ display: 'flex', alignItems: 'center', gap: '16px', color: '#d1d5db' }}>
-              <div style={{
-                padding: '12px',
-                backgroundColor: 'rgba(139, 92, 246, 0.1)',
-                borderRadius: '8px'
-              }}>
-                <MapPin style={{ width: '20px', height: '20px', color: '#8b5cf6' }} />
-              </div>
-              <div>
-                <div style={{ fontSize: '12px', color: '#6b7280', textTransform: 'uppercase', letterSpacing: '1px' }}>Location</div>
-                <div style={{ color: 'white' }}>Prague, Czechia</div>
-              </div>
+            {/* Contact Items */}
+            <div style={{ display: 'flex', flexDirection: 'column', gap: '24px' }}>
+              {[
+                { icon: Mail, label: 'Email', value: 'sm.lysyuk@gmail.com', href: 'mailto:sm.lysyuk@gmail.com' },
+                { icon: Phone, label: 'Phone', value: '+380 67 537 8771', href: 'tel:+380675378771' },
+                { icon: MapPin, label: 'Location', value: 'Prague, Czechia' },
+                { icon: Linkedin, label: 'LinkedIn', value: 'Connect with me', href: 'https://www.linkedin.com/in/serhii-lysiuk-322ab926/' },
+              ].map((item, i) => (
+                <div key={i}>
+                  {item.href ? (
+                    <a
+                      href={item.href}
+                      target={item.href.startsWith('http') ? '_blank' : undefined}
+                      rel={item.href.startsWith('http') ? 'noopener noreferrer' : undefined}
+                      style={{
+                        display: 'flex',
+                        alignItems: 'center',
+                        gap: '20px',
+                        textDecoration: 'none',
+                        transition: 'all 0.3s'
+                      }}
+                      className="contact-item"
+                    >
+                      <div style={{
+                        width: '56px',
+                        height: '56px',
+                        backgroundColor: 'rgba(57, 194, 215, 0.1)',
+                        display: 'flex',
+                        alignItems: 'center',
+                        justifyContent: 'center',
+                        transition: 'all 0.3s'
+                      }}>
+                        <item.icon style={{ width: '24px', height: '24px', color: '#39c2d7' }} />
+                      </div>
+                      <div>
+                        <p style={{
+                          fontSize: '12px',
+                          color: 'rgba(255,255,255,0.5)',
+                          textTransform: 'uppercase',
+                          letterSpacing: '1px',
+                          marginBottom: '4px'
+                        }}>
+                          {item.label}
+                        </p>
+                        <p style={{ fontSize: '16px', color: 'white', fontWeight: '500' }}>
+                          {item.value}
+                        </p>
+                      </div>
+                    </a>
+                  ) : (
+                    <div style={{ display: 'flex', alignItems: 'center', gap: '20px' }}>
+                      <div style={{
+                        width: '56px',
+                        height: '56px',
+                        backgroundColor: 'rgba(57, 194, 215, 0.1)',
+                        display: 'flex',
+                        alignItems: 'center',
+                        justifyContent: 'center'
+                      }}>
+                        <item.icon style={{ width: '24px', height: '24px', color: '#39c2d7' }} />
+                      </div>
+                      <div>
+                        <p style={{
+                          fontSize: '12px',
+                          color: 'rgba(255,255,255,0.5)',
+                          textTransform: 'uppercase',
+                          letterSpacing: '1px',
+                          marginBottom: '4px'
+                        }}>
+                          {item.label}
+                        </p>
+                        <p style={{ fontSize: '16px', color: 'white', fontWeight: '500' }}>
+                          {item.value}
+                        </p>
+                      </div>
+                    </div>
+                  )}
+                </div>
+              ))}
             </div>
-
-            <a
-              href="https://www.linkedin.com/in/serhii-lysiuk-322ab926/"
-              target="_blank"
-              rel="noopener noreferrer"
-              style={{ display: 'flex', alignItems: 'center', gap: '16px', color: '#d1d5db', textDecoration: 'none' }}
-            >
-              <div style={{
-                padding: '12px',
-                backgroundColor: 'rgba(139, 92, 246, 0.1)',
-                borderRadius: '8px'
-              }}>
-                <Linkedin style={{ width: '20px', height: '20px', color: '#8b5cf6' }} />
-              </div>
-              <div>
-                <div style={{ fontSize: '12px', color: '#6b7280', textTransform: 'uppercase', letterSpacing: '1px' }}>LinkedIn</div>
-                <div style={{ color: 'white' }}>Connect with me</div>
-              </div>
-            </a>
           </div>
 
-          {/* Contact Form */}
+          {/* Right - Contact Form */}
           <div style={{
             backgroundColor: 'rgba(255,255,255,0.05)',
-            borderRadius: '12px',
-            padding: '24px',
+            padding: '48px',
             border: '1px solid rgba(255,255,255,0.1)'
           }}>
-            <form style={{ display: 'flex', flexDirection: 'column', gap: '16px' }}>
-              <input
-                type="text"
-                name="name"
-                placeholder="Your name"
-                style={{
-                  width: '100%',
-                  padding: '12px 16px',
-                  backgroundColor: 'rgba(255,255,255,0.05)',
-                  border: '1px solid rgba(255,255,255,0.1)',
-                  borderRadius: '8px',
-                  color: 'white',
-                  fontSize: '14px',
-                  outline: 'none'
-                }}
-              />
-              <input
-                type="email"
-                name="email"
-                placeholder="Your email"
-                style={{
-                  width: '100%',
-                  padding: '12px 16px',
-                  backgroundColor: 'rgba(255,255,255,0.05)',
-                  border: '1px solid rgba(255,255,255,0.1)',
-                  borderRadius: '8px',
-                  color: 'white',
-                  fontSize: '14px',
-                  outline: 'none'
-                }}
-              />
-              <textarea
-                name="message"
-                rows={4}
-                placeholder="Your message..."
-                style={{
-                  width: '100%',
-                  padding: '12px 16px',
-                  backgroundColor: 'rgba(255,255,255,0.05)',
-                  border: '1px solid rgba(255,255,255,0.1)',
-                  borderRadius: '8px',
-                  color: 'white',
-                  fontSize: '14px',
-                  resize: 'none',
-                  outline: 'none'
-                }}
-              />
+            <h3 style={{
+              fontSize: '24px',
+              fontWeight: '600',
+              color: 'white',
+              marginBottom: '32px'
+            }}>
+              Send a Message
+            </h3>
+            <form style={{ display: 'flex', flexDirection: 'column', gap: '24px' }}>
+              <div>
+                <label style={{
+                  display: 'block',
+                  fontSize: '12px',
+                  color: 'rgba(255,255,255,0.5)',
+                  textTransform: 'uppercase',
+                  letterSpacing: '1px',
+                  marginBottom: '8px'
+                }}>
+                  Your Name
+                </label>
+                <input
+                  type="text"
+                  name="name"
+                  style={{
+                    width: '100%',
+                    padding: '16px',
+                    backgroundColor: 'rgba(255,255,255,0.05)',
+                    border: '1px solid rgba(255,255,255,0.1)',
+                    color: 'white',
+                    fontSize: '16px',
+                    outline: 'none',
+                    transition: 'border-color 0.3s'
+                  }}
+                  onFocus={(e) => e.target.style.borderColor = '#39c2d7'}
+                  onBlur={(e) => e.target.style.borderColor = 'rgba(255,255,255,0.1)'}
+                />
+              </div>
+              <div>
+                <label style={{
+                  display: 'block',
+                  fontSize: '12px',
+                  color: 'rgba(255,255,255,0.5)',
+                  textTransform: 'uppercase',
+                  letterSpacing: '1px',
+                  marginBottom: '8px'
+                }}>
+                  Your Email
+                </label>
+                <input
+                  type="email"
+                  name="email"
+                  style={{
+                    width: '100%',
+                    padding: '16px',
+                    backgroundColor: 'rgba(255,255,255,0.05)',
+                    border: '1px solid rgba(255,255,255,0.1)',
+                    color: 'white',
+                    fontSize: '16px',
+                    outline: 'none',
+                    transition: 'border-color 0.3s'
+                  }}
+                  onFocus={(e) => e.target.style.borderColor = '#39c2d7'}
+                  onBlur={(e) => e.target.style.borderColor = 'rgba(255,255,255,0.1)'}
+                />
+              </div>
+              <div>
+                <label style={{
+                  display: 'block',
+                  fontSize: '12px',
+                  color: 'rgba(255,255,255,0.5)',
+                  textTransform: 'uppercase',
+                  letterSpacing: '1px',
+                  marginBottom: '8px'
+                }}>
+                  Message
+                </label>
+                <textarea
+                  name="message"
+                  rows={5}
+                  style={{
+                    width: '100%',
+                    padding: '16px',
+                    backgroundColor: 'rgba(255,255,255,0.05)',
+                    border: '1px solid rgba(255,255,255,0.1)',
+                    color: 'white',
+                    fontSize: '16px',
+                    resize: 'none',
+                    outline: 'none',
+                    transition: 'border-color 0.3s'
+                  }}
+                  onFocus={(e) => e.target.style.borderColor = '#39c2d7'}
+                  onBlur={(e) => e.target.style.borderColor = 'rgba(255,255,255,0.1)'}
+                />
+              </div>
               <button
                 type="submit"
                 style={{
-                  padding: '12px 24px',
-                  background: 'linear-gradient(135deg, #a855f7, #6366f1)',
+                  display: 'flex',
+                  alignItems: 'center',
+                  justifyContent: 'center',
+                  gap: '12px',
+                  padding: '16px 32px',
+                  backgroundColor: '#a3c644',
                   color: 'white',
                   border: 'none',
-                  borderRadius: '8px',
-                  fontWeight: '500',
+                  fontWeight: '600',
                   fontSize: '14px',
-                  cursor: 'pointer'
+                  textTransform: 'uppercase',
+                  letterSpacing: '1px',
+                  cursor: 'pointer',
+                  transition: 'all 0.3s'
                 }}
+                onMouseEnter={(e) => e.target.style.backgroundColor = '#8fb33a'}
+                onMouseLeave={(e) => e.target.style.backgroundColor = '#a3c644'}
               >
                 Send Message
+                <Send style={{ width: '16px', height: '16px' }} />
               </button>
             </form>
           </div>
         </div>
       </div>
+
+      <style>{`
+        .contact-item:hover div:first-child {
+          background-color: #39c2d7 !important;
+        }
+        .contact-item:hover svg {
+          color: white !important;
+        }
+        @media (max-width: 900px) {
+          .contact-grid {
+            grid-template-columns: 1fr !important;
+            gap: 48px !important;
+          }
+        }
+      `}</style>
     </section>
   )
 }

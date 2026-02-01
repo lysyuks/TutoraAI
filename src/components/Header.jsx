@@ -14,78 +14,139 @@ function Header() {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false)
 
   useEffect(() => {
-    const handleScroll = () => {
-      setIsScrolled(window.scrollY > 50)
-    }
+    const handleScroll = () => setIsScrolled(window.scrollY > 50)
     window.addEventListener('scroll', handleScroll)
     return () => window.removeEventListener('scroll', handleScroll)
   }, [])
 
   return (
-    <header
-      style={{
-        position: 'fixed',
-        top: 0,
-        left: 0,
-        right: 0,
-        zIndex: 50,
-        transition: 'all 0.3s',
-        backgroundColor: isScrolled ? 'rgba(26, 26, 46, 0.95)' : 'transparent',
-        backdropFilter: isScrolled ? 'blur(10px)' : 'none',
-        padding: isScrolled ? '12px 0' : '20px 0',
-      }}
-    >
-      <nav className="container-width" style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between' }}>
-        <a href="#" style={{ fontSize: '20px', fontWeight: 'bold', color: 'white', textDecoration: 'none' }}>
-          SL<span style={{ color: '#e94560' }}>.</span>
+    <header style={{
+      position: 'fixed',
+      top: 0,
+      left: 0,
+      right: 0,
+      zIndex: 1000,
+      backgroundColor: isScrolled ? 'rgba(255, 255, 255, 0.98)' : 'white',
+      boxShadow: isScrolled ? '0 2px 20px rgba(0,0,0,0.08)' : 'none',
+      transition: 'all 0.3s ease'
+    }}>
+      <nav style={{
+        maxWidth: '1400px',
+        margin: '0 auto',
+        padding: '0 48px',
+        height: '80px',
+        display: 'flex',
+        alignItems: 'center',
+        justifyContent: 'space-between'
+      }}>
+        {/* Logo */}
+        <a href="#" style={{
+          fontSize: '24px',
+          fontWeight: '700',
+          color: '#464547',
+          textDecoration: 'none',
+          letterSpacing: '-0.5px'
+        }}>
+          <span style={{ color: '#39c2d7' }}>S</span>ERHII
+          <span style={{ color: '#a3c644' }}>.</span>
         </a>
 
         {/* Desktop Navigation */}
-        <ul style={{ display: 'none', gap: '32px', listStyle: 'none', margin: 0, padding: 0 }} className="desktop-nav">
+        <div className="desktop-nav" style={{ display: 'none', gap: '40px', alignItems: 'center' }}>
           {navLinks.map((link) => (
-            <li key={link.name}>
-              <a
-                href={link.href}
-                style={{ color: '#9ca3af', textDecoration: 'none', fontSize: '14px', fontWeight: '500', transition: 'color 0.2s' }}
-                onMouseOver={(e) => e.target.style.color = '#e94560'}
-                onMouseOut={(e) => e.target.style.color = '#9ca3af'}
-              >
-                {link.name}
-              </a>
-            </li>
+            <a
+              key={link.name}
+              href={link.href}
+              style={{
+                color: '#464547',
+                textDecoration: 'none',
+                fontSize: '14px',
+                fontWeight: '500',
+                textTransform: 'uppercase',
+                letterSpacing: '1px',
+                transition: 'color 0.3s'
+              }}
+              onMouseEnter={(e) => e.target.style.color = '#39c2d7'}
+              onMouseLeave={(e) => e.target.style.color = '#464547'}
+            >
+              {link.name}
+            </a>
           ))}
-        </ul>
+          <a
+            href="#contact"
+            style={{
+              padding: '12px 24px',
+              backgroundColor: '#a3c644',
+              color: 'white',
+              textDecoration: 'none',
+              fontSize: '13px',
+              fontWeight: '600',
+              textTransform: 'uppercase',
+              letterSpacing: '1px',
+              transition: 'all 0.3s'
+            }}
+            onMouseEnter={(e) => e.target.style.backgroundColor = '#8fb33a'}
+            onMouseLeave={(e) => e.target.style.backgroundColor = '#a3c644'}
+          >
+            Hire Me
+          </a>
+        </div>
 
         {/* Mobile Menu Button */}
         <button
-          style={{ padding: '8px', background: 'none', border: 'none', cursor: 'pointer' }}
           className="mobile-menu-btn"
+          style={{ padding: '8px', background: 'none', border: 'none', cursor: 'pointer' }}
           onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
         >
           {isMobileMenuOpen ? (
-            <X style={{ width: '24px', height: '24px', color: 'white' }} />
+            <X style={{ width: '24px', height: '24px', color: '#464547' }} />
           ) : (
-            <Menu style={{ width: '24px', height: '24px', color: 'white' }} />
+            <Menu style={{ width: '24px', height: '24px', color: '#464547' }} />
           )}
         </button>
       </nav>
 
       {/* Mobile Navigation */}
       {isMobileMenuOpen && (
-        <div style={{ backgroundColor: '#1a1a2e', borderTop: '1px solid rgba(255,255,255,0.1)' }}>
-          <ul className="container-width" style={{ padding: '16px 24px', listStyle: 'none', margin: 0 }}>
-            {navLinks.map((link) => (
-              <li key={link.name}>
-                <a
-                  href={link.href}
-                  style={{ display: 'block', padding: '8px 0', color: '#9ca3af', textDecoration: 'none', fontWeight: '500' }}
-                  onClick={() => setIsMobileMenuOpen(false)}
-                >
-                  {link.name}
-                </a>
-              </li>
-            ))}
-          </ul>
+        <div style={{ backgroundColor: 'white', borderTop: '1px solid #e0e0e0', padding: '24px 48px' }}>
+          {navLinks.map((link) => (
+            <a
+              key={link.name}
+              href={link.href}
+              style={{
+                display: 'block',
+                padding: '12px 0',
+                color: '#464547',
+                textDecoration: 'none',
+                fontWeight: '500',
+                fontSize: '14px',
+                textTransform: 'uppercase',
+                letterSpacing: '1px',
+                borderBottom: '1px solid #f0f0f0'
+              }}
+              onClick={() => setIsMobileMenuOpen(false)}
+            >
+              {link.name}
+            </a>
+          ))}
+          <a
+            href="#contact"
+            style={{
+              display: 'inline-block',
+              marginTop: '16px',
+              padding: '12px 24px',
+              backgroundColor: '#a3c644',
+              color: 'white',
+              textDecoration: 'none',
+              fontSize: '13px',
+              fontWeight: '600',
+              textTransform: 'uppercase',
+              letterSpacing: '1px'
+            }}
+            onClick={() => setIsMobileMenuOpen(false)}
+          >
+            Hire Me
+          </a>
         </div>
       )}
 
