@@ -33,7 +33,7 @@ function Hero() {
             fontSize: '12px',
             color: '#39c2d7',
             letterSpacing: '3px',
-            marginBottom: '24px',
+            marginBottom: '28px',
             fontWeight: '600',
             textTransform: 'uppercase'
           }}>
@@ -44,7 +44,7 @@ function Hero() {
           <h1 style={{
             fontSize: '64px',
             fontWeight: '700',
-            margin: '0 0 16px -2px',
+            margin: '0 0 28px -2px',
             color: themes.text,
             lineHeight: '1.1',
             letterSpacing: '-1px'
@@ -167,7 +167,7 @@ function Hero() {
         {/* Right Content - Profile Image */}
         <div style={{
           display: 'flex',
-          justifyContent: 'center',
+          justifyContent: 'flex-end',
           alignItems: 'center'
         }}>
           <div className="photo-container" style={{
