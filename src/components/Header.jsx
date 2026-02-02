@@ -50,9 +50,9 @@ function Header() {
           textDecoration: 'none',
           letterSpacing: '-0.5px',
           display: 'flex',
-          alignItems: 'flex-end',
-          alignSelf: 'stretch',
-          lineHeight: '1'
+          alignItems: 'center',
+          lineHeight: '1',
+          marginTop: '6px'
         }}>
           <span style={{ color: '#39c2d7' }}>Serhii</span>{' '}
           <span style={{ color: themes.text }}>Lysiuk</span>
