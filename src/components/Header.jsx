@@ -52,7 +52,7 @@ function Header() {
           display: 'flex',
           alignItems: 'center',
           lineHeight: '1',
-          marginTop: '2px',
+          marginTop: '0px',
           gap: '2px'
         }}>
           <span style={{ color: '#39c2d7' }}>Serhii</span>
