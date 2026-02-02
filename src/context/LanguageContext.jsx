@@ -16,7 +16,7 @@ export const translations = {
     hero: {
       tagline: 'ENGINEERING EXCELLENCE FOR TOMORROW\'S WORLD',
       title: 'Product Manager | Senior Level Executive',
-      description: 'Technical Product Manager with deep expertise in AI, blockchain, legal tech, and supply-chain domains. 14+ years delivering high-impact products for enterprises and startups.',
+      description: 'Product Manager with deep expertise in AI, blockchain, legal tech, and supply-chain domains. 14+ years delivering high-impact products for enterprises and startups.',
       getInTouch: 'Get In Touch',
       viewExperience: 'View Experience',
     },
@@ -89,7 +89,7 @@ export const translations = {
     hero: {
       tagline: 'ІНЖЕНЕРНА ДОСКОНАЛІСТЬ ДЛЯ СВІТУ МАЙБУТНЬОГО',
       title: 'Продакт-менеджер | Керівник вищого рівня',
-      description: 'Технічний продакт-менеджер з глибокою експертизою в AI, блокчейні, legal tech та supply-chain. 14+ років створення високоефективних продуктів для підприємств та стартапів.',
+      description: 'Продакт-менеджер з глибокою експертизою в AI, блокчейні, legal tech та supply-chain. 14+ років створення високоефективних продуктів для підприємств та стартапів.',
       getInTouch: 'Зв\'язатися',
       viewExperience: 'Переглянути досвід',
     },
