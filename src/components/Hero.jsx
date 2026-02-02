@@ -170,31 +170,60 @@ function Hero() {
           justifyContent: 'center',
           alignItems: 'center'
         }}>
-          <div style={{
-            position: 'relative',
-            padding: '15px',
-            background: 'linear-gradient(135deg, #39c2d7 0%, #a3c644 100%)'
+          <div className="photo-container" style={{
+            position: 'relative'
           }}>
-            {/* Image Container */}
-            <img
-              src="/profile.png"
-              alt="Serhii Lysiuk"
-              style={{
-                display: 'block',
-                maxWidth: '420px',
-                maxHeight: '520px',
-                width: 'auto',
-                height: 'auto'
-              }}
-              onError={(e) => {
-                e.target.style.display = 'none'
-                e.target.parentElement.innerHTML = `
-                  <div style="width: 400px; height: 400px; display: flex; align-items: center; justify-content: center; background: #242424;">
-                    <span style="font-size: 120px; font-weight: 700; color: white;">SL</span>
-                  </div>
-                `
-              }}
-            />
+            {/* Outer animated layer */}
+            <div className="photo-layer-outer" style={{
+              position: 'absolute',
+              top: '-12px',
+              left: '-12px',
+              right: '-12px',
+              bottom: '-12px',
+              background: 'linear-gradient(135deg, #39c2d7 0%, #a3c644 50%, #39c2d7 100%)',
+              backgroundSize: '200% 200%',
+              opacity: 0.5,
+              zIndex: 0
+            }}></div>
+            {/* Middle layer */}
+            <div className="photo-layer-middle" style={{
+              position: 'absolute',
+              top: '-6px',
+              left: '-6px',
+              right: '-6px',
+              bottom: '-6px',
+              background: 'linear-gradient(45deg, #a3c644 0%, #39c2d7 100%)',
+              opacity: 0.7,
+              zIndex: 1
+            }}></div>
+            {/* Inner frame */}
+            <div style={{
+              position: 'relative',
+              padding: '3px',
+              background: 'linear-gradient(135deg, #39c2d7 0%, #a3c644 100%)',
+              zIndex: 2
+            }}>
+              {/* Image Container */}
+              <img
+                src="/profile.png"
+                alt="Serhii Lysiuk"
+                style={{
+                  display: 'block',
+                  maxWidth: '420px',
+                  maxHeight: '520px',
+                  width: 'auto',
+                  height: 'auto'
+                }}
+                onError={(e) => {
+                  e.target.style.display = 'none'
+                  e.target.parentElement.innerHTML = `
+                    <div style="width: 400px; height: 400px; display: flex; align-items: center; justify-content: center; background: #242424;">
+                      <span style="font-size: 120px; font-weight: 700; color: white;">SL</span>
+                    </div>
+                  `
+                }}
+              />
+            </div>
           </div>
         </div>
       </div>
@@ -218,6 +247,35 @@ function Hero() {
         @keyframes bounce {
           0%, 100% { transform: translateX(-50%) translateY(0); }
           50% { transform: translateX(-50%) translateY(-10px); }
+        }
+        @keyframes gradientShift {
+          0% { background-position: 0% 50%; }
+          50% { background-position: 100% 50%; }
+          100% { background-position: 0% 50%; }
+        }
+        @keyframes pulse {
+          0%, 100% { opacity: 0.5; transform: scale(1); }
+          50% { opacity: 0.3; transform: scale(1.02); }
+        }
+        @keyframes glow {
+          0%, 100% { opacity: 0.7; }
+          50% { opacity: 0.9; }
+        }
+        .photo-layer-outer {
+          animation: gradientShift 4s ease infinite, pulse 3s ease-in-out infinite;
+        }
+        .photo-layer-middle {
+          animation: glow 2s ease-in-out infinite;
+        }
+        .photo-container:hover .photo-layer-outer {
+          opacity: 0.7;
+          transform: scale(1.03);
+        }
+        .photo-container:hover .photo-layer-middle {
+          opacity: 0.9;
+        }
+        .photo-layer-outer, .photo-layer-middle {
+          transition: all 0.4s ease;
         }
         @media (max-width: 900px) {
           .hero-grid {

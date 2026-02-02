@@ -26,14 +26,14 @@ function Footer() {
         }}>
           {/* Logo */}
           <a href="#" style={{
-            fontSize: '24px',
+            fontSize: '28px',
             fontWeight: '700',
             color: 'white',
             textDecoration: 'none',
             letterSpacing: '-0.5px'
           }}>
-            <span style={{ color: '#39c2d7' }}>Serhii</span>{' '}
-            <span style={{ color: 'white' }}>Lysiuk</span>
+            <span style={{ color: '#39c2d7' }}>S</span>
+            <span style={{ color: '#a3c644' }}>L</span>
           </a>
 
           {/* Social Links */}
