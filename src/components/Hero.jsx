@@ -176,10 +176,10 @@ function Hero() {
             {/* Outer animated layer */}
             <div className="photo-layer-outer" style={{
               position: 'absolute',
-              top: '-12px',
-              left: '-12px',
-              right: '-12px',
-              bottom: '-12px',
+              top: '-8px',
+              left: '-8px',
+              right: '-8px',
+              bottom: '-8px',
               background: 'linear-gradient(135deg, #39c2d7 0%, #a3c644 50%, #39c2d7 100%)',
               backgroundSize: '200% 200%',
               opacity: 0.5,
@@ -188,10 +188,10 @@ function Hero() {
             {/* Middle layer */}
             <div className="photo-layer-middle" style={{
               position: 'absolute',
-              top: '-6px',
-              left: '-6px',
-              right: '-6px',
-              bottom: '-6px',
+              top: '-4px',
+              left: '-4px',
+              right: '-4px',
+              bottom: '-4px',
               background: 'linear-gradient(45deg, #a3c644 0%, #39c2d7 100%)',
               opacity: 0.7,
               zIndex: 1
@@ -199,7 +199,7 @@ function Hero() {
             {/* Inner frame */}
             <div style={{
               position: 'relative',
-              padding: '3px',
+              padding: '1px',
               background: 'linear-gradient(135deg, #39c2d7 0%, #a3c644 100%)',
               zIndex: 2
             }}>

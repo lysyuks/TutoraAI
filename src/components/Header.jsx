@@ -44,14 +44,14 @@ function Header() {
       }}>
         {/* Logo */}
         <a href="#" style={{
-          fontSize: '24px',
+          fontSize: '20px',
           fontWeight: '700',
           color: themes.text,
           textDecoration: 'none',
           letterSpacing: '-0.5px'
         }}>
-          <span style={{ color: '#39c2d7' }}>S</span>
-          <span style={{ color: '#a3c644' }}>L</span>
+          <span style={{ color: '#39c2d7' }}>Serhii</span>{' '}
+          <span style={{ color: themes.text }}>Lysiuk</span>
         </a>
 
         {/* Desktop Navigation */}
