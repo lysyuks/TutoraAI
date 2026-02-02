@@ -44,7 +44,7 @@ function Hero() {
           <h1 style={{
             fontSize: '64px',
             fontWeight: '700',
-            margin: '0 0 16px 0',
+            margin: '0 0 16px -1px',
             color: themes.text,
             lineHeight: '1.1',
             letterSpacing: '-1px'
