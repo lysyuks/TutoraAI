@@ -168,7 +168,8 @@ function Hero() {
         <div style={{
           display: 'flex',
           justifyContent: 'flex-end',
-          alignItems: 'flex-start'
+          alignItems: 'flex-start',
+          paddingRight: '140px'
         }}>
           <div className="photo-container" style={{
             position: 'relative'
