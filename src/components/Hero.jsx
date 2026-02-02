@@ -172,7 +172,8 @@ function Hero() {
           paddingRight: '140px'
         }}>
           <div className="photo-container" style={{
-            position: 'relative'
+            position: 'relative',
+            marginTop: '8px'
           }}>
             {/* Outer animated layer */}
             <div className="photo-layer-outer" style={{
