@@ -171,50 +171,30 @@ function Hero() {
           alignItems: 'center'
         }}>
           <div style={{
-            width: '450px',
-            height: '500px',
-            position: 'relative'
+            position: 'relative',
+            padding: '15px',
+            background: 'linear-gradient(135deg, #39c2d7 0%, #a3c644 100%)'
           }}>
-            {/* Background Shape */}
-            <div style={{
-              position: 'absolute',
-              top: '20px',
-              left: '20px',
-              width: '100%',
-              height: '100%',
-              background: 'linear-gradient(135deg, #39c2d7 0%, #a3c644 100%)',
-              zIndex: 0
-            }}></div>
             {/* Image Container */}
-            <div style={{
-              position: 'relative',
-              width: '100%',
-              height: '100%',
-              backgroundColor: themes.bgAlt,
-              overflow: 'hidden',
-              zIndex: 1,
-              display: 'flex',
-              alignItems: 'center',
-              justifyContent: 'center'
-            }}>
-              <img
-                src="/profile.png"
-                alt="Serhii Lysiuk"
-                style={{
-                  width: '100%',
-                  height: '100%',
-                  objectFit: 'contain'
-                }}
-                onError={(e) => {
-                  e.target.style.display = 'none'
-                  e.target.parentElement.innerHTML = `
-                    <div style="width: 100%; height: 100%; display: flex; align-items: center; justify-content: center; background: linear-gradient(135deg, #39c2d7, #a3c644);">
-                      <span style="font-size: 120px; font-weight: 700; color: white;">SL</span>
-                    </div>
-                  `
-                }}
-              />
-            </div>
+            <img
+              src="/profile.png"
+              alt="Serhii Lysiuk"
+              style={{
+                display: 'block',
+                maxWidth: '420px',
+                maxHeight: '520px',
+                width: 'auto',
+                height: 'auto'
+              }}
+              onError={(e) => {
+                e.target.style.display = 'none'
+                e.target.parentElement.innerHTML = `
+                  <div style="width: 400px; height: 400px; display: flex; align-items: center; justify-content: center; background: #242424;">
+                    <span style="font-size: 120px; font-weight: 700; color: white;">SL</span>
+                  </div>
+                `
+              }}
+            />
           </div>
         </div>
       </div>
@@ -254,9 +234,9 @@ function Hero() {
           .hero-grid > div:last-child {
             order: 1;
           }
-          .hero-grid > div:last-child > div {
-            width: 280px !important;
-            height: 280px !important;
+          .hero-grid > div:last-child img {
+            max-width: 280px !important;
+            max-height: 350px !important;
           }
           .hero-buttons {
             justify-content: center !important;
