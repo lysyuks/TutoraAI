@@ -49,8 +49,8 @@ function Hero() {
             lineHeight: '1.1',
             letterSpacing: '-1px'
           }}>
-            Serhii<br />
-            <span style={{ color: '#39c2d7' }}>Lysiuk</span>
+            {t.hero.firstName}<br />
+            <span style={{ color: '#39c2d7' }}>{t.hero.lastName}</span>
           </h1>
 
           {/* Title */}
