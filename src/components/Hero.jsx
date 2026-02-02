@@ -171,8 +171,8 @@ function Hero() {
           alignItems: 'center'
         }}>
           <div style={{
-            width: '400px',
-            height: '400px',
+            width: '450px',
+            height: '500px',
             position: 'relative'
           }}>
             {/* Background Shape */}
@@ -192,7 +192,10 @@ function Hero() {
               height: '100%',
               backgroundColor: themes.bgAlt,
               overflow: 'hidden',
-              zIndex: 1
+              zIndex: 1,
+              display: 'flex',
+              alignItems: 'center',
+              justifyContent: 'center'
             }}>
               <img
                 src="/profile.png"
@@ -200,7 +203,7 @@ function Hero() {
                 style={{
                   width: '100%',
                   height: '100%',
-                  objectFit: 'cover'
+                  objectFit: 'contain'
                 }}
                 onError={(e) => {
                   e.target.style.display = 'none'
