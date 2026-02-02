@@ -23,7 +23,7 @@ function Hero() {
         display: 'grid',
         gridTemplateColumns: '1fr 1fr',
         gap: '80px',
-        alignItems: 'center',
+        alignItems: 'start',
         width: '100%'
       }} className="hero-grid">
         {/* Left Content */}
@@ -168,7 +168,7 @@ function Hero() {
         <div style={{
           display: 'flex',
           justifyContent: 'flex-end',
-          alignItems: 'center'
+          alignItems: 'flex-start'
         }}>
           <div className="photo-container" style={{
             position: 'relative'
