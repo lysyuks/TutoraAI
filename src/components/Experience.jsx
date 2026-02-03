@@ -56,18 +56,6 @@ const experiences = [
     technologies: ['Solidity', 'IPFS', 'Chainlink', 'React Native'],
   },
   {
-    title: 'Founder',
-    company: 'UPPERSETUP',
-    location: 'UAE',
-    period: '2014 - 2017',
-    highlight: 'Legal Tech',
-    description: [
-      'Created from scratch an all-in-one legal platform guiding entrepreneurs through UAE business registration',
-      'Built end-to-end product from ideation to market launch',
-    ],
-    technologies: ['Salesforce', 'OpenCart', 'Commercetools'],
-  },
-  {
     title: 'Chief Executive Officer',
     company: 'Eatsmart',
     location: 'Kyiv, Ukraine',
