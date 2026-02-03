@@ -67,6 +67,19 @@ const experiences = [
     ],
     technologies: ['Salesforce', 'OpenCart', 'Commercetools'],
   },
+  {
+    title: 'Chief Executive Officer',
+    company: 'Eatsmart',
+    location: 'Kyiv, Ukraine',
+    period: 'Dec 2012 - Feb 2016',
+    highlight: 'Forbes Featured',
+    description: [
+      'Built restaurant reservation platform from scratch — 800+ restaurants, 50K+ downloads, featured by Forbes',
+      'Led Seed, Series A & B fundraising; managed 5 engineers, 4 marketing, 2 sales across Scrum delivery',
+      'Drove product-market fit, unit economics, and full-funnel growth (ASO, paid UA, influencer campaigns)',
+    ],
+    technologies: ['iOS', 'Android', 'Firebase', 'Mixpanel', 'Agile/Scrum'],
+  },
 ]
 
 function Experience() {
