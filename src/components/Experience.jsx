@@ -1,3 +1,4 @@
+import { useState } from 'react'
 import { Calendar, MapPin, ChevronRight } from 'lucide-react'
 import { useTheme } from '../context/ThemeContext'
 import { useLanguage } from '../context/LanguageContext'
@@ -73,6 +74,14 @@ const experiences = [
 function Experience() {
   const { themes } = useTheme()
   const { t } = useLanguage()
+  const [expandedCards, setExpandedCards] = useState({})
+
+  const toggleExpanded = (index) => {
+    setExpandedCards(prev => ({
+      ...prev,
+      [index]: !prev[index]
+    }))
+  }
 
   return (
     <section id="experience" style={{
@@ -220,7 +229,7 @@ function Experience() {
                 flexWrap: 'wrap',
                 gap: '8px'
               }}>
-                {exp.technologies.slice(0, 4).map((tech, i) => (
+                {(expandedCards[index] ? exp.technologies : exp.technologies.slice(0, 4)).map((tech, i) => (
                   <span key={i} style={{
                     padding: '4px 10px',
                     backgroundColor: themes.bgAlt,
@@ -234,15 +243,23 @@ function Experience() {
                   </span>
                 ))}
                 {exp.technologies.length > 4 && (
-                  <span style={{
-                    padding: '4px 10px',
-                    backgroundColor: '#39c2d7',
-                    color: 'white',
-                    fontSize: '11px',
-                    fontWeight: '500'
-                  }}>
-                    +{exp.technologies.length - 4}
-                  </span>
+                  <button
+                    onClick={() => toggleExpanded(index)}
+                    style={{
+                      padding: '4px 10px',
+                      backgroundColor: '#39c2d7',
+                      color: 'white',
+                      fontSize: '11px',
+                      fontWeight: '500',
+                      border: 'none',
+                      cursor: 'pointer',
+                      transition: 'background-color 0.2s'
+                    }}
+                    onMouseEnter={(e) => e.target.style.backgroundColor = '#2ba8bc'}
+                    onMouseLeave={(e) => e.target.style.backgroundColor = '#39c2d7'}
+                  >
+                    {expandedCards[index] ? '−' : `+${exp.technologies.length - 4}`}
+                  </button>
                 )}
               </div>
             </div>
