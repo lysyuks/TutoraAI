@@ -2,6 +2,7 @@ import { useTheme } from './context/ThemeContext'
 import Header from './components/Header'
 import Hero from './components/Hero'
 import About from './components/About'
+import WhatIDo from './components/WhatIDo'
 import Experience from './components/Experience'
 import Skills from './components/Skills'
 import Contact from './components/Contact'
@@ -21,6 +22,7 @@ function App() {
       <main>
         <Hero />
         <About />
+        <WhatIDo />
         <Experience />
         <Skills />
         <Contact />
