@@ -60,30 +60,68 @@ function About() {
             }}></div>
 
             <p style={{
-              fontSize: '18px',
+              fontSize: '17px',
               color: themes.textMuted,
-              marginBottom: '24px',
+              marginBottom: '20px',
               lineHeight: '1.8'
             }}>
               {t.about.bio1}
             </p>
 
             <p style={{
-              fontSize: '16px',
+              fontSize: '15px',
               color: themes.textMuted,
-              marginBottom: '24px',
+              marginBottom: '20px',
               lineHeight: '1.8'
             }}>
               {t.about.bio2}
             </p>
 
             <p style={{
-              fontSize: '16px',
+              fontSize: '15px',
               color: themes.textMuted,
-              marginBottom: '40px',
+              marginBottom: '28px',
               lineHeight: '1.8'
             }}>
               {t.about.bio3}
+            </p>
+
+            {/* What I Do Section */}
+            <h3 style={{
+              fontSize: '24px',
+              fontWeight: '600',
+              color: themes.text,
+              marginBottom: '16px'
+            }}>
+              {t.about.whatIDoTitle}
+            </h3>
+
+            <p style={{
+              fontSize: '15px',
+              color: themes.textMuted,
+              marginBottom: '20px',
+              lineHeight: '1.8'
+            }}>
+              {t.about.bio4}
+            </p>
+
+            <p style={{
+              fontSize: '15px',
+              color: themes.textMuted,
+              marginBottom: '20px',
+              lineHeight: '1.8'
+            }}>
+              {t.about.bio5}
+            </p>
+
+            <p style={{
+              fontSize: '15px',
+              color: themes.textMuted,
+              marginBottom: '32px',
+              lineHeight: '1.8',
+              fontStyle: 'italic'
+            }}>
+              {t.about.bio6}
             </p>
 
             {/* Info Items */}
