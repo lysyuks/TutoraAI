@@ -53,7 +53,7 @@ function Header() {
           alignItems: 'center',
           lineHeight: '1',
           marginTop: '0px',
-          gap: '2px'
+          gap: '3px'
         }}>
           <span style={{ color: '#39c2d7' }}>Serhii</span>
           <span style={{ color: themes.text }}>Lysiuk</span>
