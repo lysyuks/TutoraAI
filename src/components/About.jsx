@@ -82,11 +82,8 @@ function About() {
             <p style={{
               fontSize: '15px',
               color: themes.textMuted,
-              lineHeight: '1.75',
-              padding: '16px 20px',
-              borderLeft: '3px solid #a3c644',
-              backgroundColor: themes.bgAlt,
-              marginBottom: '24px'
+              marginBottom: '24px',
+              lineHeight: '1.75'
             }}>
               {t.about.bio3}
             </p>
