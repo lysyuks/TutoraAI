@@ -111,7 +111,7 @@ function WhatIDo() {
               flexWrap: 'wrap',
               marginTop: '20px'
             }}>
-              {['LangChain', 'RAG', 'Qdrant', 'OpenAI', 'CrewAI', 'AutoGPT'].map((tag, i) => (
+              {['LangChain', 'RAG', 'Qdrant', 'OpenAI', 'CrewAI', 'AutoGPT', 'Claude Code'].map((tag, i) => (
                 <span key={i} style={{
                   padding: '6px 12px',
                   backgroundColor: 'rgba(57, 194, 215, 0.2)',
