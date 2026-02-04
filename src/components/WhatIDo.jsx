@@ -100,22 +100,14 @@ function WhatIDo() {
               {t.about.bio5}
             </p>
 
-            {/* Proudest Achievement Callout */}
-            <div style={{
-              padding: '20px 24px',
-              background: `linear-gradient(135deg, ${themes.cardBg} 0%, ${themes.bgAlt} 100%)`,
-              borderLeft: '4px solid #a3c644',
-              marginBottom: '28px'
+            <p style={{
+              fontSize: '15px',
+              color: themes.textMuted,
+              marginBottom: '28px',
+              lineHeight: '1.8'
             }}>
-              <p style={{
-                fontSize: '15px',
-                color: themes.text,
-                lineHeight: '1.7',
-                fontStyle: 'italic'
-              }}>
-                "{t.about.bio6}"
-              </p>
-            </div>
+              {t.about.bio6}
+            </p>
 
             {/* CTA Button */}
             <a

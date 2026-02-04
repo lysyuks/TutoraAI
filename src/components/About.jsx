@@ -9,8 +9,8 @@ function About() {
   const stats = [
     { value: '1.5M+', label: t.about.stats.installs, color: '#39c2d7' },
     { value: '14+', label: t.about.stats.years, color: '#a3c644' },
-    { value: '$670M', label: t.about.stats.revenue, color: '#39c2d7' },
-    { value: '1000+', label: t.about.stats.engineers, color: '#a3c644' },
+    { value: '70M', label: t.about.stats.revenue, color: '#39c2d7' },
+    { value: '400+', label: t.about.stats.engineers, color: '#a3c644' },
   ]
 
   const certifications = [
