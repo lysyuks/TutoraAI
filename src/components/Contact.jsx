@@ -360,6 +360,28 @@ function Contact() {
             gap: 48px !important;
           }
         }
+        @media (max-width: 600px) {
+          #contact > div {
+            padding: 0 20px !important;
+          }
+          #contact {
+            padding: 60px 0 !important;
+          }
+          #contact h2 {
+            font-size: 32px !important;
+          }
+          .contact-grid > div:last-child {
+            padding: 32px 24px !important;
+          }
+        }
+        @media (max-width: 480px) {
+          #contact > div {
+            padding: 0 16px !important;
+          }
+          .contact-grid > div:last-child {
+            padding: 24px 16px !important;
+          }
+        }
       `}</style>
     </section>
   )

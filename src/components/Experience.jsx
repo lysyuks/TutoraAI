@@ -297,11 +297,32 @@ function Experience() {
         }
         @media (max-width: 768px) {
           .experience-scroll {
-            padding-left: 24px !important;
+            padding-left: 20px !important;
           }
           .experience-card {
-            min-width: 320px !important;
-            max-width: 320px !important;
+            min-width: 300px !important;
+            max-width: 300px !important;
+          }
+          #experience > div {
+            padding: 0 20px !important;
+          }
+          #experience h2 {
+            font-size: 32px !important;
+          }
+        }
+        @media (max-width: 480px) {
+          #experience {
+            padding: 60px 0 !important;
+          }
+          #experience > div {
+            padding: 0 16px !important;
+          }
+          .experience-scroll {
+            padding-left: 16px !important;
+          }
+          .experience-card {
+            min-width: 280px !important;
+            max-width: 280px !important;
           }
         }
       `}</style>

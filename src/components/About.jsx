@@ -223,6 +223,23 @@ function About() {
             gap: 40px !important;
           }
         }
+        @media (max-width: 600px) {
+          #about > div {
+            padding: 0 20px !important;
+          }
+          #about {
+            padding: 60px 0 !important;
+          }
+          #about h2 {
+            font-size: 32px !important;
+          }
+          .stat-card {
+            padding: 20px 16px !important;
+          }
+          .stat-card > div:nth-child(2) {
+            font-size: 28px !important;
+          }
+        }
       `}</style>
     </section>
   )

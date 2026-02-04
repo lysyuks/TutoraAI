@@ -89,6 +89,22 @@ function Footer() {
           </p>
         </div>
       </div>
+
+      <style>{`
+        @media (max-width: 600px) {
+          footer > div {
+            padding: 0 20px !important;
+          }
+          footer > div > div:first-child {
+            flex-direction: column !important;
+            text-align: center;
+          }
+          footer > div > div:last-child {
+            flex-direction: column !important;
+            text-align: center;
+          }
+        }
+      `}</style>
     </footer>
   )
 }

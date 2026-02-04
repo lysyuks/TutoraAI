@@ -349,10 +349,26 @@ function WhatIDo() {
         @media (max-width: 600px) {
           .bento-grid {
             grid-template-columns: 1fr !important;
+            gap: 16px !important;
           }
           .bento-grid > div {
             grid-column: span 1 !important;
             grid-row: span 1 !important;
+            padding: 24px !important;
+          }
+          .bento-grid h2 {
+            font-size: 28px !important;
+          }
+          .bento-grid h3 {
+            font-size: 22px !important;
+          }
+        }
+        @media (max-width: 480px) {
+          section > div {
+            padding: 0 16px !important;
+          }
+          section {
+            padding: 60px 0 !important;
           }
         }
       `}</style>

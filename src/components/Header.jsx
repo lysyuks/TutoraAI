@@ -216,8 +216,8 @@ function Header() {
         <div style={{
           backgroundColor: themes.bg,
           borderTop: `1px solid ${themes.border}`,
-          padding: '24px 48px'
-        }}>
+          padding: '24px 20px'
+        }} className="mobile-nav">
           {navLinks.map((link) => (
             <a
               key={link.name}
@@ -260,10 +260,16 @@ function Header() {
       )}
 
       <style>{`
-        @media (min-width: 768px) {
+        @media (min-width: 900px) {
           .desktop-nav { display: flex !important; }
           .mobile-menu-btn { display: none !important; }
           .mobile-controls { display: none !important; }
+        }
+        @media (max-width: 600px) {
+          nav {
+            padding: 0 20px !important;
+            height: 70px !important;
+          }
         }
       `}</style>
     </header>

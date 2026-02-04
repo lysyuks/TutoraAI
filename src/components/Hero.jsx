@@ -284,6 +284,7 @@ function Hero() {
             grid-template-columns: 1fr !important;
             text-align: center;
             gap: 40px !important;
+            padding: 40px 20px !important;
           }
           .hero-grid h1 {
             font-size: 48px !important;
@@ -293,6 +294,8 @@ function Hero() {
           }
           .hero-grid > div:last-child {
             order: 1;
+            padding-right: 0 !important;
+            justify-content: center !important;
           }
           .hero-grid > div:last-child img {
             max-width: 280px !important;
@@ -300,6 +303,7 @@ function Hero() {
           }
           .hero-buttons {
             justify-content: center !important;
+            flex-wrap: wrap !important;
           }
           .hero-grid > div:first-child > div:last-child {
             justify-content: center !important;
@@ -311,6 +315,22 @@ function Hero() {
           .hero-grid > div:first-child > div:nth-child(5) {
             margin-left: auto;
             margin-right: auto;
+          }
+        }
+        @media (max-width: 480px) {
+          .hero-grid {
+            padding: 30px 16px !important;
+          }
+          .hero-grid h1 {
+            font-size: 36px !important;
+          }
+          .hero-grid > div:last-child img {
+            max-width: 220px !important;
+            max-height: 280px !important;
+          }
+          .hero-buttons a {
+            padding: 14px 24px !important;
+            font-size: 12px !important;
           }
         }
       `}</style>
