@@ -55,7 +55,7 @@ function WhatIDo() {
               color: themes.textMuted,
               lineHeight: '1.7'
             }}>
-              Building products at the intersection of AI, blockchain, and design.
+              Building AI-powered SaaS products with deep expertise in personalization, segmentation, and growth strategies.
             </p>
           </div>
 
