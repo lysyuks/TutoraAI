@@ -3,78 +3,12 @@ import { Calendar, MapPin, ChevronRight } from 'lucide-react'
 import { useTheme } from '../context/ThemeContext'
 import { useLanguage } from '../context/LanguageContext'
 
-const experiences = [
-  {
-    title: 'AI Product Manager',
-    company: 'UserWay',
-    location: 'Prague, Czechia',
-    period: 'May 2023 - Present',
-    highlight: '1.5M+ installs',
-    description: [
-      'Scaled AI accessibility platform from MVP to 1.5M+ widget installs worldwide',
-      'Owned roadmap and OKRs for LangChain-powered RAG features with Qdrant vector databases',
-      'Drove 10% MoM ARR growth, closed six-figure deals, and landed Google\'s largest 2024 accessibility contract',
-    ],
-    technologies: ['LangChain', 'LangGraph', 'VectorDB (Qdrant)', 'RAG', 'PostgreSQL', 'Redis'],
-  },
-  {
-    title: 'Technical Product Manager',
-    company: 'BlueYonder',
-    location: 'Remote',
-    period: 'May 2019 - Apr 2023',
-    highlight: '1,000+ engineers',
-    description: [
-      'Product-managed company-wide Design System / Common Component Library adopted by 1,000+ engineers',
-      'Owned CCL roadmap (v3 → v4) aligned with OKRs, business goals, and Material 3 guidelines',
-      'Led cross-team initiatives—Playwright/WDIO test harness, GitHub Actions CI/CD—reducing release time 30%',
-    ],
-    technologies: ['React', 'TypeScript', 'MUI v5', 'Shadcn', 'Rollup', 'Webpack', 'Storybook'],
-  },
-  {
-    title: 'Product Manager',
-    company: 'EPAM / Evri (Hermes)',
-    location: 'Remote',
-    period: 'Apr 2018 - Apr 2019',
-    highlight: '$670M revenue',
-    description: [
-      'Worked for Evri (formerly Hermes), Europe\'s #1 parcel-delivery network — 52 countries, 12M DAU',
-      'Owned three cross-functional squads (30+ FTEs) delivering enterprise CMS digital-transformation',
-      'Led end-to-end CMS migration that unlocked $670M new annual revenue',
-    ],
-    technologies: ['AWS', 'Prismic', 'SonarQube', 'Jenkins', 'Jira'],
-  },
-  {
-    title: 'Product Manager',
-    company: 'Sapien Wallet',
-    location: 'Remote',
-    period: '2017 - 2018',
-    highlight: '100K users',
-    description: [
-      'Developed from scratch a crypto wallet with post-transaction human rating system',
-      'Attracted 100K users in the first month of launch',
-      'Integrated blockchain technologies including Solidity, IPFS, and Chainlink oracles',
-    ],
-    technologies: ['Solidity', 'IPFS', 'Chainlink', 'React Native'],
-  },
-  {
-    title: 'Chief Executive Officer',
-    company: 'Eatsmart',
-    location: 'Kyiv, Ukraine',
-    period: 'Dec 2012 - Feb 2016',
-    highlight: 'Forbes Featured',
-    description: [
-      'Built restaurant reservation platform from scratch — 800+ restaurants, 50K+ downloads, featured by Forbes',
-      'Led Seed, Series A & B fundraising; managed 5 engineers, 4 marketing, 2 sales across Scrum delivery',
-      'Drove product-market fit, unit economics, and full-funnel growth (ASO, paid UA, influencer campaigns)',
-    ],
-    technologies: ['iOS', 'Android', 'Firebase', 'Mixpanel', 'Agile/Scrum'],
-  },
-]
-
 function Experience() {
   const { themes } = useTheme()
   const { t } = useLanguage()
   const [expandedCards, setExpandedCards] = useState({})
+
+  const experiences = t.experience.jobs
 
   const toggleExpanded = (index) => {
     setExpandedCards(prev => ({
