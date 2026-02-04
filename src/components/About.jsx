@@ -20,7 +20,7 @@ function About() {
 
   return (
     <section id="about" style={{
-      backgroundColor: themes.bg,
+      backgroundColor: themes.bgAlt,
       padding: '80px 0',
       transition: 'background-color 0.3s'
     }}>
