@@ -1,10 +1,45 @@
-import { Mail, MapPin, Linkedin, Phone, Send } from 'lucide-react'
+import { useState } from 'react'
+import { Mail, MapPin, Linkedin, Phone, Send, CheckCircle, AlertCircle } from 'lucide-react'
 import { useTheme } from '../context/ThemeContext'
 import { useLanguage } from '../context/LanguageContext'
 
 function Contact() {
   const { themes } = useTheme()
   const { t } = useLanguage()
+  const [formState, setFormState] = useState({ status: 'idle', message: '' })
+  const [formData, setFormData] = useState({ name: '', email: '', message: '' })
+
+  // Formspree form ID - replace with your own from https://formspree.io
+  const FORMSPREE_ID = 'xpwzgkqr'
+
+  const handleSubmit = async (e) => {
+    e.preventDefault()
+    setFormState({ status: 'loading', message: '' })
+
+    try {
+      const response = await fetch(`https://formspree.io/f/${FORMSPREE_ID}`, {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+          'Accept': 'application/json'
+        },
+        body: JSON.stringify(formData)
+      })
+
+      if (response.ok) {
+        setFormState({ status: 'success', message: t.contact.successMessage || 'Message sent successfully!' })
+        setFormData({ name: '', email: '', message: '' })
+      } else {
+        throw new Error('Failed to send')
+      }
+    } catch {
+      setFormState({ status: 'error', message: t.contact.errorMessage || 'Failed to send. Please try again.' })
+    }
+  }
+
+  const handleChange = (e) => {
+    setFormData(prev => ({ ...prev, [e.target.name]: e.target.value }))
+  }
 
   const contactItems = [
     { icon: Mail, label: t.contact.email, value: 'sm.lysyuk@gmail.com', href: 'mailto:sm.lysyuk@gmail.com' },
@@ -154,7 +189,7 @@ function Contact() {
             }}>
               {t.contact.sendMessage}
             </h3>
-            <form style={{ display: 'flex', flexDirection: 'column', gap: '24px' }}>
+            <form onSubmit={handleSubmit} style={{ display: 'flex', flexDirection: 'column', gap: '24px' }}>
               <div>
                 <label style={{
                   display: 'block',
@@ -169,6 +204,9 @@ function Contact() {
                 <input
                   type="text"
                   name="name"
+                  value={formData.name}
+                  onChange={handleChange}
+                  required
                   style={{
                     width: '100%',
                     padding: '16px',
@@ -197,6 +235,9 @@ function Contact() {
                 <input
                   type="email"
                   name="email"
+                  value={formData.email}
+                  onChange={handleChange}
+                  required
                   style={{
                     width: '100%',
                     padding: '16px',
@@ -224,6 +265,9 @@ function Contact() {
                 </label>
                 <textarea
                   name="message"
+                  value={formData.message}
+                  onChange={handleChange}
+                  required
                   rows={5}
                   style={{
                     width: '100%',
@@ -240,28 +284,62 @@ function Contact() {
                   onBlur={(e) => e.target.style.borderColor = 'rgba(255,255,255,0.1)'}
                 />
               </div>
+
+              {/* Status Message */}
+              {formState.status === 'success' && (
+                <div style={{
+                  display: 'flex',
+                  alignItems: 'center',
+                  gap: '10px',
+                  padding: '14px 16px',
+                  backgroundColor: 'rgba(163, 198, 68, 0.15)',
+                  border: '1px solid #a3c644',
+                  color: '#a3c644'
+                }}>
+                  <CheckCircle style={{ width: '20px', height: '20px' }} />
+                  <span>{formState.message}</span>
+                </div>
+              )}
+
+              {formState.status === 'error' && (
+                <div style={{
+                  display: 'flex',
+                  alignItems: 'center',
+                  gap: '10px',
+                  padding: '14px 16px',
+                  backgroundColor: 'rgba(239, 68, 68, 0.15)',
+                  border: '1px solid #ef4444',
+                  color: '#ef4444'
+                }}>
+                  <AlertCircle style={{ width: '20px', height: '20px' }} />
+                  <span>{formState.message}</span>
+                </div>
+              )}
+
               <button
                 type="submit"
+                disabled={formState.status === 'loading'}
                 style={{
                   display: 'flex',
                   alignItems: 'center',
                   justifyContent: 'center',
                   gap: '12px',
                   padding: '16px 32px',
-                  backgroundColor: '#a3c644',
+                  backgroundColor: formState.status === 'loading' ? '#7a9433' : '#a3c644',
                   color: 'white',
                   border: 'none',
                   fontWeight: '600',
                   fontSize: '14px',
                   textTransform: 'uppercase',
                   letterSpacing: '1px',
-                  cursor: 'pointer',
-                  transition: 'all 0.3s'
+                  cursor: formState.status === 'loading' ? 'not-allowed' : 'pointer',
+                  transition: 'all 0.3s',
+                  opacity: formState.status === 'loading' ? 0.7 : 1
                 }}
-                onMouseEnter={(e) => e.target.style.backgroundColor = '#8fb33a'}
-                onMouseLeave={(e) => e.target.style.backgroundColor = '#a3c644'}
+                onMouseEnter={(e) => formState.status !== 'loading' && (e.target.style.backgroundColor = '#8fb33a')}
+                onMouseLeave={(e) => formState.status !== 'loading' && (e.target.style.backgroundColor = '#a3c644')}
               >
-                {t.contact.send}
+                {formState.status === 'loading' ? (t.contact.sending || 'Sending...') : t.contact.send}
                 <Send style={{ width: '16px', height: '16px' }} />
               </button>
             </form>

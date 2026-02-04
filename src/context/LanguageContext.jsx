@@ -75,6 +75,9 @@ export const translations = {
       yourEmail: 'Your Email',
       message: 'Message',
       send: 'Send Message',
+      sending: 'Sending...',
+      successMessage: 'Message sent successfully! I\'ll get back to you soon.',
+      errorMessage: 'Failed to send. Please try again or email me directly.',
     },
     // Footer
     footer: {
@@ -154,6 +157,9 @@ export const translations = {
       yourEmail: 'Ваш Email',
       message: 'Повідомлення',
       send: 'Надіслати',
+      sending: 'Надсилаю...',
+      successMessage: 'Повідомлення надіслано! Я зв\'яжусь з вами найближчим часом.',
+      errorMessage: 'Не вдалося надіслати. Спробуйте ще раз або напишіть мені напряму.',
     },
     // Footer
     footer: {
