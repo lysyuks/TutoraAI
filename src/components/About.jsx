@@ -1,4 +1,4 @@
-import { MapPin, Briefcase, Award } from 'lucide-react'
+import { Award } from 'lucide-react'
 import { useTheme } from '../context/ThemeContext'
 import { useLanguage } from '../context/LanguageContext'
 
@@ -88,72 +88,34 @@ function About() {
               {t.about.bio3}
             </p>
 
-            {/* Location & Role Row */}
-            <div style={{
-              display: 'flex',
-              gap: '32px',
-              marginBottom: '20px',
-              flexWrap: 'wrap'
-            }}>
-              <div style={{ display: 'flex', alignItems: 'center', gap: '10px' }}>
-                <div style={{
-                  width: '36px',
-                  height: '36px',
-                  backgroundColor: themes.bgAlt,
-                  display: 'flex',
-                  alignItems: 'center',
-                  justifyContent: 'center'
-                }}>
-                  <MapPin style={{ width: '16px', height: '16px', color: '#39c2d7' }} />
-                </div>
-                <div>
-                  <p style={{ fontSize: '11px', color: themes.textLight, textTransform: 'uppercase', letterSpacing: '0.5px' }}>
-                    {t.about.location}
-                  </p>
-                  <p style={{ fontSize: '14px', color: themes.text, fontWeight: '500' }}>
-                    Prague, Czechia
-                  </p>
-                </div>
-              </div>
-
-              <div style={{ display: 'flex', alignItems: 'center', gap: '10px' }}>
-                <div style={{
-                  width: '36px',
-                  height: '36px',
-                  backgroundColor: themes.bgAlt,
-                  display: 'flex',
-                  alignItems: 'center',
-                  justifyContent: 'center'
-                }}>
-                  <Briefcase style={{ width: '16px', height: '16px', color: '#39c2d7' }} />
-                </div>
-                <div>
-                  <p style={{ fontSize: '11px', color: themes.textLight, textTransform: 'uppercase', letterSpacing: '0.5px' }}>
-                    {t.about.currentRole}
-                  </p>
-                  <p style={{ fontSize: '14px', color: themes.text, fontWeight: '500' }}>
-                    AI Product Manager @ UserWay
-                  </p>
-                </div>
-              </div>
-            </div>
-
             {/* Certifications */}
             <div style={{
               display: 'flex',
               alignItems: 'flex-start',
-              gap: '10px',
-              padding: '14px 16px',
-              backgroundColor: themes.bgAlt,
-              borderLeft: '3px solid #39c2d7'
+              gap: '14px',
+              padding: '20px 24px',
+              backgroundColor: themes.cardBg,
+              border: `1px solid ${themes.border}`,
+              borderLeft: '4px solid #39c2d7',
+              boxShadow: '0 4px 12px rgba(0,0,0,0.08)'
             }}>
-              <Award style={{ width: '16px', height: '16px', color: '#39c2d7', marginTop: '2px', flexShrink: 0 }} />
+              <div style={{
+                width: '44px',
+                height: '44px',
+                background: 'linear-gradient(135deg, rgba(57, 194, 215, 0.2) 0%, rgba(163, 198, 68, 0.2) 100%)',
+                display: 'flex',
+                alignItems: 'center',
+                justifyContent: 'center',
+                flexShrink: 0
+              }}>
+                <Award style={{ width: '22px', height: '22px', color: '#39c2d7' }} />
+              </div>
               <div>
-                <p style={{ fontSize: '11px', color: themes.textLight, textTransform: 'uppercase', letterSpacing: '0.5px', marginBottom: '6px' }}>
+                <p style={{ fontSize: '12px', color: '#39c2d7', textTransform: 'uppercase', letterSpacing: '1px', marginBottom: '10px', fontWeight: '600' }}>
                   {t.about.certifications}
                 </p>
                 {certifications.map((cert, i) => (
-                  <p key={i} style={{ fontSize: '13px', color: themes.textMuted, marginBottom: i < certifications.length - 1 ? '4px' : 0 }}>
+                  <p key={i} style={{ fontSize: '14px', color: themes.text, marginBottom: i < certifications.length - 1 ? '6px' : 0, fontWeight: '500' }}>
                     {cert}
                   </p>
                 ))}
