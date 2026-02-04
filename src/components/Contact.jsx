@@ -10,7 +10,7 @@ function Contact() {
   const [formData, setFormData] = useState({ name: '', email: '', message: '' })
 
   // Formspree form ID - replace with your own from https://formspree.io
-  const FORMSPREE_ID = 'xpwzgkqr'
+  const FORMSPREE_ID = 'xvzbpoak'
 
   const handleSubmit = async (e) => {
     e.preventDefault()
