@@ -1,3 +1,4 @@
+import { useState, useEffect, useRef } from 'react'
 import { Cpu, Coins, Rocket, Users, Palette, ChevronRight } from 'lucide-react'
 import { useTheme } from '../context/ThemeContext'
 import { useLanguage } from '../context/LanguageContext'
@@ -5,13 +6,35 @@ import { useLanguage } from '../context/LanguageContext'
 function WhatIDo() {
   const { themes } = useTheme()
   const { t } = useLanguage()
+  const [isVisible, setIsVisible] = useState(false)
+  const sectionRef = useRef(null)
+
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting) {
+          setIsVisible(true)
+        }
+      },
+      { threshold: 0.1 }
+    )
+
+    if (sectionRef.current) {
+      observer.observe(sectionRef.current)
+    }
+
+    return () => observer.disconnect()
+  }, [])
 
   return (
-    <section style={{
-      backgroundColor: themes.bg,
-      padding: '100px 0',
-      transition: 'background-color 0.3s'
-    }}>
+    <section
+      ref={sectionRef}
+      style={{
+        backgroundColor: themes.bg,
+        padding: '100px 0',
+        transition: 'background-color 0.3s'
+      }}
+    >
       <div style={{ maxWidth: '1400px', margin: '0 auto', padding: '0 48px' }}>
         {/* Bento Grid Layout */}
         <div style={{
@@ -22,15 +45,19 @@ function WhatIDo() {
         }} className="bento-grid">
 
           {/* Header Card - Spans 2 columns */}
-          <div style={{
-            gridColumn: 'span 2',
-            padding: '40px',
-            backgroundColor: themes.cardBg,
-            border: `1px solid ${themes.border}`,
-            display: 'flex',
-            flexDirection: 'column',
-            justifyContent: 'center'
-          }}>
+          <div
+            className={`bento-card ${isVisible ? 'animate-in' : ''}`}
+            style={{
+              gridColumn: 'span 2',
+              padding: '40px',
+              backgroundColor: themes.cardBg,
+              border: `1px solid ${themes.border}`,
+              display: 'flex',
+              flexDirection: 'column',
+              justifyContent: 'center',
+              animationDelay: '0ms'
+            }}
+          >
             <p style={{
               fontSize: '12px',
               color: '#a3c644',
@@ -61,7 +88,7 @@ function WhatIDo() {
 
           {/* AI & ML - Large Card */}
           <div
-            className="skill-bento"
+            className={`skill-bento bento-card ai-card ${isVisible ? 'animate-in' : ''}`}
             style={{
               gridColumn: 'span 2',
               gridRow: 'span 2',
@@ -74,11 +101,12 @@ function WhatIDo() {
               minHeight: '280px',
               transition: 'all 0.3s',
               position: 'relative',
-              overflow: 'hidden'
+              overflow: 'hidden',
+              animationDelay: '100ms'
             }}
           >
             <div>
-              <div style={{
+              <div className="icon-box icon-pulse" style={{
                 width: '60px',
                 height: '60px',
                 backgroundColor: 'rgba(57, 194, 215, 0.2)',
@@ -126,12 +154,16 @@ function WhatIDo() {
           </div>
 
           {/* Bio Text Card */}
-          <div style={{
-            gridColumn: 'span 2',
-            padding: '32px',
-            backgroundColor: themes.bgAlt,
-            border: `1px solid ${themes.border}`
-          }}>
+          <div
+            className={`bento-card ${isVisible ? 'animate-in' : ''}`}
+            style={{
+              gridColumn: 'span 2',
+              padding: '32px',
+              backgroundColor: themes.bgAlt,
+              border: `1px solid ${themes.border}`,
+              animationDelay: '200ms'
+            }}
+          >
             <p style={{
               fontSize: '14px',
               color: themes.textMuted,
@@ -143,15 +175,16 @@ function WhatIDo() {
 
           {/* Blockchain Card */}
           <div
-            className="skill-bento"
+            className={`skill-bento bento-card ${isVisible ? 'animate-in' : ''}`}
             style={{
               padding: '28px',
               background: `linear-gradient(135deg, rgba(163, 198, 68, 0.15) 0%, rgba(163, 198, 68, 0.05) 100%)`,
               border: `1px solid rgba(163, 198, 68, 0.3)`,
-              transition: 'all 0.3s'
+              transition: 'all 0.3s',
+              animationDelay: '300ms'
             }}
           >
-            <div style={{
+            <div className="icon-box" style={{
               width: '48px',
               height: '48px',
               backgroundColor: 'rgba(163, 198, 68, 0.2)',
@@ -177,15 +210,16 @@ function WhatIDo() {
 
           {/* SaaS Card */}
           <div
-            className="skill-bento"
+            className={`skill-bento bento-card ${isVisible ? 'animate-in' : ''}`}
             style={{
               padding: '28px',
               background: `linear-gradient(135deg, rgba(57, 194, 215, 0.15) 0%, rgba(57, 194, 215, 0.05) 100%)`,
               border: `1px solid rgba(57, 194, 215, 0.3)`,
-              transition: 'all 0.3s'
+              transition: 'all 0.3s',
+              animationDelay: '400ms'
             }}
           >
-            <div style={{
+            <div className="icon-box" style={{
               width: '48px',
               height: '48px',
               backgroundColor: 'rgba(57, 194, 215, 0.2)',
@@ -211,15 +245,16 @@ function WhatIDo() {
 
           {/* Marketing Card */}
           <div
-            className="skill-bento"
+            className={`skill-bento bento-card ${isVisible ? 'animate-in' : ''}`}
             style={{
               padding: '28px',
               background: `linear-gradient(135deg, rgba(163, 198, 68, 0.15) 0%, rgba(163, 198, 68, 0.05) 100%)`,
               border: `1px solid rgba(163, 198, 68, 0.3)`,
-              transition: 'all 0.3s'
+              transition: 'all 0.3s',
+              animationDelay: '500ms'
             }}
           >
-            <div style={{
+            <div className="icon-box" style={{
               width: '48px',
               height: '48px',
               backgroundColor: 'rgba(163, 198, 68, 0.2)',
@@ -245,15 +280,16 @@ function WhatIDo() {
 
           {/* Design Card */}
           <div
-            className="skill-bento"
+            className={`skill-bento bento-card ${isVisible ? 'animate-in' : ''}`}
             style={{
               padding: '28px',
               background: `linear-gradient(135deg, rgba(57, 194, 215, 0.15) 0%, rgba(57, 194, 215, 0.05) 100%)`,
               border: `1px solid rgba(57, 194, 215, 0.3)`,
-              transition: 'all 0.3s'
+              transition: 'all 0.3s',
+              animationDelay: '600ms'
             }}
           >
-            <div style={{
+            <div className="icon-box" style={{
               width: '48px',
               height: '48px',
               backgroundColor: 'rgba(57, 194, 215, 0.2)',
@@ -278,15 +314,19 @@ function WhatIDo() {
           </div>
 
           {/* CTA Card */}
-          <div style={{
-            gridColumn: 'span 2',
-            padding: '32px 40px',
-            background: 'linear-gradient(135deg, #a3c644 0%, #8fb33a 100%)',
-            display: 'flex',
-            alignItems: 'center',
-            justifyContent: 'space-between',
-            gap: '20px'
-          }}>
+          <div
+            className={`bento-card cta-card ${isVisible ? 'animate-in' : ''}`}
+            style={{
+              gridColumn: 'span 2',
+              padding: '32px 40px',
+              background: 'linear-gradient(135deg, #a3c644 0%, #8fb33a 100%)',
+              display: 'flex',
+              alignItems: 'center',
+              justifyContent: 'space-between',
+              gap: '20px',
+              animationDelay: '700ms'
+            }}
+          >
             <div>
               <h4 style={{
                 fontSize: '20px',
@@ -326,6 +366,92 @@ function WhatIDo() {
       </div>
 
       <style>{`
+        @keyframes fadeInUp {
+          from {
+            opacity: 0;
+            transform: translateY(30px);
+          }
+          to {
+            opacity: 1;
+            transform: translateY(0);
+          }
+        }
+
+        @keyframes iconPulse {
+          0%, 100% {
+            box-shadow: 0 0 0 0 rgba(57, 194, 215, 0.4);
+          }
+          50% {
+            box-shadow: 0 0 20px 5px rgba(57, 194, 215, 0.2);
+          }
+        }
+
+        @keyframes gradientShift {
+          0% {
+            background-position: 0% 50%;
+          }
+          50% {
+            background-position: 100% 50%;
+          }
+          100% {
+            background-position: 0% 50%;
+          }
+        }
+
+        @keyframes shimmer {
+          0% {
+            background-position: -200% 0;
+          }
+          100% {
+            background-position: 200% 0;
+          }
+        }
+
+        .bento-card {
+          opacity: 0;
+          transform: translateY(30px);
+        }
+
+        .bento-card.animate-in {
+          animation: fadeInUp 0.6s ease-out forwards;
+        }
+
+        .icon-box {
+          transition: all 0.3s ease;
+        }
+
+        .skill-bento:hover .icon-box {
+          transform: scale(1.1) rotate(5deg);
+        }
+
+        .icon-pulse {
+          animation: iconPulse 3s ease-in-out infinite;
+        }
+
+        .ai-card::before {
+          content: '';
+          position: absolute;
+          top: 0;
+          left: 0;
+          right: 0;
+          bottom: 0;
+          background: linear-gradient(
+            90deg,
+            transparent,
+            rgba(57, 194, 215, 0.1),
+            transparent
+          );
+          background-size: 200% 100%;
+          animation: shimmer 3s ease-in-out infinite;
+          pointer-events: none;
+        }
+
+        .cta-card {
+          background-size: 200% 200%;
+          animation: gradientShift 4s ease infinite;
+          background-image: linear-gradient(135deg, #a3c644 0%, #8fb33a 50%, #a3c644 100%);
+        }
+
         .skill-bento:hover {
           transform: translateY(-4px);
           box-shadow: 0 20px 40px rgba(0,0,0,0.15);
