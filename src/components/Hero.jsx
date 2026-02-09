@@ -1,4 +1,4 @@
-import { ArrowDown, Github, Linkedin, Mail } from 'lucide-react'
+import { ArrowDown, Github, Linkedin, Mail, Download } from 'lucide-react'
 import { useTheme } from '../context/ThemeContext'
 import { useLanguage } from '../context/LanguageContext'
 
@@ -126,6 +126,36 @@ function Hero() {
               }}
             >
               {t.hero.viewExperience}
+            </a>
+            <a
+              href="/Serhii_Lysiuk_Senior_PM_CV.pdf"
+              download
+              style={{
+                padding: '16px 32px',
+                backgroundColor: 'transparent',
+                color: '#39c2d7',
+                textDecoration: 'none',
+                fontSize: '14px',
+                fontWeight: '600',
+                textTransform: 'uppercase',
+                letterSpacing: '1px',
+                border: '2px solid #39c2d7',
+                transition: 'all 0.3s',
+                display: 'inline-flex',
+                alignItems: 'center',
+                gap: '8px'
+              }}
+              onMouseEnter={(e) => {
+                e.currentTarget.style.backgroundColor = '#39c2d7'
+                e.currentTarget.style.color = 'white'
+              }}
+              onMouseLeave={(e) => {
+                e.currentTarget.style.backgroundColor = 'transparent'
+                e.currentTarget.style.color = '#39c2d7'
+              }}
+            >
+              <Download style={{ width: '16px', height: '16px' }} />
+              {t.hero.downloadCV}
             </a>
           </div>
 

@@ -21,6 +21,7 @@ export const translations = {
       description: 'Product Manager with deep expertise in AI, fintech, SaaS, and blockchain domains. 14+ years delivering high-impact products for enterprises and startups.',
       getInTouch: 'Get In Touch',
       viewExperience: 'View Experience',
+      downloadCV: 'Download CV',
     },
     // About
     about: {
@@ -170,6 +171,7 @@ export const translations = {
       description: 'Продакт менеджер з глибокою експертизою в AI, SaaS, fintech та блокчейні. Більше 14 років створюю продукти для великих ентерпрайзів та стартапів.',
       getInTouch: 'Зв\'язатися',
       viewExperience: 'Переглянути досвід',
+      downloadCV: 'Завантажити CV',
     },
     // About
     about: {
