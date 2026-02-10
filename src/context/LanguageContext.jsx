@@ -8,6 +8,7 @@ export const translations = {
     nav: {
       about: 'About',
       experience: 'Experience',
+      cases: 'Case Studies',
       skills: 'Skills',
       contact: 'Contact',
       hireMe: 'Hire Me',
@@ -155,7 +156,7 @@ export const translations = {
     // Cases
     cases: {
       label: 'MY WORK',
-      title: 'Featured Cases',
+      title: 'Case Studies',
       description: 'A selection of projects and products I\'ve built or contributed to.',
       items: [
         {
@@ -173,6 +174,7 @@ export const translations = {
     nav: {
       about: 'Про мене',
       experience: 'Досвід',
+      cases: 'Кейси',
       skills: 'Навички',
       contact: 'Контакти',
       hireMe: 'Найняти',
@@ -320,7 +322,7 @@ export const translations = {
     // Cases
     cases: {
       label: 'МОЇ РОБОТИ',
-      title: 'Обрані кейси',
+      title: 'Кейс-стаді',
       description: 'Підбірка проектів та продуктів, які я створив або до яких долучився.',
       items: [
         {
