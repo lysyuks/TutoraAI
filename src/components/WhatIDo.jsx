@@ -513,8 +513,17 @@ function WhatIDo() {
           pointer-events: none;
         }
 
+        .ai-card.animate-in {
+          animation: fadeInScale 0.6s ease-out forwards;
+        }
+
         .ai-card {
-          animation: fadeInScale 0.6s ease-out forwards, borderGlow 4s ease-in-out infinite;
+          box-shadow: 0 0 15px rgba(57, 194, 215, 0.3);
+          transition: box-shadow 0.3s ease;
+        }
+
+        .ai-card:hover {
+          box-shadow: 0 0 25px rgba(57, 194, 215, 0.5), 0 25px 50px rgba(0,0,0,0.2);
         }
 
         .ai-card span {
@@ -537,17 +546,21 @@ function WhatIDo() {
 
         .cta-card {
           background-size: 200% 200%;
-          animation: gradientShift 4s ease infinite;
           background-image: linear-gradient(135deg, #a3c644 0%, #8fb33a 50%, #a3c644 100%);
         }
 
         .cta-card.animate-in {
-          animation: fadeInScale 0.6s ease-out forwards, gradientShift 4s ease infinite;
+          animation: fadeInScale 0.6s ease-out forwards;
+        }
+
+        .cta-card.gradient-active {
+          animation: gradientShift 4s ease infinite;
         }
 
         .skill-bento {
           position: relative;
           overflow: hidden;
+          transition: transform 0.3s ease, box-shadow 0.3s ease;
         }
 
         .skill-bento::after {
@@ -577,12 +590,12 @@ function WhatIDo() {
 
         .skill-bento:nth-child(4):hover,
         .skill-bento:nth-child(6):hover {
-          animation: borderGlowGreen 2s ease-in-out infinite;
+          box-shadow: 0 0 20px rgba(163, 198, 68, 0.5), 0 25px 50px rgba(0,0,0,0.2);
         }
 
         .skill-bento:nth-child(5):hover,
         .skill-bento:nth-child(7):hover {
-          animation: borderGlow 2s ease-in-out infinite;
+          box-shadow: 0 0 20px rgba(57, 194, 215, 0.5), 0 25px 50px rgba(0,0,0,0.2);
         }
 
         .cta-btn {
