@@ -326,7 +326,7 @@ export const translations = {
       description: 'Реальні проекти, реальні рішення — від концепції до деплою.',
       items: [
         {
-          title: "Weight Loss Clinic Intake Form",
+          title: "Форма запису до клініки зниження ваги",
           description: "Розробив повноцінну цифрову систему прийому для Health Company. Багатокрокова форма онбордингу пацієнтів з валідацією в реальному часі, умовною логікою та автоматичною генерацією PDF — повністю замінивши паперові форми.",
           image: "/cases/casestudy33.jpg",
           tags: ["Next.js", "React", "TypeScript", "Tailwind CSS", "PDF Generation", "Vercel"],
