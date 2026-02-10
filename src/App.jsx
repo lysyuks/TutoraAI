@@ -5,6 +5,7 @@ import About from './components/About'
 import WhatIDo from './components/WhatIDo'
 import Experience from './components/Experience'
 import Skills from './components/Skills'
+import Cases from './components/Cases'
 import Contact from './components/Contact'
 import Footer from './components/Footer'
 
@@ -25,6 +26,7 @@ function App() {
         <WhatIDo />
         <Experience />
         <Skills />
+        <Cases />
         <Contact />
       </main>
       <Footer />

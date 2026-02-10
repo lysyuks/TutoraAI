@@ -152,6 +152,21 @@ export const translations = {
       rights: 'All rights reserved.',
       title: 'Product Manager | Senior Level Executive',
     },
+    // Cases
+    cases: {
+      label: 'MY WORK',
+      title: 'Featured Cases',
+      description: 'A selection of projects and products I\'ve built or contributed to.',
+      items: [
+        {
+          title: "Medicare Intake Form",
+          description: "Digital intake form for Medicare patients — streamlined onboarding process with multi-step form, validation, and PDF generation.",
+          image: "/cases/medicare-form.svg",
+          tags: ["Next.js", "React", "Tailwind CSS", "Vercel"],
+          link: "https://medicare-intake-form.vercel.app"
+        }
+      ],
+    },
   },
   ua: {
     // Header
@@ -301,6 +316,21 @@ export const translations = {
     footer: {
       rights: 'Всі права захищені.',
       title: 'Продакт-менеджер | Керівник вищого рівня',
+    },
+    // Cases
+    cases: {
+      label: 'МОЇ РОБОТИ',
+      title: 'Обрані кейси',
+      description: 'Підбірка проектів та продуктів, які я створив або до яких долучився.',
+      items: [
+        {
+          title: "Medicare Intake Form",
+          description: "Цифрова форма прийому для пацієнтів Medicare — спрощений процес онбордингу з багатокроковою формою, валідацією та генерацією PDF.",
+          image: "/cases/medicare-form.svg",
+          tags: ["Next.js", "React", "Tailwind CSS", "Vercel"],
+          link: "https://medicare-intake-form.vercel.app"
+        }
+      ],
     },
   },
 }
