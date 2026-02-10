@@ -29,11 +29,11 @@ function Cases() {
 
   const cases = t.cases?.items || [
     {
-      title: "SlimForm Medical Weight Loss",
-      description: "Medical weight loss platform — helping patients transform their health and achieve their wellness goals with personalized treatment plans.",
+      title: "Medicare Intake Form",
+      description: "Digital intake form for Medicare patients — streamlined onboarding process with multi-step form, validation, and PDF generation.",
       image: "/cases/slimform-case.jpg",
       tags: ["Next.js", "React", "Tailwind CSS", "Vercel"],
-      link: "https://slimform.vercel.app"
+      link: "https://medicare-intake-form.vercel.app"
     }
   ]
 
