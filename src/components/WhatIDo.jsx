@@ -609,14 +609,18 @@ function WhatIDo() {
         @media (max-width: 1000px) {
           .bento-grid {
             grid-template-columns: repeat(2, 1fr) !important;
+            gap: 16px !important;
+          }
+          .bento-grid > div {
+            grid-column: span 1 !important;
+            grid-row: span 1 !important;
+            min-height: auto !important;
           }
           .bento-grid > div:nth-child(1) {
             grid-column: span 2 !important;
           }
           .bento-grid > div:nth-child(2) {
             grid-column: span 2 !important;
-            grid-row: span 1 !important;
-            min-height: auto !important;
           }
           .bento-grid > div:nth-child(3) {
             grid-column: span 2 !important;
@@ -625,7 +629,7 @@ function WhatIDo() {
             grid-column: span 2 !important;
           }
         }
-        @media (max-width: 600px) {
+        @media (max-width: 700px) {
           .bento-grid {
             grid-template-columns: 1fr !important;
             gap: 16px !important;
@@ -641,6 +645,9 @@ function WhatIDo() {
           }
           .bento-grid h3 {
             font-size: 22px !important;
+          }
+          .bento-grid h4 {
+            font-size: 16px !important;
           }
           .bento-grid > div:last-child {
             flex-direction: column !important;
