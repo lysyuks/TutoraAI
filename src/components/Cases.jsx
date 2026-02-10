@@ -31,7 +31,7 @@ function Cases() {
     {
       title: "Medicare Intake Form",
       description: "Digital intake form for Medicare patients — streamlined onboarding process with multi-step form, validation, and PDF generation.",
-      image: "/cases/medicare-form.svg",
+      image: "/cases/medicare-case.jpg",
       tags: ["Next.js", "React", "Tailwind CSS", "Vercel"],
       link: "https://medicare-intake-form.vercel.app"
     }
