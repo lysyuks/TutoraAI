@@ -162,7 +162,7 @@ export const translations = {
         {
           title: "Medicare Intake Form",
           description: "Digital intake form for Medicare patients — streamlined onboarding process with multi-step form, validation, and PDF generation.",
-          image: "/cases/_1280720_px__Nano_Banana_82133.jpg",
+          image: "/cases/casestudy1.jpg",
           tags: ["Next.js", "React", "Tailwind CSS", "Vercel"],
           link: "https://medicare-intake-form.vercel.app"
         }
@@ -328,7 +328,7 @@ export const translations = {
         {
           title: "Medicare Intake Form",
           description: "Цифрова форма прийому для пацієнтів Medicare — спрощений процес онбордингу з багатокроковою формою, валідацією та генерацією PDF.",
-          image: "/cases/_1280720_px__Nano_Banana_82133.jpg",
+          image: "/cases/casestudy1.jpg",
           tags: ["Next.js", "React", "Tailwind CSS", "Vercel"],
           link: "https://medicare-intake-form.vercel.app"
         }
