@@ -18,8 +18,8 @@ function Header() {
   const navLinks = [
     { name: t.nav.about, href: '#about' },
     { name: t.nav.experience, href: '#experience' },
-    { name: t.nav.cases, href: '#cases' },
     { name: t.nav.skills, href: '#skills' },
+    { name: t.nav.cases, href: '#cases' },
     { name: t.nav.contact, href: '#contact' },
   ]
 
