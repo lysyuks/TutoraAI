@@ -160,7 +160,7 @@ export const translations = {
       description: 'Real projects, real solutions — from concept to deployment.',
       items: [
         {
-          title: "Medicare Intake Form",
+          title: "Weight Loss Clinic Intake Form",
           description: "Built a full-cycle digital intake system for Health Company. Multi-step patient onboarding form with real-time validation, conditional logic, and automated PDF generation — replacing paper forms entirely.",
           image: "/cases/casestudy2.jpg",
           tags: ["Next.js", "React", "TypeScript", "Tailwind CSS", "PDF Generation", "Vercel"],
@@ -326,7 +326,7 @@ export const translations = {
       description: 'Реальні проекти, реальні рішення — від концепції до деплою.',
       items: [
         {
-          title: "Medicare Intake Form",
+          title: "Weight Loss Clinic Intake Form",
           description: "Розробив повноцінну цифрову систему прийому для Health Company. Багатокрокова форма онбордингу пацієнтів з валідацією в реальному часі, умовною логікою та автоматичною генерацією PDF — повністю замінивши паперові форми.",
           image: "/cases/casestudy2.jpg",
           tags: ["Next.js", "React", "TypeScript", "Tailwind CSS", "PDF Generation", "Vercel"],
