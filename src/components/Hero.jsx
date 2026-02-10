@@ -95,7 +95,8 @@ function Hero() {
                 fontWeight: '600',
                 textTransform: 'uppercase',
                 letterSpacing: '1px',
-                transition: 'all 0.3s'
+                transition: 'all 0.3s',
+                whiteSpace: 'nowrap'
               }}
               onMouseEnter={(e) => e.target.style.backgroundColor = '#8fb33a'}
               onMouseLeave={(e) => e.target.style.backgroundColor = '#a3c644'}
@@ -114,7 +115,8 @@ function Hero() {
                 textTransform: 'uppercase',
                 letterSpacing: '1px',
                 border: `2px solid ${themes.text}`,
-                transition: 'all 0.3s'
+                transition: 'all 0.3s',
+                whiteSpace: 'nowrap'
               }}
               onMouseEnter={(e) => {
                 e.target.style.backgroundColor = themes.text
@@ -143,7 +145,8 @@ function Hero() {
                 transition: 'all 0.3s',
                 display: 'inline-flex',
                 alignItems: 'center',
-                gap: '8px'
+                gap: '8px',
+                whiteSpace: 'nowrap'
               }}
               onMouseEnter={(e) => {
                 e.currentTarget.style.backgroundColor = '#39c2d7'
