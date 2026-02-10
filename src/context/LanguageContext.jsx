@@ -155,15 +155,15 @@ export const translations = {
     },
     // Cases
     cases: {
-      label: 'MY WORK',
-      title: 'Case Studies',
-      description: 'A selection of projects and products I\'ve built or contributed to.',
+      label: 'CASE STUDIES',
+      title: 'My Work',
+      description: 'Real projects, real solutions — from concept to deployment.',
       items: [
         {
           title: "Medicare Intake Form",
-          description: "Digital intake form for Medicare patients — streamlined onboarding process with multi-step form, validation, and PDF generation.",
+          description: "Built a full-cycle digital intake system for a medical weight loss clinic. Multi-step patient onboarding form with real-time validation, conditional logic, and automated PDF generation — replacing paper forms entirely.",
           image: "/cases/casestudy1.jpg",
-          tags: ["Next.js", "React", "Tailwind CSS", "Vercel"],
+          tags: ["Next.js", "React", "TypeScript", "Tailwind CSS", "PDF Generation", "Vercel"],
           link: "https://medicare-intake-form.vercel.app"
         }
       ],
@@ -321,15 +321,15 @@ export const translations = {
     },
     // Cases
     cases: {
-      label: 'МОЇ РОБОТИ',
-      title: 'Кейс-стаді',
-      description: 'Підбірка проектів та продуктів, які я створив або до яких долучився.',
+      label: 'КЕЙС-СТАДІ',
+      title: 'Мої роботи',
+      description: 'Реальні проекти, реальні рішення — від концепції до деплою.',
       items: [
         {
           title: "Medicare Intake Form",
-          description: "Цифрова форма прийому для пацієнтів Medicare — спрощений процес онбордингу з багатокроковою формою, валідацією та генерацією PDF.",
+          description: "Розробив повноцінну цифрову систему прийому для клініки схуднення. Багатокрокова форма онбордингу пацієнтів з валідацією в реальному часі, умовною логікою та автоматичною генерацією PDF — повністю замінивши паперові форми.",
           image: "/cases/casestudy1.jpg",
-          tags: ["Next.js", "React", "Tailwind CSS", "Vercel"],
+          tags: ["Next.js", "React", "TypeScript", "Tailwind CSS", "PDF Generation", "Vercel"],
           link: "https://medicare-intake-form.vercel.app"
         }
       ],
