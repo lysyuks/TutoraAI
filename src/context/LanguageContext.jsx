@@ -161,7 +161,7 @@ export const translations = {
       items: [
         {
           title: "Medicare Intake Form",
-          description: "Built a full-cycle digital intake system for a medical weight loss clinic. Multi-step patient onboarding form with real-time validation, conditional logic, and automated PDF generation — replacing paper forms entirely.",
+          description: "Built a full-cycle digital intake system for Health Company. Multi-step patient onboarding form with real-time validation, conditional logic, and automated PDF generation — replacing paper forms entirely.",
           image: "/cases/casestudy1.jpg",
           tags: ["Next.js", "React", "TypeScript", "Tailwind CSS", "PDF Generation", "Vercel"],
           link: "https://medicare-intake-form.vercel.app"
@@ -327,7 +327,7 @@ export const translations = {
       items: [
         {
           title: "Medicare Intake Form",
-          description: "Розробив повноцінну цифрову систему прийому для клініки схуднення. Багатокрокова форма онбордингу пацієнтів з валідацією в реальному часі, умовною логікою та автоматичною генерацією PDF — повністю замінивши паперові форми.",
+          description: "Розробив повноцінну цифрову систему прийому для Health Company. Багатокрокова форма онбордингу пацієнтів з валідацією в реальному часі, умовною логікою та автоматичною генерацією PDF — повністю замінивши паперові форми.",
           image: "/cases/casestudy1.jpg",
           tags: ["Next.js", "React", "TypeScript", "Tailwind CSS", "PDF Generation", "Vercel"],
           link: "https://medicare-intake-form.vercel.app"
