@@ -606,39 +606,36 @@ function WhatIDo() {
           transform: scale(1.05);
           box-shadow: 0 8px 25px rgba(0, 0, 0, 0.2);
         }
-        @media (max-width: 1000px) {
+        @media (max-width: 1100px) {
           .bento-grid {
-            grid-template-columns: repeat(2, 1fr) !important;
+            grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
             gap: 16px !important;
           }
           .bento-grid > div {
             grid-column: span 1 !important;
             grid-row: span 1 !important;
             min-height: auto !important;
+            width: 100% !important;
+            box-sizing: border-box !important;
           }
-          .bento-grid > div:nth-child(1) {
-            grid-column: span 2 !important;
-          }
-          .bento-grid > div:nth-child(2) {
-            grid-column: span 2 !important;
-          }
-          .bento-grid > div:nth-child(3) {
-            grid-column: span 2 !important;
-          }
+          .bento-grid > div:nth-child(1),
+          .bento-grid > div:nth-child(2),
+          .bento-grid > div:nth-child(3),
           .bento-grid > div:nth-child(8) {
-            grid-column: span 2 !important;
+            grid-column: 1 / -1 !important;
           }
         }
-        @media (max-width: 700px) {
+        @media (max-width: 768px) {
           .bento-grid {
             grid-template-columns: 1fr !important;
             gap: 16px !important;
           }
           .bento-grid > div {
-            grid-column: span 1 !important;
+            grid-column: 1 / -1 !important;
             grid-row: span 1 !important;
             padding: 24px !important;
             min-height: auto !important;
+            width: 100% !important;
           }
           .bento-grid h2 {
             font-size: 28px !important;
