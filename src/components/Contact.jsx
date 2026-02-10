@@ -50,7 +50,7 @@ function Contact() {
 
   return (
     <section id="contact" style={{
-      backgroundColor: themes.contactBg,
+      backgroundColor: themes.bgAlt,
       padding: '100px 0',
       transition: 'background-color 0.3s'
     }}>
@@ -76,7 +76,7 @@ function Contact() {
             <h2 style={{
               fontSize: '48px',
               fontWeight: '700',
-              color: 'white',
+              color: themes.text,
               marginBottom: '16px',
               lineHeight: '1.1'
             }}>
@@ -91,7 +91,7 @@ function Contact() {
 
             <p style={{
               fontSize: '18px',
-              color: 'rgba(255,255,255,0.7)',
+              color: themes.textMuted,
               marginBottom: '48px',
               lineHeight: '1.8'
             }}>
@@ -130,14 +130,14 @@ function Contact() {
                       <div>
                         <p style={{
                           fontSize: '12px',
-                          color: 'rgba(255,255,255,0.5)',
+                          color: themes.textLight,
                           textTransform: 'uppercase',
                           letterSpacing: '1px',
                           marginBottom: '4px'
                         }}>
                           {item.label}
                         </p>
-                        <p style={{ fontSize: '16px', color: 'white', fontWeight: '500' }}>
+                        <p style={{ fontSize: '16px', color: themes.text, fontWeight: '500' }}>
                           {item.value}
                         </p>
                       </div>
@@ -157,14 +157,14 @@ function Contact() {
                       <div>
                         <p style={{
                           fontSize: '12px',
-                          color: 'rgba(255,255,255,0.5)',
+                          color: themes.textLight,
                           textTransform: 'uppercase',
                           letterSpacing: '1px',
                           marginBottom: '4px'
                         }}>
                           {item.label}
                         </p>
-                        <p style={{ fontSize: '16px', color: 'white', fontWeight: '500' }}>
+                        <p style={{ fontSize: '16px', color: themes.text, fontWeight: '500' }}>
                           {item.value}
                         </p>
                       </div>
@@ -177,14 +177,14 @@ function Contact() {
 
           {/* Right - Contact Form */}
           <div style={{
-            backgroundColor: 'rgba(255,255,255,0.05)',
+            backgroundColor: themes.cardBg,
             padding: '48px',
-            border: '1px solid rgba(255,255,255,0.1)'
+            border: `1px solid ${themes.border}`
           }}>
             <h3 style={{
               fontSize: '24px',
               fontWeight: '600',
-              color: 'white',
+              color: themes.text,
               marginBottom: '32px'
             }}>
               {t.contact.sendMessage}
@@ -194,7 +194,7 @@ function Contact() {
                 <label style={{
                   display: 'block',
                   fontSize: '12px',
-                  color: 'rgba(255,255,255,0.5)',
+                  color: themes.textLight,
                   textTransform: 'uppercase',
                   letterSpacing: '1px',
                   marginBottom: '8px'
@@ -210,22 +210,22 @@ function Contact() {
                   style={{
                     width: '100%',
                     padding: '16px',
-                    backgroundColor: 'rgba(255,255,255,0.05)',
-                    border: '1px solid rgba(255,255,255,0.1)',
-                    color: 'white',
+                    backgroundColor: themes.bg,
+                    border: `1px solid ${themes.border}`,
+                    color: themes.text,
                     fontSize: '16px',
                     outline: 'none',
                     transition: 'border-color 0.3s'
                   }}
                   onFocus={(e) => e.target.style.borderColor = '#39c2d7'}
-                  onBlur={(e) => e.target.style.borderColor = 'rgba(255,255,255,0.1)'}
+                  onBlur={(e) => e.target.style.borderColor = themes.border}
                 />
               </div>
               <div>
                 <label style={{
                   display: 'block',
                   fontSize: '12px',
-                  color: 'rgba(255,255,255,0.5)',
+                  color: themes.textLight,
                   textTransform: 'uppercase',
                   letterSpacing: '1px',
                   marginBottom: '8px'
@@ -241,22 +241,22 @@ function Contact() {
                   style={{
                     width: '100%',
                     padding: '16px',
-                    backgroundColor: 'rgba(255,255,255,0.05)',
-                    border: '1px solid rgba(255,255,255,0.1)',
-                    color: 'white',
+                    backgroundColor: themes.bg,
+                    border: `1px solid ${themes.border}`,
+                    color: themes.text,
                     fontSize: '16px',
                     outline: 'none',
                     transition: 'border-color 0.3s'
                   }}
                   onFocus={(e) => e.target.style.borderColor = '#39c2d7'}
-                  onBlur={(e) => e.target.style.borderColor = 'rgba(255,255,255,0.1)'}
+                  onBlur={(e) => e.target.style.borderColor = themes.border}
                 />
               </div>
               <div>
                 <label style={{
                   display: 'block',
                   fontSize: '12px',
-                  color: 'rgba(255,255,255,0.5)',
+                  color: themes.textLight,
                   textTransform: 'uppercase',
                   letterSpacing: '1px',
                   marginBottom: '8px'
@@ -272,16 +272,16 @@ function Contact() {
                   style={{
                     width: '100%',
                     padding: '16px',
-                    backgroundColor: 'rgba(255,255,255,0.05)',
-                    border: '1px solid rgba(255,255,255,0.1)',
-                    color: 'white',
+                    backgroundColor: themes.bg,
+                    border: `1px solid ${themes.border}`,
+                    color: themes.text,
                     fontSize: '16px',
                     resize: 'none',
                     outline: 'none',
                     transition: 'border-color 0.3s'
                   }}
                   onFocus={(e) => e.target.style.borderColor = '#39c2d7'}
-                  onBlur={(e) => e.target.style.borderColor = 'rgba(255,255,255,0.1)'}
+                  onBlur={(e) => e.target.style.borderColor = themes.border}
                 />
               </div>
 

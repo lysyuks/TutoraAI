@@ -9,7 +9,7 @@ function Footer() {
 
   return (
     <footer style={{
-      backgroundColor: themes.footerBg,
+      backgroundColor: themes.contactBg,
       padding: '60px 0 40px',
       transition: 'background-color 0.3s'
     }}>
