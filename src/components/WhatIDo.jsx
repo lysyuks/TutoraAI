@@ -599,40 +599,12 @@ function WhatIDo() {
         }
 
         .cta-btn {
-          position: relative;
-          overflow: hidden;
-          z-index: 1;
-        }
-
-        .cta-btn::before {
-          content: '';
-          position: absolute;
-          top: 0;
-          left: -100%;
-          width: 100%;
-          height: 100%;
-          background: linear-gradient(
-            90deg,
-            transparent,
-            rgba(255, 255, 255, 0.3),
-            transparent
-          );
-          transition: left 0.5s ease;
-          z-index: -1;
-        }
-
-        .cta-btn:hover::before {
-          left: 100%;
+          transition: all 0.3s ease;
         }
 
         .cta-btn:hover {
           transform: scale(1.05);
           box-shadow: 0 8px 25px rgba(0, 0, 0, 0.2);
-          background-color: rgba(255,255,255,0.35) !important;
-        }
-
-        .cta-btn svg {
-          pointer-events: none;
         }
         @media (max-width: 1000px) {
           .bento-grid {
