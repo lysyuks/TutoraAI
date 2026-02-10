@@ -50,7 +50,7 @@ function Contact() {
 
   return (
     <section id="contact" style={{
-      backgroundColor: themes.bgAlt,
+      backgroundColor: themes.bg,
       padding: '100px 0',
       transition: 'background-color 0.3s'
     }}>
