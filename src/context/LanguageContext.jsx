@@ -155,8 +155,8 @@ export const translations = {
     },
     // Cases
     cases: {
-      label: 'CASE STUDIES',
-      title: 'My Work',
+      label: '',
+      title: 'Case Studies',
       description: 'Real projects, real solutions — from concept to deployment.',
       items: [
         {
@@ -321,8 +321,8 @@ export const translations = {
     },
     // Cases
     cases: {
-      label: 'КЕЙС-СТАДІ',
-      title: 'Мої роботи',
+      label: '',
+      title: 'Кейс-стаді',
       description: 'Реальні проекти, реальні рішення — від концепції до деплою.',
       items: [
         {

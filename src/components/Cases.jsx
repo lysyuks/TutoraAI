@@ -56,16 +56,18 @@ function Cases() {
             marginBottom: '60px'
           }}
         >
-          <p style={{
-            fontSize: '12px',
-            color: '#a3c644',
-            letterSpacing: '3px',
-            marginBottom: '16px',
-            fontWeight: '600',
-            textTransform: 'uppercase'
-          }}>
-            {t.cases?.label || 'MY WORK'}
-          </p>
+          {t.cases?.label && (
+            <p style={{
+              fontSize: '12px',
+              color: '#a3c644',
+              letterSpacing: '3px',
+              marginBottom: '16px',
+              fontWeight: '600',
+              textTransform: 'uppercase'
+            }}>
+              {t.cases.label}
+            </p>
+          )}
           <h2 style={{
             fontSize: '42px',
             fontWeight: '700',
