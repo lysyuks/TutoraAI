@@ -1,0 +1,267 @@
+import { useState } from 'react'
+import { Calendar, MapPin, ChevronRight } from 'lucide-react'
+import { useTheme } from '../context/ThemeContext'
+import { useLanguage } from '../context/LanguageContext'
+
+function Experience() {
+  const { themes } = useTheme()
+  const { t } = useLanguage()
+  const [expandedCards, setExpandedCards] = useState({})
+
+  const experiences = t.experience.jobs
+
+  const toggleExpanded = (index) => {
+    setExpandedCards(prev => ({
+      ...prev,
+      [index]: !prev[index]
+    }))
+  }
+
+  return (
+    <section id="experience" style={{
+      backgroundColor: themes.bgAlt,
+      padding: '100px 0',
+      transition: 'background-color 0.3s'
+    }}>
+      <div style={{ maxWidth: '1400px', margin: '0 auto', padding: '0 48px' }}>
+        {/* Section Header */}
+        <div style={{ marginBottom: '60px' }}>
+          <p style={{
+            fontSize: '12px',
+            color: '#39c2d7',
+            letterSpacing: '3px',
+            marginBottom: '16px',
+            fontWeight: '600',
+            textTransform: 'uppercase'
+          }}>
+            {t.experience.label}
+          </p>
+          <h2 style={{
+            fontSize: '48px',
+            fontWeight: '700',
+            color: themes.text,
+            marginBottom: '16px',
+            lineHeight: '1.1'
+          }}>
+            {t.experience.title}
+          </h2>
+          <div style={{
+            width: '60px',
+            height: '4px',
+            background: 'linear-gradient(90deg, #39c2d7, #a3c644)'
+          }}></div>
+        </div>
+
+        {/* Horizontal Scrolling Cards */}
+        <div style={{
+          display: 'flex',
+          gap: '24px',
+          overflowX: 'auto',
+          paddingBottom: '24px',
+          scrollSnapType: 'x mandatory'
+        }} className="experience-scroll">
+          {experiences.map((exp, index) => (
+            <div
+              key={index}
+              style={{
+                minWidth: '400px',
+                maxWidth: '400px',
+                backgroundColor: themes.cardBg,
+                border: `1px solid ${themes.border}`,
+                scrollSnapAlign: 'start',
+                display: 'flex',
+                flexDirection: 'column',
+                transition: 'all 0.3s'
+              }}
+              className="experience-card"
+            >
+              {/* Card Header */}
+              <div style={{
+                padding: '24px',
+                borderBottom: `1px solid ${themes.border}`,
+                background: 'linear-gradient(135deg, #39c2d7 0%, #a3c644 100%)'
+              }}>
+                <span style={{
+                  display: 'inline-block',
+                  padding: '4px 12px',
+                  backgroundColor: 'rgba(255,255,255,0.2)',
+                  color: 'white',
+                  fontSize: '12px',
+                  fontWeight: '600',
+                  marginBottom: '12px',
+                  textTransform: 'uppercase',
+                  letterSpacing: '1px'
+                }}>
+                  {exp.highlight}
+                </span>
+                <h3 style={{
+                  fontSize: '20px',
+                  fontWeight: '600',
+                  color: 'white',
+                  marginBottom: '4px'
+                }}>
+                  {exp.title}
+                </h3>
+                <p style={{
+                  fontSize: '16px',
+                  color: 'rgba(255,255,255,0.9)',
+                  fontWeight: '500'
+                }}>
+                  {exp.company}
+                </p>
+              </div>
+
+              {/* Card Meta */}
+              <div style={{
+                padding: '16px 24px',
+                display: 'flex',
+                gap: '24px',
+                borderBottom: `1px solid ${themes.border}`,
+                backgroundColor: themes.bgAlt
+              }}>
+                <div style={{ display: 'flex', alignItems: 'center', gap: '8px', color: themes.textMuted, fontSize: '13px' }}>
+                  <Calendar style={{ width: '14px', height: '14px', color: '#39c2d7' }} />
+                  <span>{exp.period}</span>
+                </div>
+                <div style={{ display: 'flex', alignItems: 'center', gap: '8px', color: themes.textMuted, fontSize: '13px' }}>
+                  <MapPin style={{ width: '14px', height: '14px', color: '#39c2d7' }} />
+                  <span>{exp.location}</span>
+                </div>
+              </div>
+
+              {/* Card Body */}
+              <div style={{ padding: '24px', flex: 1 }}>
+                <ul style={{ margin: 0, paddingLeft: 0, listStyle: 'none' }}>
+                  {exp.description.map((item, i) => (
+                    <li key={i} style={{
+                      display: 'flex',
+                      alignItems: 'flex-start',
+                      gap: '12px',
+                      color: themes.textMuted,
+                      fontSize: '14px',
+                      marginBottom: '12px',
+                      lineHeight: '1.5'
+                    }}>
+                      <ChevronRight style={{
+                        width: '16px',
+                        height: '16px',
+                        color: '#a3c644',
+                        marginTop: '2px',
+                        flexShrink: 0
+                      }} />
+                      <span>{item}</span>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+
+              {/* Card Footer - Technologies */}
+              <div style={{
+                padding: '16px 24px',
+                borderTop: `1px solid ${themes.border}`,
+                display: 'flex',
+                flexWrap: 'wrap',
+                gap: '8px'
+              }}>
+                {(expandedCards[index] ? exp.technologies : exp.technologies.slice(0, 4)).map((tech, i) => (
+                  <span key={i} style={{
+                    padding: '4px 10px',
+                    backgroundColor: themes.bgAlt,
+                    color: themes.textMuted,
+                    fontSize: '11px',
+                    fontWeight: '500',
+                    textTransform: 'uppercase',
+                    letterSpacing: '0.5px'
+                  }}>
+                    {tech}
+                  </span>
+                ))}
+                {exp.technologies.length > 4 && (
+                  <button
+                    onClick={() => toggleExpanded(index)}
+                    style={{
+                      padding: '4px 10px',
+                      backgroundColor: '#39c2d7',
+                      color: 'white',
+                      fontSize: '11px',
+                      fontWeight: '500',
+                      border: 'none',
+                      cursor: 'pointer',
+                      transition: 'background-color 0.2s'
+                    }}
+                    onMouseEnter={(e) => e.target.style.backgroundColor = '#2ba8bc'}
+                    onMouseLeave={(e) => e.target.style.backgroundColor = '#39c2d7'}
+                  >
+                    {expandedCards[index] ? '−' : `+${exp.technologies.length - 4}`}
+                  </button>
+                )}
+              </div>
+            </div>
+          ))}
+        </div>
+
+        {/* Scroll Indicator */}
+        <div style={{
+          display: 'flex',
+          justifyContent: 'center',
+          gap: '8px',
+          marginTop: '24px'
+        }}>
+          <span style={{ fontSize: '13px', color: themes.textLight, textTransform: 'uppercase', letterSpacing: '1px' }}>
+            {t.experience.scrollToExplore}
+          </span>
+          <ChevronRight style={{ width: '16px', height: '16px', color: '#39c2d7' }} />
+        </div>
+      </div>
+
+      <style>{`
+        .experience-scroll::-webkit-scrollbar {
+          height: 6px;
+        }
+        .experience-scroll::-webkit-scrollbar-track {
+          background: ${themes.border};
+        }
+        .experience-scroll::-webkit-scrollbar-thumb {
+          background: linear-gradient(90deg, #39c2d7, #a3c644);
+          border-radius: 3px;
+        }
+        .experience-card:hover {
+          transform: translateY(-4px);
+          box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+        }
+        @media (max-width: 768px) {
+          .experience-scroll {
+            padding-left: 20px !important;
+          }
+          .experience-card {
+            min-width: 300px !important;
+            max-width: 300px !important;
+          }
+          #experience > div {
+            padding: 0 20px !important;
+          }
+          #experience h2 {
+            font-size: 32px !important;
+          }
+        }
+        @media (max-width: 480px) {
+          #experience {
+            padding: 60px 0 !important;
+          }
+          #experience > div {
+            padding: 0 16px !important;
+          }
+          .experience-scroll {
+            padding-left: 16px !important;
+          }
+          .experience-card {
+            min-width: 280px !important;
+            max-width: 280px !important;
+          }
+        }
+      `}</style>
+    </section>
+  )
+}
+
+export default Experience
